@@ -103,32 +103,6 @@ const work = [
   },
 ];
 
-const insights = [
-  {
-    tag: 'Technical Whitepaper · PDF',
-    title: 'Regulatory-Grade AI & Sovereign LLM Deployments in Global Banking',
-    read: '48 Page Architecture Blueprint',
-    href: '/reports',
-  },
-  {
-    tag: 'Editorial Point of View',
-    title: 'The Next Enterprise AI Stack: What CIOs Must Architect for in 2026',
-    read: '12 min read · Dr. Aris Thorne',
-    href: '/blogs',
-  },
-  {
-    tag: 'Field Research Briefing',
-    title: 'Why Autonomous Platform Teams Outperform Legacy PMO Models at Scale',
-    read: '7 min read · Transformation Series',
-    href: '/blogs',
-  },
-  {
-    tag: 'Architecture Standard · PDF',
-    title: 'Zero-Trust Microservices & Cryptographic API Perimeters at Hyperscale',
-    read: '32 Page Engineering Standard',
-    href: '/reports',
-  },
-];
 
 const industriesData = [
   {
@@ -418,9 +392,10 @@ export default function HomePage() {
                 Get The Full View Of <span className="font-semibold italic text-[#86bc25]">Industry Intelligence</span>
               </h2>
             </div>
-            <p className="text-[13px] sm:text-[14px] text-zinc-300 max-w-sm mt-2 md:mt-0 font-light hidden sm:block">
-              Comprehensive reference architectures and sovereign cloud benchmarks across high-consequence critical infrastructures.
-            </p>
+            <Link href="/industries" className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#86bc25] hover:underline">
+              <span>Explore All Industries</span>
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4">
@@ -502,60 +477,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. ORIGINAL SECTION: DEEP SAPPHIRE-BLUE RESEARCH & FIRM MODEL */}
+      {/* 5. FIRM MODEL SECTION */}
       <section className="relative bg-gradient-to-r from-[#0a162b] via-[#0e2140] to-[#0a162b] text-white py-16 lg:py-24 border-b border-[#1c3a6b] font-sans overflow-hidden">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#2270d1]/10 blur-[120px] pointer-events-none" />
         <div className="mx-auto max-w-[1500px] px-6 lg:px-12 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 pb-4 border-b border-[#1c3969]">
-            <div>
-              <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#63a3ff] flex items-center gap-1.5">
-                <Sparkles className="h-3.5 w-3.5 text-[#86bc25]" />
-                Intelligence & Editorial Research
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight mt-1">
-                Architectural Whitepapers & <span className="font-semibold text-white">Pragmatic Editorials</span>
-              </h2>
-            </div>
-            <div className="flex items-center gap-3 mt-4 md:mt-0">
-              <Link href="/blogs" className="inline-flex items-center gap-1 text-[13px] sm:text-[14px] font-semibold text-[#c7dbff] hover:text-white transition-colors">
-                <BookOpen className="h-3.5 w-3.5 text-[#86bc25]" />
-                <span>Blogs</span>
-              </Link>
-              <Link href="/reports" className="inline-flex items-center gap-1 text-[12.5px] sm:text-[13.5px] font-bold bg-[#14305c] border border-[#2b569e] text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded shadow hover:bg-[#86bc25] hover:text-black hover:border-[#86bc25] transition-all">
-                <Download className="h-3.5 w-3.5 text-[#86bc25]" />
-                <span>Whitepapers</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-7 mb-14 lg:mb-24">
-            {insights.map((p, i) => (
-              <Link
-                key={i}
-                href={p.href}
-                className="hover-SensiTech-border group flex flex-col justify-between bg-[#0b1a33]/90 border border-[#1e3c70] rounded-lg p-4 sm:p-7 hover:bg-[#11264a] hover:border-transparent hover:shadow-xl hover:shadow-blue-950/50 transition-all duration-200"
-              >
-                <div>
-                  <span className="inline-block text-[9.5px] sm:text-[11px] font-extrabold uppercase tracking-wider bg-[#183563] text-[#aedc5b] px-2 sm:px-3 py-0.5 sm:py-1 rounded border border-[#264c8c] mb-3 sm:mb-4 line-clamp-1">
-                    {p.tag}
-                  </span>
-                  <h4 className="text-[13px] sm:text-[19px] font-semibold text-white leading-snug group-hover:text-white transition-colors mb-4 sm:mb-6 line-clamp-3">
-                    {p.title}
-                  </h4>
-                </div>
-                <div className="pt-3 sm:pt-4 border-t border-[#1d396b] flex items-center justify-between text-[11px] sm:text-[13px] text-[#b3cae3] font-normal">
-                  <span className="truncate max-w-[90px] sm:max-w-none">{p.read}</span>
-                  <span className="inline-flex items-center gap-1 text-white font-bold group-hover:text-[#86bc25] transition-colors shrink-0">
-                    <span>{p.href === '/reports' ? 'PDF' : 'Read'}</span>
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-
           {/* WHY {clientConfig.shortName.toUpperCase()} FIRM MODEL */}
-          <div className="grid lg:grid-cols-12 gap-12 items-center pt-8 border-t border-[#1a3869]/80">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-4">
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#86bc25]">Why {clientConfig.name}</span>
               <h2 className="text-3xl font-light text-white tracking-tight mt-1 mb-4">
@@ -602,9 +529,10 @@ export default function HomePage() {
                 Industries We <span className="font-semibold text-black">Serve</span>
               </h2>
             </div>
-            <p className="mt-2 md:mt-0 text-[13px] sm:text-[14.5px] text-[#6b6255] max-w-md font-light leading-relaxed hidden sm:block">
-              Tailored reference architectures and compliance frameworks engineered specifically for high-consequence regulated environments.
-            </p>
+            <Link href="/industries" className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#5e8817] hover:underline">
+              <span>Explore All Industries</span>
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">

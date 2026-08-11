@@ -108,8 +108,8 @@ const NAV = [
       featured: {
         tag: 'Perspective',
         title: 'Architecting regulatory-grade AI in European banking.',
-        cta: 'Read the research paper',
-        href: '/blogs',
+        cta: 'Explore BFSI Solutions',
+        href: '/industries/bfsi',
         image: DC_IMG,
       },
     },

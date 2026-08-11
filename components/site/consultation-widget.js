@@ -76,12 +76,12 @@ export default function ConsultationWidget() {
             </Link>
 
             <Link
-              href="/reports"
+              href="/our-work"
               onClick={close}
               className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-zinc-900/90 text-slate-900 dark:text-zinc-100 text-sm font-medium transition-all hover:bg-[#86bc25]/15 dark:hover:bg-[#86bc25]/20 hover:text-[#86bc25] hover:translate-x-0.5"
             >
               <FileText className="h-4 w-4 text-[#86bc25]" />
-              <span>Request Technical Whitepapers</span>
+              <span>Explore Client Case Studies</span>
             </Link>
 
             <a

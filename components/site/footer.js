@@ -10,26 +10,26 @@ const COLS = [
     links: [
       { label: 'Who We Are', href: '/who-we-are' },
       { label: 'Our Work & Outcomes', href: '/our-work' },
-      { label: 'Careers at TechSensi', href: '/careers' },
+      { label: 'Careers', href: '/careers' },
       { label: 'Contact Our Partners', href: '/contact' },
     ],
   },
   {
     title: 'Capabilities',
     links: [
-      { label: 'Cloud Modernization', href: '/what-we-do' },
-      { label: 'AI & Applied Intelligence', href: '/what-we-do' },
-      { label: 'Cybersecurity & Zero Trust', href: '/what-we-do' },
-      { label: 'Digital Transformation', href: '/what-we-do' },
+      { label: 'Cloud Modernization', href: '/what-we-do/cloud-modernization' },
+      { label: 'AI & Applied Intelligence', href: '/what-we-do/ai-applied-intelligence' },
+      { label: 'Cybersecurity & Zero Trust', href: '/what-we-do/cybersecurity-zero-trust' },
+      { label: 'Explore All Capabilities →', href: '/what-we-do' },
     ],
   },
   {
-    title: 'Intelligence & Reports',
+    title: 'Industries',
     links: [
-      { label: 'Enterprise AI Stack Blog', href: '/blogs' },
-      { label: 'Research Whitepapers', href: '/reports' },
-      { label: 'Executive Insights', href: '/insights' },
-      { label: 'Newsroom & Press', href: '/insights' },
+      { label: 'Banking & Financial Services', href: '/industries/bfsi' },
+      { label: 'AI Solutions & Computing', href: '/industries/ai-solutions' },
+      { label: 'Cybersecurity & Defense', href: '/industries/cybersecurity-defense' },
+      { label: 'Explore All Industries →', href: '/industries' },
     ],
   },
 ];
@@ -107,13 +107,13 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-6">
             <p>© {new Date().getFullYear()} TechSensi Technologies. All rights reserved.</p>
             <span className="hidden md:block h-3 w-px bg-[#262626]" />
-            <Link href="/insights" className="hover:text-[#86bc25] transition-colors">
+            <Link href="/contact" className="hover:text-[#86bc25] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/insights" className="hover:text-[#86bc25] transition-colors">
+            <Link href="/contact" className="hover:text-[#86bc25] transition-colors">
               Terms & Conditions
             </Link>
-            <Link href="/insights" className="hover:text-[#86bc25] transition-colors">
+            <Link href="/contact" className="hover:text-[#86bc25] transition-colors">
               Security Compliance
             </Link>
           </div>

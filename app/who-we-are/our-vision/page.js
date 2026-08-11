@@ -155,10 +155,10 @@ export default function OurVisionPage() {
               </p>
             </div>
             <Link
-              href="/insights"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-[#1c1a18] text-white text-[14px] font-bold px-7 py-3.5 rounded shadow hover:bg-[#86bc25] hover:text-black transition-all shrink-0"
             >
-              <span>Read perspectives</span>
+              <span>Schedule Consultation</span>
               <ArrowUpRight className="h-4.5 w-4.5" />
             </Link>
           </div>
