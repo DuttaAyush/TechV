@@ -1,6 +1,7 @@
 import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
 import { ThemeProvider } from '@/components/site/theme-provider';
+import { CartProvider } from '@/lib/cart-context';
 import { siteMetadata, clientConfig } from '@/lib/config';
 
 export const metadata = {
@@ -23,8 +24,10 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-background text-foreground">
         <ThemeProvider>
-          {children}
-          <Toaster position="bottom-right" />
+          <CartProvider>
+            {children}
+            <Toaster position="bottom-right" />
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>

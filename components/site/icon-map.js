@@ -1,13 +1,22 @@
 'use client';
 
 import {
-  Cloud, Cpu, ShieldCheck, Workflow, Database, Layers, Zap,
-  Landmark, Truck, ShoppingBag, HeartPulse, Building2, Lock
+  Globe, Smartphone, Code, TrendingUp, Users, Briefcase,
+  MonitorCheck, LineChart, Cpu, Cloud, ShieldCheck, Workflow,
+  Database, Layers, Zap, Landmark, Truck, ShoppingBag, HeartPulse, Building2, Lock
 } from 'lucide-react';
 
 const ICON_MAP = {
-  Cloud,
+  Globe,
+  Smartphone,
+  Code,
+  TrendingUp,
+  Users,
+  Briefcase,
+  MonitorCheck,
+  LineChart,
   Cpu,
+  Cloud,
   ShieldCheck,
   Workflow,
   Database,
@@ -22,6 +31,6 @@ const ICON_MAP = {
 };
 
 export default function RenderIcon({ name, className = 'h-5 w-5' }) {
-  const Component = ICON_MAP[name] || Cloud;
+  const Component = ICON_MAP[name] || Globe;
   return <Component className={className} />;
 }

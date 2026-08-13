@@ -6,10 +6,11 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  Menu, X, ArrowUpRight, ChevronDown, ChevronRight, Download
+  Menu, X, ArrowUpRight, ChevronDown, ChevronRight, Download, ShoppingCart, User
 } from 'lucide-react';
 import Logo from './logo';
 import RenderIcon from './icon-map';
+import { useCart } from '@/lib/cart-context';
 import { clientConfig } from '@/lib/config';
 
 const SKY_IMG =
@@ -55,29 +56,32 @@ const NAV = [
     href: '/what-we-do',
     panel: {
       lead: {
-        title: 'Capabilities',
+        title: 'Core Services',
         description:
-          'Seven senior-led transformation practices covering the enterprise stack — from board strategy to production deployment.',
+          'Nine specialized engineering and advisory practices designed to accelerate digital innovation and enterprise scale.',
       },
       categories: [
-        { label: 'Cloud Modernization', href: '/what-we-do/cloud-modernization', icon: 'Cloud' },
-        { label: 'AI & Intelligence', href: '/what-we-do/ai-applied-intelligence', icon: 'Cpu' },
-        { label: 'Cybersecurity', href: '/what-we-do/cybersecurity-zero-trust', icon: 'ShieldCheck' },
-        { label: 'View All Practices', href: '/what-we-do', icon: 'Layers' },
+        { label: 'Web Dev', href: '/what-we-do/web-dev', icon: 'Globe' },
+        { label: 'App Dev', href: '/what-we-do/app-dev', icon: 'Smartphone' },
+        { label: 'Software Dev', href: '/what-we-do/software-dev', icon: 'Code' },
+        { label: 'View All 9 Services', href: '/what-we-do', icon: 'Globe' },
       ],
       pages: [
-        { title: 'Cloud Modernization', desc: 'AWS, Azure, and GCP re-architecture at scale.', href: '/what-we-do/cloud-modernization', icon: 'Cloud' },
-        { title: 'AI & Applied Intelligence', desc: 'LLM ops, enterprise retrieval, and regulated governance.', href: '/what-we-do/ai-applied-intelligence', icon: 'Cpu' },
-        { title: 'Cybersecurity & Zero Trust', desc: 'Identity modernization and SOC defense perimeter.', href: '/what-we-do/cybersecurity-zero-trust', icon: 'ShieldCheck' },
-        { title: 'Digital Transformation', desc: 'Operating model, Agile engineering, and org change.', href: '/what-we-do/digital-transformation', icon: 'Workflow' },
-        { title: 'Data & Analytics Fabric', desc: 'Lakehouse architectures and real-time semantic layers.', href: '/what-we-do/data-analytics-fabric', icon: 'Database' },
-        { title: 'Enterprise Architecture', desc: 'API integration strategy and long-term tech standards.', href: '/what-we-do/enterprise-architecture', icon: 'Layers' },
+        { title: 'Web Dev', desc: 'Next.js web apps and digital platforms.', href: '/what-we-do/web-dev', icon: 'Globe' },
+        { title: 'App Dev', desc: 'iOS, Android & cross-platform mobile apps.', href: '/what-we-do/app-dev', icon: 'Smartphone' },
+        { title: 'Software Dev', desc: 'Custom enterprise software & microservices.', href: '/what-we-do/software-dev', icon: 'Code' },
+        { title: 'Digital Marketing', desc: 'Performance SEO, CRO & growth engines.', href: '/what-we-do/digital-marketing', icon: 'TrendingUp' },
+        { title: 'CRM Dev', desc: 'Salesforce, HubSpot & CRM pipelines.', href: '/what-we-do/crm-dev', icon: 'Users' },
+        { title: 'ERP Sol', desc: 'SAP, Oracle & supply chain ERP systems.', href: '/what-we-do/erp-sol', icon: 'Briefcase' },
+        { title: 'IT Consulting', desc: 'Enterprise IT architecture & tech roadmap.', href: '/what-we-do/it-consulting', icon: 'MonitorCheck' },
+        { title: 'Business Consulting', desc: 'Operating model redesign & process automation.', href: '/what-we-do/business-consulting', icon: 'LineChart' },
+        { title: 'AI Consulting', desc: 'Sovereign LLMs, RAG & AI agents.', href: '/what-we-do/ai-consulting', icon: 'Cpu' },
       ],
       featured: {
-        tag: 'Case Study',
-        title: 'Core banking modernization across 14 sovereign markets.',
-        cta: 'View case study',
-        href: '/our-work',
+        tag: 'Featured Service',
+        title: 'Bespoke enterprise engineering with senior-led accountability.',
+        cta: 'Explore all services',
+        href: '/what-we-do',
         image: SKY_IMG,
       },
     },
@@ -115,33 +119,8 @@ const NAV = [
     },
   },
   {
-    label: 'Our Work',
-    href: '/our-work',
-    panel: {
-      lead: {
-        title: 'Client impact',
-        description:
-          'Audited outcomes delivered with Fortune 100 leaders, global banks, and state healthcare institutions.',
-      },
-      categories: [
-        { label: 'All case studies', href: '/our-work', icon: 'Building2' },
-        { label: 'By industry sector', href: '/industries', icon: 'Building2' },
-        { label: 'By technology capability', href: '/what-we-do', icon: 'Layers' },
-      ],
-      pages: [
-        { title: 'Core Banking Modernization', desc: 'Tier-1 global bank · 14 markets unified.', href: '/our-work' },
-        { title: 'Enterprise LLM Underwriter', desc: 'Fortune 100 insurer · 38% faster claims.', href: '/our-work' },
-        { title: 'National Clinical Data Fabric', desc: '220 regional hospitals · 11.4M records unified.', href: '/our-work' },
-        { title: 'Global Zero-Trust Perimeter', desc: '180,000 corporate identity credentials secured.', href: '/our-work' },
-      ],
-      featured: {
-        tag: 'Featured Outcome',
-        title: '€1.9B annual infrastructure run-cost reduction.',
-        cta: 'Read client study',
-        href: '/our-work',
-        image: ARCH_IMG,
-      },
-    },
+    label: 'Our Solutions',
+    href: '/our-solutions',
   },
 ];
 
@@ -151,6 +130,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const navRef = useRef(null);
+  const { totalItems, setIsCartOpen } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -173,8 +153,8 @@ export default function Nav() {
       onMouseLeave={() => setActive(null)}
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#000000] border-b border-[#1f1f1f] shadow-2xl py-3'
-          : 'bg-[#000000] border-b border-[#141414] py-4'
+          ? 'bg-[#050c1a]/95 backdrop-blur-md border-b border-[#1b3563] shadow-2xl py-3'
+          : 'bg-[#071326] border-b border-[#1b3563] py-4'
       }`}
     >
       <div className="mx-auto max-w-[1600px] px-6 lg:px-12 flex items-center justify-between">
@@ -197,18 +177,20 @@ export default function Nav() {
                   href={item.href}
                   className={`inline-flex items-center gap-1.5 px-4 py-2 text-[14px] font-medium transition-all rounded-md ${
                     isCurrentPage
-                      ? 'text-[#86bc25] font-semibold'
-                      : isActive
-                      ? 'text-white bg-[#141414]'
-                      : 'text-zinc-300 hover:text-white hover:bg-[#0f0f0f]'
+                      ? 'text-[#D4AF37] font-semibold'
+                      : isActive && item.panel
+                      ? 'text-white bg-[#0f2447]'
+                      : 'text-zinc-200 hover:text-white hover:bg-[#0c1f3d]'
                   }`}
                 >
                   <span>{item.label}</span>
-                  <ChevronDown
-                    className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                      isActive ? 'rotate-180 text-[#86bc25]' : 'text-zinc-500'
-                    }`}
-                  />
+                  {item.panel && (
+                    <ChevronDown
+                      className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                        isActive ? 'rotate-180 text-[#D4AF37]' : 'text-zinc-400'
+                      }`}
+                    />
+                  )}
                 </Link>
               </div>
             );
@@ -216,22 +198,47 @@ export default function Nav() {
           <Link
             href="/careers"
             className={`px-4 py-2 text-[14px] font-medium transition-all rounded-md ${
-              pathname === '/careers' ? 'text-[#86bc25] font-semibold' : 'text-zinc-300 hover:text-white hover:bg-[#0f0f0f]'
+              pathname === '/careers' ? 'text-[#D4AF37] font-semibold' : 'text-zinc-200 hover:text-white hover:bg-[#0c1f3d]'
             }`}
           >
             Careers
           </Link>
+
+          {/* Cart Icon & Login Button beside Careers */}
+          <div className="flex items-center gap-2.5 ml-2 border-l border-[#1b3563] pl-3">
+            <button
+              aria-label="Cart"
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2 text-zinc-300 hover:text-[#D4AF37] hover:bg-[#0c1f3d] rounded-md transition-all flex items-center justify-center"
+              title="View Cart"
+            >
+              <ShoppingCart className="h-4.5 w-4.5" />
+              {totalItems > 0 && (
+                <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#D4AF37] text-[10px] font-bold text-black border border-[#071326]">
+                  {totalItems}
+                </span>
+              )}
+            </button>
+
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md border border-[#2b4c80] text-[13.5px] font-bold text-white hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#0c1f3d] transition-all"
+            >
+              <User className="h-4 w-4 text-[#D4AF37]" />
+              <span>Login</span>
+            </Link>
+          </div>
         </nav>
 
-        {/* Action CTAs */}
+        {/* Action CTAs: Contact Us */}
         <div className="hidden lg:flex items-center gap-4">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-[#86bc25] text-black hover:bg-[#97d031] text-[13.5px] font-bold px-5 py-2.5 rounded shadow transition-all duration-200 hover:shadow-lg hover:shadow-[#86bc25]/20"
+          <a
+            href="#contact-form"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#D4AF37] via-[#C5A059] to-[#B8860B] text-black hover:opacity-95 text-[13.5px] font-extrabold px-5 py-2.5 rounded shadow transition-all duration-200 hover:shadow-lg hover:shadow-[#D4AF37]/20"
           >
-            <span>Partner Briefing</span>
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
+            <span>Contact Us</span>
+            <ArrowUpRight className="h-4 w-4 text-black" />
+          </a>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -244,30 +251,29 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Desktop Mega-Menu Dropdown Panel */}
       <AnimatePresence>
-        {activeItem && (
+        {activeItem && activeItem.panel && (
           <motion.div
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
-            className="absolute top-full left-0 right-0 bg-[#000000] border-b border-[#1f1f1f] shadow-2xl text-white overflow-hidden"
+            className="absolute top-full left-0 right-0 bg-[#071326] border-b border-[#1b3563] shadow-2xl text-white overflow-hidden"
           >
-            <div className="mx-auto max-w-[1600px] border-t border-[#1a1a1a]">
+            <div className="mx-auto max-w-[1600px] border-t border-[#1b3563]">
               <div className="grid grid-cols-12 min-h-[380px]">
                 
                 {/* Left Category Column */}
-                <div className="col-span-3 p-8 bg-[#000000] border-r border-[#1a1a1a] flex flex-col justify-between">
+                <div className="col-span-3 p-8 bg-[#050c1a] border-r border-[#1b3563] flex flex-col justify-between">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#86bc25] block mb-2">
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#D4AF37] block mb-2">
                       {activeItem.panel.lead.title}
                     </span>
-                    <p className="text-[13.5px] leading-relaxed text-zinc-300 font-light mb-8">
+                    <p className="text-[13.5px] leading-relaxed text-[#b0cae8] font-light mb-8">
                       {activeItem.panel.lead.description}
                     </p>
 
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#86bc25] block mb-3">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#D4AF37] block mb-3">
                       Sub-practices & Focus
                     </span>
                     <ul className="space-y-2">
@@ -276,9 +282,9 @@ export default function Nav() {
                           <Link
                             href={c.href}
                             onClick={() => setActive(null)}
-                            className="inline-flex items-center gap-2.5 text-[13.5px] text-zinc-300 hover:text-[#86bc25] font-medium transition-colors group"
+                            className="inline-flex items-center gap-2.5 text-[13.5px] text-zinc-300 hover:text-[#D4AF37] font-medium transition-colors group"
                           >
-                            <RenderIcon name={c.icon} className="h-4 w-4 text-[#86bc25] group-hover:scale-110 transition-transform" />
+                            <RenderIcon name={c.icon} className="h-4 w-4 text-[#D4AF37] group-hover:scale-110 transition-transform" />
                             <span>{c.label}</span>
                           </Link>
                         </li>
@@ -288,7 +294,7 @@ export default function Nav() {
                 </div>
 
                 {/* Center Main Navigation Links */}
-                <div className="col-span-5 p-10 bg-[#000000] flex flex-col justify-between">
+                <div className="col-span-5 p-10 bg-[#071326] flex flex-col justify-between">
                   <div>
                     <span className="text-[11px] uppercase tracking-[0.2em] text-white/60 font-semibold block mb-6">
                       Explore Capabilities & Areas
@@ -403,41 +409,52 @@ export default function Nav() {
                       >
                         {item.label}
                       </Link>
-                      <div className="pl-3 space-y-2">
-                        {item.panel.pages.slice(0, 4).map((p) => (
-                          <Link
-                            key={p.title}
-                            href={p.href}
-                            onClick={() => setMobileOpen(false)}
-                            className="text-sm text-zinc-400 hover:text-white block py-1"
-                          >
-                            {p.title}
-                          </Link>
-                        ))}
-                      </div>
+                      {item.panel && (
+                        <div className="pl-3 space-y-2">
+                          {item.panel.pages.slice(0, 4).map((p) => (
+                            <Link
+                              key={p.title}
+                              href={p.href}
+                              onClick={() => setMobileOpen(false)}
+                              className="text-sm text-zinc-400 hover:text-white block py-1"
+                            >
+                              {p.title}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   ))}
-                  <div>
+                  <div className="pt-2 border-t border-[#1a1a1a] flex items-center justify-between">
                     <Link
                       href="/careers"
                       onClick={() => setMobileOpen(false)}
-                      className="text-lg font-bold text-white hover:text-[#86bc25] block"
+                      className="text-lg font-bold text-white hover:text-[#D4AF37]"
                     >
                       Careers
+                    </Link>
+
+                    <Link
+                      href="/login"
+                      onClick={() => setMobileOpen(false)}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#2b4c80] text-sm font-bold text-[#D4AF37]"
+                    >
+                      <User className="h-4 w-4" />
+                      Login
                     </Link>
                   </div>
                 </div>
               </div>
 
               <div className="p-6 border-t border-[#1a1a1a] bg-[#090b0f]">
-                <Link
-                  href="/contact"
+                <a
+                  href="#contact-form"
                   onClick={() => setMobileOpen(false)}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#86bc25] text-black font-bold text-sm py-3 rounded shadow"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#D4AF37] via-[#C5A059] to-[#B8860B] text-black font-extrabold text-sm py-3 rounded shadow"
                 >
-                  <span>Partner Briefing</span>
-                  <ArrowUpRight className="h-4 w-4" />
-                </Link>
+                  <span>Contact Us</span>
+                  <ArrowUpRight className="h-4 w-4 text-black" />
+                </a>
               </div>
             </motion.aside>
           </>

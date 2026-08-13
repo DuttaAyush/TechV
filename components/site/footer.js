@@ -15,12 +15,15 @@ const COLS = [
     ],
   },
   {
-    title: 'Capabilities',
+    title: 'Services',
     links: [
-      { label: 'Cloud Modernization', href: '/what-we-do/cloud-modernization' },
-      { label: 'AI & Applied Intelligence', href: '/what-we-do/ai-applied-intelligence' },
-      { label: 'Cybersecurity & Zero Trust', href: '/what-we-do/cybersecurity-zero-trust' },
-      { label: 'Explore All Capabilities →', href: '/what-we-do' },
+      { label: 'Web Dev', href: '/what-we-do/web-dev' },
+      { label: 'App Dev', href: '/what-we-do/app-dev' },
+      { label: 'Software Dev', href: '/what-we-do/software-dev' },
+      { label: 'Digital Marketing', href: '/what-we-do/digital-marketing' },
+      { label: 'CRM & ERP Solutions', href: '/what-we-do/crm-dev' },
+      { label: 'IT, Business & AI Consulting', href: '/what-we-do/ai-consulting' },
+      { label: 'View All 9 Services →', href: '/what-we-do' },
     ],
   },
   {

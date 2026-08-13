@@ -36,10 +36,10 @@ export default function WhatWeDoPage() {
 
           <div className="absolute bottom-8 left-6 md:left-12 z-10 max-w-4xl">
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-tight">
-              Our <span className="font-semibold text-[#86bc25]">Capabilities & Services</span>
+              Our <span className="font-semibold text-[#D4AF37]">Capabilities & Services</span>
             </h1>
-            <div className="mt-3 border-l-4 border-[#86bc25] pl-4 py-1">
-              <p className="text-lg md:text-2xl font-light italic text-[#cbe395] leading-relaxed">
+            <div className="mt-3 border-l-4 border-[#D4AF37] pl-4 py-1">
+              <p className="text-lg md:text-2xl font-light italic text-[#FDF5E6] leading-relaxed">
                 &ldquo;Engineering high-consequence enterprise platforms with zero compromise and senior practitioner delivery.&rdquo;
               </p>
             </div>
@@ -53,14 +53,14 @@ export default function WhatWeDoPage() {
           
           {/* Practice Overview Statement */}
           <div className="bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-sm">
-            <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#784813] block mb-2">
-              Capabilities Architecture
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#8c6b12] block mb-2">
+              Services Architecture
             </span>
             <h2 className="text-2xl sm:text-3xl font-light text-[#1c1a18] tracking-tight mb-3">
-              Seven Practice Areas. <span className="font-bold">One Accountable Partner.</span>
+              Nine Core Services. <span className="font-bold">One Accountable Partner.</span>
             </h2>
             <p className="text-[15.5px] text-[#5c5449] font-normal leading-relaxed max-w-4xl">
-              Our practice capabilities cover the full enterprise technology stack—from board-level architectural strategy to hands-on SRE deployment, sovereign AI pipelines, and zero-trust perimeter defense.
+              Our core services span the entire digital and enterprise landscape—from Web Dev, App Dev, and Custom Software Engineering to Digital Marketing, CRM, ERP, and strategic IT, Business, and AI Advisory.
             </p>
           </div>
 
@@ -139,13 +139,17 @@ export default function WhatWeDoPage() {
                         ))}
                       </div>
 
-                      <Link
-                        href={`/what-we-do/${service.slug}`}
-                        className="inline-flex items-center gap-1 text-[11px] sm:text-[13px] font-bold text-[#1c1a18] group-hover:text-[#5e8817] transition-colors shrink-0"
-                      >
-                        <span>Explore</span>
-                        <ArrowUpRight className="h-3.5 w-3.5 text-[#86bc25]" />
-                      </Link>
+                      <div className="flex flex-col gap-2 sm:gap-0 sm:flex-row items-center justify-end mt-2">
+                        <div className="flex items-center gap-3 w-full sm:w-auto">
+                          <Link
+                            href={`/what-we-do/${service.slug}`}
+                            className="inline-flex flex-1 justify-center items-center gap-1 text-[11px] sm:text-[13px] font-bold text-[#1c1a18] group-hover:text-[#D4AF37] transition-colors shrink-0"
+                          >
+                            <span>Explore</span>
+                            <ArrowUpRight className="h-3.5 w-3.5" />
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 );
