@@ -506,7 +506,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1500px] px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-4">
-              <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#D4AF37]">WHY TECHSENSI</span>
+              <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#D4AF37]">WHY VRTANS</span>
               <h2 className="text-3xl font-cabinet font-medium text-white tracking-tight mt-1 mb-4">
                 A More Focused Way <span className="font-normal bg-gradient-to-r from-[#D4AF37] to-white bg-clip-text text-transparent">To Work With Technology.</span>
               </h2>

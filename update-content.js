@@ -22,7 +22,7 @@ const replacements = {
   'One Accountable Team.': 'Across the Transformation Journey.',
 
   // Firm Model (Section 5)
-  'Why {clientConfig.name}': 'WHY TECHSENSI',
+  'Why {clientConfig.name}': 'WHY VRTANS',
   'A Consulting Model': 'A More Focused Way',
   'Engineered for Results': 'To Work With Technology.',
   'Independent. Senior by design. Totally outcome accountable. We replace expensive, layered consultancy pyramids with high-density practitioner pods that ship real enterprise cloud architectures.': 'Technology transformation does not need unnecessary layers between the people making decisions and the people solving the technical problems. VRTANS brings strategy, engineering, and technology expertise together so clients can work with a team that understands both the business objective and the technical detail behind it.',
