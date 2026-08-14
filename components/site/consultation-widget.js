@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Calendar, Mail, FileText, MessageSquare } from 'lucide-react';
+import { Calendar, Mail, PhoneCall, MessageSquare } from 'lucide-react';
 
 export default function ConsultationWidget() {
   const pathname = usePathname();
@@ -54,8 +54,8 @@ export default function ConsultationWidget() {
   return (
     <div
       ref={widgetRef}
-      className={`fixed right-4 bottom-6 sm:right-8 sm:bottom-8 z-50 flex flex-col items-stretch rounded-2xl overflow-hidden bg-white dark:bg-[#090b0f] border border-black/10 dark:border-white/10 shadow-2xl transition-all duration-300 ${
-        open ? 'shadow-[#86bc25]/20 ring-1 ring-[#86bc25]/30' : 'hover:border-[#86bc25]/50'
+      className={`fixed right-4 bottom-6 sm:right-8 sm:bottom-8 z-50 flex flex-col items-stretch rounded-2xl overflow-hidden bg-[#1B1931] border border-[#662249]/50 shadow-2xl transition-all duration-300 ${
+        open ? 'shadow-[#ED9E59]/30 ring-1 ring-[#ED9E59]/40' : 'hover:border-[#ED9E59]/50 hover:shadow-[#ED9E59]/20'
       }`}
     >
       {/* Expandable Shutter Menu */}
@@ -69,28 +69,19 @@ export default function ConsultationWidget() {
             <Link
               href="/contact"
               onClick={close}
-              className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-zinc-900/90 text-slate-900 dark:text-zinc-100 text-sm font-medium transition-all hover:bg-[#86bc25]/15 dark:hover:bg-[#86bc25]/20 hover:text-[#86bc25] hover:translate-x-0.5"
+              className="flex items-center gap-3 p-3 rounded-xl bg-[#44174E]/40 text-white text-sm font-medium transition-all hover:bg-[#ED9E59]/15 hover:text-[#ED9E59] hover:translate-x-0.5"
             >
-              <Calendar className="h-4 w-4 text-[#86bc25]" />
-              <span>Schedule an Advisory Call</span>
-            </Link>
-
-            <Link
-              href="/our-work"
-              onClick={close}
-              className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-zinc-900/90 text-slate-900 dark:text-zinc-100 text-sm font-medium transition-all hover:bg-[#86bc25]/15 dark:hover:bg-[#86bc25]/20 hover:text-[#86bc25] hover:translate-x-0.5"
-            >
-              <FileText className="h-4 w-4 text-[#86bc25]" />
-              <span>Explore Client Case Studies</span>
+              <PhoneCall className="h-4 w-4 text-[#ED9E59]" />
+              <span>Contact Us</span>
             </Link>
 
             <a
               href="mailto:partners@SensiTech.tech?subject=Enterprise%20Consulting%20Inquiry"
               onClick={close}
-              className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-zinc-900/90 text-slate-900 dark:text-zinc-100 text-sm font-medium transition-all hover:bg-[#86bc25]/15 dark:hover:bg-[#86bc25]/20 hover:text-[#86bc25] hover:translate-x-0.5"
+              className="flex items-center gap-3 p-3 rounded-xl bg-[#44174E]/40 text-white text-sm font-medium transition-all hover:bg-[#ED9E59]/15 hover:text-[#ED9E59] hover:translate-x-0.5"
             >
-              <Mail className="h-4 w-4 text-[#86bc25]" />
-              <span>Email Senior Partners</span>
+              <Mail className="h-4 w-4 text-[#ED9E59]" />
+              <span>Email Us</span>
             </a>
           </div>
         </div>
@@ -101,9 +92,9 @@ export default function ConsultationWidget() {
         type="button"
         onClick={() => setOpen((val) => !val)}
         aria-expanded={open}
-        className="flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-black dark:bg-[#1a1a1a] text-white text-[14.5px] font-medium tracking-tight transition-colors hover:bg-[#262626] border-t border-white/10"
+        className="flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-[#ED9E59] hover:bg-[#E28945] text-black text-[14.5px] font-bold tracking-tight transition-all border-t border-black/10"
       >
-        <MessageSquare className="h-4 w-4 text-[#86bc25]" />
+        <MessageSquare className="h-4 w-4 text-black" />
         <span>{open ? 'Close options' : 'Schedule a consultation'}</span>
       </button>
     </div>

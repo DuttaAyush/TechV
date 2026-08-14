@@ -12,6 +12,7 @@ import Logo from './logo';
 import RenderIcon from './icon-map';
 import { useCart } from '@/lib/cart-context';
 import { clientConfig } from '@/lib/config';
+import LoginModal from './login-modal';
 
 const SKY_IMG =
   'https://images.unsplash.com/photo-1708651949057-34781b3cbdcd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBza3lzY3JhcGVyfGVufDB8fHxibGFja3wxNzgzMTY0MTAyfDA&ixlib=rb-4.1.0&q=85';
@@ -131,6 +132,15 @@ export default function Nav() {
   const pathname = usePathname();
   const navRef = useRef(null);
   const { totalItems, setIsCartOpen } = useCart();
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('user');
+      if (stored) setUser(JSON.parse(stored));
+    } catch(e) {}
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -220,13 +230,13 @@ export default function Nav() {
               )}
             </button>
 
-            <Link
-              href="/login"
+            <button
+              onClick={() => user ? null : setIsLoginOpen(true)}
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md border border-[#2b4c80] text-[13.5px] font-bold text-white hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#0c1f3d] transition-all"
             >
               <User className="h-4 w-4 text-[#D4AF37]" />
-              <span>Login</span>
-            </Link>
+              <span>{user ? `Hello, ${user.name}` : 'Login'}</span>
+            </button>
           </div>
         </nav>
 
@@ -434,14 +444,16 @@ export default function Nav() {
                       Careers
                     </Link>
 
-                    <Link
-                      href="/login"
-                      onClick={() => setMobileOpen(false)}
+                    <button
+                      onClick={() => {
+                        setMobileOpen(false);
+                        if (!user) setIsLoginOpen(true);
+                      }}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#2b4c80] text-sm font-bold text-[#D4AF37]"
                     >
                       <User className="h-4 w-4" />
-                      Login
-                    </Link>
+                      {user ? `Hello, ${user.name}` : 'Login'}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -460,6 +472,7 @@ export default function Nav() {
           </>
         )}
       </AnimatePresence>
+      <LoginModal isOpen={isLoginOpen} setIsOpen={setIsLoginOpen} onLogin={setUser} />
     </header>
   );
 }

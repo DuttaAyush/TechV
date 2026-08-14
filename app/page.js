@@ -32,7 +32,6 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import PageShell from '@/components/site/page-shell';
-import InteractiveGlobe from '@/components/site/interactive-globe';
 import RotatingTestimonials from '@/components/site/rotating-testimonials';
 import { clientConfig } from '@/lib/config';
 
@@ -127,110 +126,110 @@ const services = [
 
 const work = [
   {
-    kicker: 'Global Tier-1 Bank · 24 Month Program',
-    title: 'Core banking architecture modernization across 14 sovereign European markets.',
-    metric: '€1.9B',
-    metricLabel: 'annual run-cost reduction',
-    href: '/our-work',
+    kicker: 'Financial Services',
+    title: 'Modernize complex financial systems with scalable architecture, stronger integration, better data flows, and technology foundations designed for changing regulatory and customer demands.',
+    metric: '45%',
+    metricLabel: 'Faster Integration',
+    href: '/our-solutions',
   },
   {
-    kicker: 'Fortune 100 Insurer · 18 Month Program',
-    title: 'Enterprise LLM claims validation platform for commercial underwriting.',
-    metric: '38%',
-    metricLabel: 'faster claim resolution',
-    href: '/our-work',
+    kicker: 'Insurance',
+    title: 'Use AI and intelligent automation to reduce repetitive work, improve information processing, and give underwriting and claims teams better tools for decision-making.',
+    metric: '30%',
+    metricLabel: 'Efficiency Gain',
+    href: '/our-solutions',
   },
   {
-    kicker: 'National Health System · 220 Hospitals',
-    title: 'Clinical patient data fabric and diagnostic record interoperability network.',
-    metric: '11.4M',
-    metricLabel: 'patient records unified',
-    href: '/our-work',
+    kicker: 'Healthcare',
+    title: 'Build secure data foundations that allow healthcare organizations to connect information across systems while improving accessibility, interoperability, and operational visibility.',
+    metric: '2.4x',
+    metricLabel: 'Faster Data Access',
+    href: '/our-solutions',
   },
   {
-    kicker: 'Logistics Operator · 500+ Hubs',
-    title: 'Autonomous AI dispatch and supply chain route optimization telemetry.',
-    metric: '99.9%',
-    metricLabel: 'on-time dispatch accuracy',
-    href: '/our-work',
+    kicker: 'Logistics',
+    title: 'Combine operational data, connected systems, analytics, and AI to improve planning, routing, visibility, and day-to-day supply chain decisions.',
+    metric: '99%',
+    metricLabel: 'Routing Accuracy',
+    href: '/our-solutions',
   },
 ];
 
 const industriesData = [
   {
-    title: 'Banking & Capital Markets',
+    title: 'BFSI & Capital Markets',
     image: 'https://images.unsplash.com/photo-1561233835-f937539b95b9?crop=entropy&cs=srgb&fm=jpg&q=85',
     href: '/industries/bfsi',
     label: 'Financial Infrastructure',
-    description: 'Core banking modernization, real-time ledger orchestration, and audited financial latency optimization across global jurisdictions.',
+    description: 'Core banking strangler patterns, real-time ledger orchestration, and instant payments across global jurisdictions.',
     stats: '€1.9B Infra Savings Delivered',
   },
   {
-    title: 'Cyber AI & Defense Systems',
+    title: 'AI Solutions & Agents',
     image: 'https://images.unsplash.com/photo-1615225164633-69f53b1dfd74?crop=entropy&cs=srgb&fm=jpg&q=85',
-    href: '/industries/cybersecurity-defense',
-    label: 'National Security',
-    description: 'Zero-trust perimeter security, sovereign LLM air-gapped deployments, and automated SOC threat analysis for critical defense networks.',
-    stats: 'Zero-Trust Audited',
+    href: '/industries/ai-solutions',
+    label: 'Enterprise AI',
+    description: 'Isolated RAG fabrics, custom LLM fine-tuning, autonomous AI agents, and rigorous enterprise AI safety guardrails.',
+    stats: 'Zero-Trust AI Audited',
   },
   {
-    title: 'Cloud & Autonomous Ops',
+    title: 'Logistics & Supply Chain',
     image: 'https://images.unsplash.com/photo-1580106815433-a5b1d1d53d85?crop=entropy&cs=srgb&fm=jpg&q=85',
-    href: '/industries/cloud-infrastructure',
-    label: 'Autonomous Systems',
-    description: 'Self-healing platform engineering, multi-cloud FinOps governance, and automated Kubernetes control planes for mission-critical apps.',
-    stats: '99.999% Operational Uptime',
+    href: '/industries/logistics-supply-chain',
+    label: 'Supply Chain Ops',
+    description: 'IoT telemetry, real-time predictive inventory, and autonomous route dispatch for global logistics networks.',
+    stats: '99.9% Dispatch Accuracy',
   },
   {
-    title: 'Energy Transition & Grid AI',
-    image: 'https://images.unsplash.com/photo-1601785491008-d1153dfadd57?crop=entropy&cs=srgb&fm=jpg&q=85',
-    href: '/industries/energy-smart-grid',
-    label: 'Grid Resiliency',
-    description: 'Real-time telemetry streaming, smart-grid load forecasting ML models, and regulatory compliance for power & utility providers.',
-    stats: 'Sub-10ms Streaming Latency',
+    title: 'Retail & Commerce',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=srgb&fm=jpg&q=85',
+    href: '/industries/retail-commerce',
+    label: 'Omnichannel Retail',
+    description: 'Unified inventory orchestration, composable high-performance storefronts, and digital transaction processing.',
+    stats: '3x Inventory Velocity',
   },
   {
-    title: 'Healthcare Interoperability',
+    title: 'Healthcare & Life Sciences',
     image: 'https://images.unsplash.com/photo-1708651949057-34781b3cbdcd?crop=entropy&cs=srgb&fm=jpg&q=85',
     href: '/industries/healthcare-life-sciences',
     label: 'Clinical Fabrics',
-    description: 'FHIR diagnostic record interoperability, secure patient data fabrics, and HIPAA-compliant clinical predictive analytics.',
+    description: 'FHIR data interoperability, secure patient data fabrics, and HIPAA-compliant clinical predictive AI compute.',
     stats: '11.4M Unified Patient Records',
   },
   {
-    title: 'Retail & Digital Supply Chain',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=srgb&fm=jpg&q=85',
-    href: '/industries/retail-commerce',
-    label: 'Omnichannel Logistics',
-    description: 'AI-driven demand forecasting, real-time inventory tracking, and high-throughput transaction processing for enterprise retail.',
-    stats: '3x Inventory Velocity',
+    title: 'Cloud & Infrastructure',
+    image: 'https://images.unsplash.com/photo-1601785491008-d1153dfadd57?crop=entropy&cs=srgb&fm=jpg&q=85',
+    href: '/industries/cloud-infrastructure',
+    label: 'Platform Engineering',
+    description: 'Sovereign landing zones, 5G edge clusters, multi-cloud FinOps governance, and automated Kubernetes control planes.',
+    stats: '99.999% Operational Uptime',
   },
 ];
 
 const whyChooseUsData = [
   {
     icon: Users,
-    title: 'Senior Practitioners Only',
-    desc: 'Every engagement is architected and executed exclusively by senior practice partners. Zero junior pass-throughs or layered consultancy bloat.',
-    highlight: '100% Senior Directed',
+    title: 'Understand',
+    desc: 'We clarify the business objective, technical environment, constraints, and priorities.',
+    highlight: 'Phase 01',
   },
   {
     icon: Lock,
-    title: 'Fiercely Independent Counsel',
-    desc: 'We remain completely vendor-neutral across AWS, Azure, and GCP. Our architectural guidance prioritizes sole corporate resilience and cost efficiency.',
-    highlight: 'Zero Vendor Lock-in',
+    title: 'Architect',
+    desc: 'We define the right solution architecture, technology direction, delivery approach, and priorities.',
+    highlight: 'Phase 02',
   },
   {
     icon: Target,
-    title: 'Audited Financial SLAs',
-    desc: 'Our delivery milestones are directly tied to audited revenue, infrastructure cost reductions, and verifiable latency metrics agreed upon upfront.',
-    highlight: 'Revenue-Linked Metrics',
+    title: 'Build',
+    desc: 'We turn the strategy into working software, infrastructure, integrations, data systems, and AI capabilities.',
+    highlight: 'Phase 03',
   },
   {
     icon: ShieldCheck,
-    title: 'Strategy Through Code',
-    desc: 'One accountable pod taking full ownership from board-level architectural strategy to hands-on deployment and compliance sign-off.',
-    highlight: 'End-to-End Ownership',
+    title: 'Improve',
+    desc: 'We measure what is working, identify what needs to change, and continuously improve the solution.',
+    highlight: 'Phase 04',
   },
 ];
 
@@ -289,6 +288,7 @@ export default function HomePage() {
 
   return (
     <PageShell>
+      <div className="font-satoshi">
       {/* 1. TOP SECTION: DEEP SAPPHIRE NAVY HERO WITH WARM GOLD ACCENTS */}
       <section className="relative bg-[#071326] text-white overflow-hidden font-sans border-b border-[#1b3563]">
         <div className="absolute inset-0 -z-10">
@@ -312,7 +312,7 @@ export default function HomePage() {
               >
                 <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#13284c] border border-[#2b4c80] text-[11.5px] font-extrabold uppercase tracking-[0.2em] text-[#D4AF37] shadow-sm">
                   <span className="h-2 w-2 rounded-full bg-[#D4AF37] animate-pulse" />
-                  Established Advisory Network · Enterprise Technology
+                  TECHNOLOGY STRATEGY · ENGINEERING · AI
                 </span>
               </motion.div>
 
@@ -320,10 +320,10 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.05 }}
-                className="text-[38px] sm:text-[50px] lg:text-[56px] font-light leading-[1.06] tracking-[-0.02em] text-white text-balance"
+                className="text-[38px] sm:text-[50px] lg:text-[56px] font-cabinet font-medium leading-[1.06] tracking-[-0.02em] text-white text-balance"
               >
-                Intelligence That Shapes <br />
-                <strong className="font-semibold text-[#D4AF37]">Better Enterprise Decisions.</strong>
+                Technology That Moves <br />
+                <span className="font-normal bg-gradient-to-r from-[#D4AF37] via-[#C5A059] to-white bg-clip-text text-transparent">Your Business Forward.</span>
               </motion.h1>
 
               <motion.p
@@ -332,7 +332,7 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="mt-6 text-[16px] md:text-[17.5px] font-light leading-relaxed text-[#b0cae8] max-w-2xl"
               >
-                Connecting cloud modernization, applied AI, and zero-trust cybersecurity directly to audited revenue and latency outcomes. Built for demanding C-suite leaders where architectural precision is paramount.
+                TechSensi helps organizations turn complex technology challenges into practical, scalable solutions. We combine technology strategy, software engineering, cloud, data, AI, and cybersecurity to modernize the systems businesses depend on.
               </motion.p>
 
               <motion.div
@@ -345,14 +345,14 @@ export default function HomePage() {
                   href="#contact-form"
                   className="inline-flex items-center gap-2.5 rounded-md bg-gradient-to-r from-[#D4AF37] via-[#C5A059] to-[#B8860B] px-7 py-3.5 text-[14.5px] font-extrabold text-black transition-all hover:opacity-95 shadow-xl shadow-[#D4AF37]/20"
                 >
-                  <span>Talk to senior partners</span>
+                  <span>Start a Conversation</span>
                   <ArrowUpRight className="h-4.5 w-4.5 text-black" />
                 </a>
                 <Link
                   href="/what-we-do"
                   className="inline-flex items-center gap-2 rounded-md border border-[#2b4c80] bg-[#0c1f3d] px-6 py-3.5 text-[14px] font-bold text-white transition-all hover:border-[#D4AF37] hover:text-[#D4AF37]"
                 >
-                  <span>Explore capabilities</span>
+                  <span>Explore What We Do</span>
                   <ArrowRight className="h-4 w-4 text-[#D4AF37]" />
                 </Link>
               </motion.div>
@@ -374,10 +374,23 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Interactive 3D Globe */}
-            <div className="hidden lg:flex lg:col-span-5 items-center justify-center relative min-h-[460px] w-full">
-              <InteractiveGlobe />
-            </div>
+            {/* Right Column: Hero Graphic */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="hidden lg:flex lg:col-span-5 items-center justify-center relative min-h-[460px] w-full"
+            >
+              <motion.div
+                animate={{ y: [-12, 12, -12] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full"
+              >
+                {/* Glowing background effect behind the image */}
+                <div className="absolute inset-0 bg-[#D4AF37]/15 blur-[70px] rounded-full scale-[0.8] animate-pulse" />
+                <Image src="/hero-graphic.png" alt="Hero Graphic" fill className="object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.3)]" priority sizes="(max-width: 1024px) 100vw, 50vw" />
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -388,14 +401,14 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-l-4 border-[#D4AF37] pl-4 sm:pl-5">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#8c6b12] block mb-1">
-                Selected Audited Outcomes
+                OUR WORK
               </span>
-              <h2 className="text-2xl sm:text-3xl font-light text-[#1c1a18] tracking-tight">
-                Transformation Results We Are <span className="font-semibold text-black">Measured Against</span>
+              <h2 className="text-2xl sm:text-3xl font-cabinet font-medium text-[#1c1a18] tracking-tight">
+                Technology Built Around <span className="font-normal bg-gradient-to-r from-[#8c6b12] to-black bg-clip-text text-transparent">Real Business Problems.</span>
               </h2>
             </div>
-            <Link href="/our-work" className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#8c6b12] hover:underline mt-2 md:mt-0">
-              <span>View Audited Case Studies</span>
+            <Link href="/our-solutions" className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#8c6b12] hover:underline mt-2 md:mt-0">
+              <span>View Our Solutions</span>
               <ArrowUpRight className="h-4 w-4 text-[#D4AF37]" />
             </Link>
           </div>
@@ -441,10 +454,10 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row items-baseline justify-between mb-12 border-b border-[#e6dfd5] pb-6">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#8c6b12] block mb-1">
-                Transformation Capabilities
+                WHAT WE DO
               </span>
               <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-[#1c1a18]">
-                Nine Specialized Services. <span className="font-semibold text-black">One Accountable Team.</span>
+                One Technology Partner <span className="font-semibold text-black">Across the Transformation Journey.</span>
               </h2>
             </div>
             <Link href="/what-we-do" className="mt-4 lg:mt-0 inline-flex items-center gap-1.5 text-[14px] font-bold text-[#8c6b12] hover:underline">
@@ -455,8 +468,9 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-7">
             {services.map((s) => (
-              <div
+              <Link
                 key={s.title}
+                href={s.href}
                 className="hover-SensiTech-border group flex flex-col justify-between rounded-2xl border border-[#e8dfcf] bg-white p-4 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:shadow-xl hover:border-transparent hover:-translate-y-1"
               >
                 <div>
@@ -480,7 +494,7 @@ export default function HomePage() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -492,25 +506,25 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1500px] px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-4">
-              <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#D4AF37]">Why {clientConfig.name}</span>
-              <h2 className="text-3xl font-light text-white tracking-tight mt-1 mb-4">
-                A Consulting Model <span className="font-semibold text-[#D4AF37]">Engineered for Results</span>
+              <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#D4AF37]">WHY TECHSENSI</span>
+              <h2 className="text-3xl font-cabinet font-medium text-white tracking-tight mt-1 mb-4">
+                A More Focused Way <span className="font-normal bg-gradient-to-r from-[#D4AF37] to-white bg-clip-text text-transparent">To Work With Technology.</span>
               </h2>
               <p className="text-[15px] text-[#b0cae8] font-light leading-relaxed mb-6">
-                Independent. Senior by design. Totally outcome accountable. We replace expensive, layered consultancy pyramids with high-density practitioner pods that ship real enterprise cloud architectures.
+                Technology transformation does not need unnecessary layers between the people making decisions and the people solving the technical problems. TechSensi brings strategy, engineering, and technology expertise together so clients can work with a team that understands both the business objective and the technical detail behind it.
               </p>
               <Link href="/who-we-are" className="inline-flex items-center gap-2 font-bold text-[#D4AF37] text-[14.5px] hover:underline">
-                <span>Meet the senior partners</span>
+                <span>Start a Conversation</span>
                 <ArrowUpRight className="h-4 w-4 text-[#D4AF37]" />
               </Link>
             </div>
 
             <div className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
               {[
-                { t: 'Senior Practitioners Only', d: 'Every program is directed and staffed by partners who personally architect at scale. Zero junior training ground pass-throughs.' },
-                { t: 'Fiercely Independent Counsel', d: 'We remain 100% vendor agnostic. Our structural guidance optimizes solely for corporate resilience and cost efficiency.' },
-                { t: 'Audited Outcome Accountable', d: 'Our delivery milestones and governance cadences are explicitly bound to the audited technical and financial outcomes we agree upon.' },
-                { t: 'From Boardroom to Production', d: 'One cohesive team taking full ownership through architectural advisory, systems engineering, compliance sign-off, and production scale.' }
+                { t: 'Senior-Level Thinking', d: 'We approach complex technology problems with architectural depth and business context.' },
+                { t: 'Technology Independent', d: 'Our recommendations are driven by the problem to be solved rather than a predetermined vendor or platform.' },
+                { t: 'Engineering Mindset', d: 'We focus on solutions that can be implemented, operated, maintained, and improved in the real world.' },
+                { t: 'One Connected Team', d: 'Strategy, architecture, engineering, data, cloud, and AI can work together instead of becoming disconnected workstreams.' }
               ].map((p, idx) => (
                 <div key={idx} className="hover-SensiTech-border bg-[#0a192f] p-6 border border-[#1b3563] rounded-2xl shadow-md hover:border-transparent transition-all">
                   <div className="flex items-center gap-2.5 mb-2">
@@ -531,10 +545,10 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-14 border-l-4 border-[#D4AF37] pl-4 sm:pl-5">
             <div>
               <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#8c6b12] block mb-1">
-                Vertical Domain Expertise
+                INDUSTRIES
               </span>
-              <h2 className="text-2xl sm:text-4xl font-light text-[#1c1a18] tracking-tight">
-                Industries We <span className="font-semibold text-black">Serve</span>
+              <h2 className="text-2xl sm:text-4xl font-cabinet font-medium text-[#1c1a18] tracking-tight">
+                Technology Expertise With <span className="font-normal bg-gradient-to-r from-[#8c6b12] to-black bg-clip-text text-transparent">Industry Context.</span>
               </h2>
             </div>
             <Link href="/industries" className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-[14px] font-bold text-[#8c6b12] hover:underline">
@@ -599,14 +613,14 @@ export default function HomePage() {
             <div>
               <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#D4AF37] flex items-center gap-2 mb-1">
                 <Sparkles className="h-3.5 w-3.5 text-[#D4AF37]" />
-                The {clientConfig.shortName} Advantage
+                OUR APPROACH
               </span>
-              <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
-                Why Choose <span className="font-semibold text-[#D4AF37]">Us</span>
+              <h2 className="text-2xl sm:text-3xl font-cabinet font-medium text-white tracking-tight">
+                Start With the Problem. <span className="font-normal bg-gradient-to-r from-[#D4AF37] to-white bg-clip-text text-transparent">Build Toward the Outcome.</span>
               </h2>
             </div>
             <p className="mt-2 md:mt-0 text-[13px] sm:text-[14px] text-[#a9c4e6] max-w-md font-light leading-relaxed hidden sm:block">
-              We replaced traditional, bloated consultancy pyramids with agile practitioner pods delivering audited outcomes.
+              Every organization starts from a different place. We do not begin by prescribing a technology stack. We begin by understanding the business problem, the existing environment, and what success needs to look like.
             </p>
           </div>
 
@@ -644,20 +658,20 @@ export default function HomePage() {
 
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 bg-[#0a192f] border border-[#1b3563] rounded-xl p-5 text-center">
             <div>
-              <span className="block text-2xl lg:text-3xl font-extrabold text-white">€1.9B+</span>
-              <span className="text-[11px] font-extrabold text-[#8caed8] uppercase tracking-wider">Infra Savings</span>
+              <span className="block text-2xl lg:text-3xl font-extrabold text-white">1</span>
+              <span className="text-[11px] font-extrabold text-[#8caed8] uppercase tracking-wider">Connected Team</span>
+            </div>
+            <div>
+              <span className="block text-2xl lg:text-3xl font-extrabold text-[#D4AF37]">9</span>
+              <span className="text-[11px] font-extrabold text-[#8caed8] uppercase tracking-wider">Specialized Services</span>
+            </div>
+            <div>
+              <span className="block text-2xl lg:text-3xl font-extrabold text-white">6</span>
+              <span className="text-[11px] font-extrabold text-[#8caed8] uppercase tracking-wider">Core Industries</span>
             </div>
             <div>
               <span className="block text-2xl lg:text-3xl font-extrabold text-[#D4AF37]">100%</span>
-              <span className="text-[11px] font-extrabold text-[#8caed8] uppercase tracking-wider">Vendor Agnostic</span>
-            </div>
-            <div>
-              <span className="block text-2xl lg:text-3xl font-extrabold text-white">24-Hr</span>
-              <span className="text-[11px] font-extrabold text-[#8caed8] uppercase tracking-wider">Partner SLA</span>
-            </div>
-            <div>
-              <span className="block text-2xl lg:text-3xl font-extrabold text-[#D4AF37]">0</span>
-              <span className="text-[11px] font-extrabold text-[#8caed8] uppercase tracking-wider">Junior Pass-Throughs</span>
+              <span className="text-[11px] font-extrabold text-[#8caed8] uppercase tracking-wider">Technology Focused</span>
             </div>
           </div>
         </div>
@@ -675,13 +689,13 @@ export default function HomePage() {
             <div className="lg:col-span-6 space-y-6 border-l-4 border-[#D4AF37] pl-6 py-1">
               <div>
                 <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#8c6b12] block mb-1">
-                  About {clientConfig.name}
+                  GET IN TOUCH
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-light text-[#1c1a18] tracking-tight mb-3">
-                  Enterprise Technology <span className="font-bold">Advisory & Architecture</span>
+                <h2 className="text-2xl sm:text-3xl font-cabinet font-medium text-[#1c1a18] tracking-tight mb-3">
+                  Let's Talk About Your Next <span className="font-normal bg-gradient-to-r from-[#8c6b12] to-black bg-clip-text text-transparent">Technology Initiative.</span>
                 </h2>
                 <p className="text-[14.5px] text-[#5c5449] font-light leading-relaxed mb-4">
-                  {clientConfig.name} is an independent enterprise technology consultancy providing software development, cloud modernization, applied AI solutions, and executive digital transformation. We replace bloated legacy consultancy pyramids with small, senior practitioner pods that deliver audited outcomes.
+                  Share a little about your organization, the challenge you are facing, and what you are trying to achieve. Our team will review the opportunity and get back to you.
                 </p>
               </div>
 
@@ -725,11 +739,11 @@ export default function HomePage() {
                 className="hover-SensiTech-border bg-white border border-[#e2d8c9] rounded-xl p-6 md:p-7 shadow-[0_8px_25px_rgba(0,0,0,0.03)] hover:border-transparent transition-all duration-300"
               >
                 <div className="mb-5 border-b border-[#f0e7db] pb-4">
-                  <h3 className="text-xl font-light text-[#1c1a18] tracking-tight">
-                    Get in Touch with <span className="font-bold">Senior Partners</span>
+                  <h3 className="text-xl font-cabinet font-medium text-[#1c1a18] tracking-tight">
+                    Let's Talk About Your Next <span className="font-normal bg-gradient-to-r from-[#8c6b12] to-black bg-clip-text text-transparent">Technology Initiative.</span>
                   </h3>
                   <p className="text-[13px] text-[#6b6257] mt-0.5 font-normal">
-                    Direct partner response within 24 hours under mutual NDA.
+                    Our team will review the opportunity and get back to you.
                   </p>
                 </div>
 
@@ -815,6 +829,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </div>
     </PageShell>
   );
 }
