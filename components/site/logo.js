@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 });
 
 export default function Logo({ className = '', size = 'md' }) {
-  const textSize = size === 'sm' ? 'text-xl' : size === 'lg' ? 'text-4xl' : 'text-3xl';
+  const textSize = size === 'sm' ? 'text-xl' : size === 'lg' ? 'text-2xl' : 'text-xl';
   const tagSize = size === 'sm' ? 'text-[10px]' : size === 'lg' ? 'text-[15px]' : 'text-[13px]';
 
   return (
@@ -25,7 +25,7 @@ export default function Logo({ className = '', size = 'md' }) {
         >
           VRTANS
         </span>
-        <span className={`hidden sm:inline ${tagSize} font-normal tracking-tight text-muted-foreground`}>
+        <span className={`hidden sm:inline ${tagSize} font-bold text-white tracking-tight text-muted-foreground`}>
           Technologies
         </span>
       </div>

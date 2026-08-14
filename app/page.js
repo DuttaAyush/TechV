@@ -384,7 +384,7 @@ export default function HomePage() {
               <motion.div
                 animate={{ y: [-12, 12, -12] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-0 w-full h-full"
+                className="absolute inset-[-15%] w-[130%] h-[130%]"
               >
                 {/* Glowing background effect behind the image */}
                 <div className="absolute inset-0 bg-[#D4AF37]/15 blur-[70px] rounded-full scale-[0.8] animate-pulse" />
@@ -396,7 +396,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. SECTION: WARM CHAMPAGNE CREAM AUDITED OUTCOMES */}
-      <section className="bg-[#faf7f2] text-[#1c1a18] py-20 border-b border-[#e5dccf] font-sans">
+      <section className="bg-white text-[#1c1a18] py-20 border-b border-[#eaeaea] font-sans">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-l-4 border-[#D4AF37] pl-4 sm:pl-5">
             <div>
@@ -418,7 +418,7 @@ export default function HomePage() {
               <Link
                 key={i}
                 href={w.href}
-                className="hover-VRTANS-border group relative flex flex-col justify-between rounded-xl border border-[#e4d7c5] bg-white p-4 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:shadow-xl hover:border-transparent hover:-translate-y-1"
+                className="hover-VRTANS-border group relative flex flex-col justify-between rounded-xl border border-[#e4d7c5] bg-[#faf7f2] p-4 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:shadow-xl hover:border-transparent hover:-translate-y-1"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -433,7 +433,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="pt-3 border-t border-[#f2ece2]">
-                  <span className="block text-2xl sm:text-4xl font-extrabold text-[#0a192f] group-hover:text-[#8c6b12] transition-colors">
+                  <span className="block text-2xl sm:text-3xl font-extrabold text-[#0a192f] group-hover:text-[#8c6b12] transition-colors">
                     {w.metric}
                   </span>
                   <span className="text-[10px] sm:text-[11.5px] font-bold text-[#8c6b12] uppercase tracking-wider block mt-0.5">

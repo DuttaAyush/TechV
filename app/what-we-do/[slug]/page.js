@@ -4,14 +4,25 @@ import { use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowUpRight, CheckCircle } from 'lucide-react';
+import { ArrowUpRight, CheckCircle, ShoppingCart, Minus, Plus } from 'lucide-react';
 import PageShell from '@/components/site/page-shell';
 import { getServiceBySlug } from '@/lib/services-data';
 import RenderIcon from '@/components/site/icon-map';
+import { useCart } from '@/lib/cart-context';
+import { toast } from 'sonner';
 
 export default function ServiceSubPage({ params }) {
   const resolvedParams = use(params);
   const service = getServiceBySlug(resolvedParams.slug);
+  const { items, addToCart, updateQuantity } = useCart();
+
+  const cartItem = items.find((i) => i.slug === service.slug);
+  const qty = cartItem ? cartItem.quantity : 0;
+
+  const handleAddToCart = () => {
+    addToCart(service);
+    toast.success(`${service.shortTitle} added to your cart.`);
+  };
 
   if (!service) {
     return notFound();
@@ -117,9 +128,48 @@ export default function ServiceSubPage({ params }) {
                   ))}
                 </div>
 
-                <div className="pt-2">
+                <div className="pt-2 pb-4">
                   <span className="text-[11.5px] text-[#6b6255] italic block">
                     &bull; All practice commitments backed by audited financial SLAs.
+                  </span>
+                </div>
+
+                <div className="pt-5 border-t border-[#e8dfd1] flex flex-col gap-3">
+                  <div className="flex items-end justify-between">
+                    <span className="text-[13px] font-extrabold uppercase text-[#784813] tracking-widest">Pricing Model</span>
+                    <span className="text-3xl font-extrabold text-[#1c1a18]">${service.price.toLocaleString()}</span>
+                  </div>
+                  {qty === 0 ? (
+                    <button
+                      onClick={handleAddToCart}
+                      className="w-full flex items-center justify-center gap-2 bg-[#86bc25] hover:bg-[#6fa01c] text-white py-3.5 rounded-lg font-bold text-[15px] transition-all shadow-md hover:shadow-lg mt-2"
+                    >
+                      <ShoppingCart className="h-5 w-5" />
+                      <span>Add to Cart</span>
+                    </button>
+                  ) : (
+                    <div className="w-full flex justify-end mt-2">
+                      <div className="flex items-center justify-between bg-[#071326] text-white rounded-lg px-4 py-2.5 shadow-md w-3/5 min-w-[140px]">
+                        <button
+                          onClick={() => updateQuantity(service.slug, -1)}
+                          className="p-1.5 hover:text-[#D4AF37] transition-colors bg-white/10 rounded-md"
+                        >
+                          <Minus className="h-4 w-4" />
+                        </button>
+                        <span className="text-[16px] font-bold min-w-[20px] text-center">
+                          {qty}
+                        </span>
+                        <button
+                          onClick={() => updateQuantity(service.slug, 1)}
+                          className="p-1.5 hover:text-[#D4AF37] transition-colors bg-white/10 rounded-md"
+                        >
+                          <Plus className="h-4 w-4" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  <span className="text-[10px] text-center text-[#6b6255] font-semibold uppercase tracking-wider block mt-1">
+                    Risk-Free Executive SLA
                   </span>
                 </div>
               </div>

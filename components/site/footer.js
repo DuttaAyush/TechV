@@ -110,14 +110,14 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-6">
             <p>© {new Date().getFullYear()} VRTANS. All rights reserved.</p>
             <span className="hidden md:block h-3 w-px bg-[#262626]" />
-            <Link href="/contact" className="hover:text-[#86bc25] transition-colors">
+            <Link href="/privacy-policy" className="hover:text-[#86bc25] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/contact" className="hover:text-[#86bc25] transition-colors">
+            <Link href="/terms-and-conditions" className="hover:text-[#86bc25] transition-colors">
               Terms & Conditions
             </Link>
-            <Link href="/contact" className="hover:text-[#86bc25] transition-colors">
-              Security Compliance
+            <Link href="/return-and-refunds" className="hover:text-[#86bc25] transition-colors">
+              Return & Refunds
             </Link>
           </div>
 
