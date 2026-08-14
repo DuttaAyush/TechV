@@ -8,18 +8,18 @@ import PageShell from '@/components/site/page-shell';
 const visionPillars = [
   {
     icon: Cpu,
-    title: 'Sovereign AI Retrieval Fabrics',
-    desc: 'Deploying domain-specific LLM intelligence perimeters on isolated cloud hardware without data leak risks.',
+    title: 'Secure Data Architectures',
+    desc: 'Establishing isolated data enclaves and secure machine learning environments for enterprise reporting.',
   },
   {
     icon: ShieldCheck,
-    title: 'Zero-Trust Perimeter Defense',
-    desc: 'Securing global identities, dynamic microservices, and hybrid workloads against modern nation-state vectors.',
+    title: 'Robust Access Controls',
+    desc: 'Implementing stringent access controls and security architectures to mitigate operational risks.',
   },
   {
     icon: Database,
-    title: 'Autonomous Data Engineering',
-    desc: 'Consolidating multi-cloud data lakes into single real-time semantic layers accessible across corporate pods.',
+    title: 'Centralized Warehousing',
+    desc: 'Designing centralized data warehousing and scalable data ingestion pipelines for business intelligence.',
   },
 ];
 
@@ -93,7 +93,7 @@ export default function OurVisionPage() {
             <div className="lg:col-span-5 relative h-[300px] md:h-[360px] rounded-xl overflow-hidden bg-[#1c1a18]">
               <Image
                 src="https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=srgb&fm=jpg&q=85"
-                alt="TechSensi Vision"
+                alt="VRTANS Vision"
                 fill
                 className="object-cover opacity-80"
               />
@@ -122,7 +122,7 @@ export default function OurVisionPage() {
               {visionPillars.map((p, idx) => (
                 <div
                   key={idx}
-                  className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                  className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#f4ece1] text-[#784813] mb-5">
@@ -142,7 +142,7 @@ export default function OurVisionPage() {
           </div>
 
           {/* Consultation Intake Card */}
-          <div className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#784813] block mb-1">
                 Strategic Advisory Intake

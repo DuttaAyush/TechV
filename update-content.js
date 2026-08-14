@@ -4,10 +4,10 @@ let content = fs.readFileSync('app/page.js', 'utf8');
 
 const replacements = {
   // Hero
-  'Established Advisory Network · Enterprise Technology': 'TECHNOLOGY STRATEGY · ENGINEERING · AI',
+  'Established Advisory Network ï¿½ Enterprise Technology': 'TECHNOLOGY STRATEGY ï¿½ ENGINEERING ï¿½ AI',
   'Intelligence That Shapes': 'Technology That Moves',
   'Better Enterprise Decisions.': 'Your Business Forward.',
-  'Connecting cloud modernization, applied AI, and zero-trust cybersecurity directly to audited revenue and latency outcomes. Built for demanding C-suite leaders where architectural precision is paramount.': 'TechSensi helps organizations turn complex technology challenges into practical, scalable solutions. We combine technology strategy, software engineering, cloud, data, AI, and cybersecurity to modernize the systems businesses depend on.',
+  'Connecting cloud modernization, applied AI, and zero-trust cybersecurity directly to audited revenue and latency outcomes. Built for demanding C-suite leaders where architectural precision is paramount.': 'VRTANS helps organizations turn complex technology challenges into practical, scalable solutions. We combine technology strategy, software engineering, cloud, data, AI, and cybersecurity to modernize the systems businesses depend on.',
   'Talk to senior partners': 'Start a Conversation',
   'Explore capabilities': 'Explore What We Do',
 
@@ -25,7 +25,7 @@ const replacements = {
   'Why {clientConfig.name}': 'WHY TECHSENSI',
   'A Consulting Model': 'A More Focused Way',
   'Engineered for Results': 'To Work With Technology.',
-  'Independent. Senior by design. Totally outcome accountable. We replace expensive, layered consultancy pyramids with high-density practitioner pods that ship real enterprise cloud architectures.': 'Technology transformation does not need unnecessary layers between the people making decisions and the people solving the technical problems. TechSensi brings strategy, engineering, and technology expertise together so clients can work with a team that understands both the business objective and the technical detail behind it.',
+  'Independent. Senior by design. Totally outcome accountable. We replace expensive, layered consultancy pyramids with high-density practitioner pods that ship real enterprise cloud architectures.': 'Technology transformation does not need unnecessary layers between the people making decisions and the people solving the technical problems. VRTANS brings strategy, engineering, and technology expertise together so clients can work with a team that understands both the business objective and the technical detail behind it.',
   'Meet the senior partners': 'Start a Conversation',
   
   // Industries
@@ -138,7 +138,7 @@ content = content.replace(
 );
 
 // Section 7 Metrics
-content = content.replace(/>€1\.9B\+</, ">1<");
+content = content.replace(/>ï¿½1\.9B\+</, ">1<");
 content = content.replace(/>Infra Savings</, ">Connected Team<");
 content = content.replace(/>100%</, ">9<");
 content = content.replace(/>Vendor Agnostic</, ">Specialized Services<");

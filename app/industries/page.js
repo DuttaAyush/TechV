@@ -21,7 +21,7 @@ export default function IndustriesPage() {
         <div className="relative h-[320px] md:h-[400px] w-full overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?crop=entropy&cs=srgb&fm=jpg&q=85"
-            alt="Industries We Serve - TechSensi Technologies"
+            alt="Industries We Serve - VRTANS"
             fill
             priority
             className="object-cover opacity-60"
@@ -84,7 +84,7 @@ export default function IndustriesPage() {
                 return (
                   <div
                     key={ind.slug}
-                    className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-4 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                    className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-4 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -156,7 +156,7 @@ export default function IndustriesPage() {
           </div>
 
           {/* Consultation Intake Card */}
-          <div className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#784813] block mb-1">
                 Industry Practice Intake

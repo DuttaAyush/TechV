@@ -59,7 +59,7 @@ module.exports = {
 
         surface: 'hsl(var(--surface))',
 
-        /* TechSensi Core Executive Palette */
+        /* VRTANS Core Executive Palette */
         iv: {
           black: '#000000',
           white: '#ffffff',

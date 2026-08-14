@@ -24,7 +24,7 @@ export default function SectionHeading({
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-2 text-[12px] font-medium uppercase tracking-[0.2em] text-muted-foreground"
         >
-          <span className="h-px w-6 SensiTech-gradient" />
+          <span className="h-px w-6 VRTANS-gradient" />
           {eyebrow}
         </motion.p>
       )}

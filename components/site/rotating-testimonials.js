@@ -15,7 +15,7 @@ const testimonials = [
     metric: '€1.9B Saved',
     metricDesc: 'annual run-cost',
     quote:
-      'TechSensi transformed our legacy core banking architecture across 14 European markets. Their senior partner-only model delivered auditable results where legacy consultancies failed.',
+      'VRTANS transformed our legacy core banking architecture across 14 European markets. Their senior partner-only model delivered auditable results where legacy consultancies failed.',
     rating: 5,
     sector: 'Banking & Financial Tech',
   },
@@ -28,7 +28,7 @@ const testimonials = [
     metric: '11.4M Records',
     metricDesc: 'patient fabric unified',
     quote:
-      'The clinical patient data fabric built by TechSensi unified millions of hospital records with zero-trust security, saving us over 18 months of development time.',
+      'The clinical patient data fabric built by VRTANS unified millions of hospital records with zero-trust security, saving us over 18 months of development time.',
     rating: 5,
     sector: 'Healthcare & Clinical Data',
   },
@@ -41,7 +41,7 @@ const testimonials = [
     metric: '38% Acceleration',
     metricDesc: 'claims resolution throughput',
     quote:
-      'Deploying sovereign LLM retrieval architectures in highly regulated perimeters required extreme rigor. TechSensi delivered zero-latency compliance flawlessly.',
+      'Deploying sovereign LLM retrieval architectures in highly regulated perimeters required extreme rigor. VRTANS delivered zero-latency compliance flawlessly.',
     rating: 5,
     sector: 'Cybersecurity & Defense',
   },
@@ -67,7 +67,7 @@ const testimonials = [
     metric: '4.2x Throughput',
     metricDesc: 'real-time trade settlement',
     quote:
-      'TechSensi’s architectural advisory provided executive clarity and immediate ROI. Their hands-on senior team restructured our entire enterprise cloud posture.',
+      'VRTANS’s architectural advisory provided executive clarity and immediate ROI. Their hands-on senior team restructured our entire enterprise cloud posture.',
     rating: 5,
     sector: 'Asset Management',
   },
@@ -80,7 +80,7 @@ const testimonials = [
     metric: '62% Latency Drop',
     metricDesc: 'edge telemetry processing',
     quote:
-      'Partnering with TechSensi gave us access to elite principal engineers who executed our edge IoT migration 6 months ahead of schedule.',
+      'Partnering with VRTANS gave us access to elite principal engineers who executed our edge IoT migration 6 months ahead of schedule.',
     rating: 5,
     sector: 'Logistics & Retail Tech',
   },

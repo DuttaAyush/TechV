@@ -8,7 +8,7 @@ export default function Logo({ className = '', size = 'md' }) {
   return (
     <Link
       href="/"
-      aria-label="TechSensi Technologies"
+      aria-label="VRTANS"
       className={`group inline-flex items-center gap-1.5 ${className}`}
     >
       <svg
@@ -22,7 +22,7 @@ export default function Logo({ className = '', size = 'md' }) {
       >
         <defs>
           <linearGradient
-            id="SensiTechLogoGrad"
+            id="VRTANSLogoGrad"
             x1="0"
             y1="0"
             x2="220"
@@ -42,9 +42,9 @@ export default function Logo({ className = '', size = 'md' }) {
           fontWeight="700"
           fontSize="42"
           letterSpacing="-1.5"
-          fill="url(#SensiTechLogoGrad)"
+          fill="url(#VRTANSLogoGrad)"
         >
-          TechSensi
+          VRTANS
         </text>
       </svg>
 

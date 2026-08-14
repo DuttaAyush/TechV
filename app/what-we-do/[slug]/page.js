@@ -70,9 +70,17 @@ export default function ServiceSubPage({ params }) {
 
             <div className="grid lg:grid-cols-12 gap-10 items-center bg-white border border-[#e5dccf] rounded-xl p-8 md:p-12 shadow-sm">
               <div className="lg:col-span-7 space-y-5">
-                <p className="text-[16px] text-[#4a4338] font-normal leading-relaxed">
-                  {service.overview}
-                </p>
+                {Array.isArray(service.overview) ? (
+                  service.overview.map((para, i) => (
+                    <p key={i} className="text-[16px] text-[#4a4338] font-normal leading-relaxed">
+                      {para}
+                    </p>
+                  ))
+                ) : (
+                  <p className="text-[16px] text-[#4a4338] font-normal leading-relaxed">
+                    {service.overview}
+                  </p>
+                )}
 
                 <div className="pt-4 border-t border-[#f2ece2]">
                   <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#784813] block mb-3">
@@ -133,22 +141,47 @@ export default function ServiceSubPage({ params }) {
               {service.deliverables.map((item, idx) => (
                 <div
                   key={idx}
-                  className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-4 sm:p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-start gap-3 sm:gap-5"
+                  className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-4 sm:p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-start gap-3 sm:gap-5"
                 >
                   <span className="text-sm sm:text-2xl font-extrabold text-[#784813] bg-[#f4ece1] px-2.5 sm:px-3.5 py-0.5 sm:py-1.5 rounded shrink-0">
                     0{idx + 1}
                   </span>
                   <div>
                     <h3 className="text-[14px] sm:text-[19px] font-bold text-[#1c1a18] mb-1 sm:mb-2 line-clamp-2">{item.title}</h3>
-                    <p className="text-[12px] sm:text-[14px] text-[#595248] leading-relaxed font-normal line-clamp-3 sm:line-clamp-none">{item.desc}</p>
+                    <p className="text-[12px] sm:text-[14px] text-[#595248] leading-relaxed font-normal">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
+          {/* New Methodology Section */}
+          {service.methodology && (
+            <div>
+              <div className="mb-10 border-l-4 border-[#86bc25] pl-5">
+                <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#784813] block mb-1">
+                  Delivery Methodology
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-light text-[#1c1a18] tracking-tight">
+                  How We <span className="font-bold text-black">Execute</span>
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                {service.methodology.map((step, idx) => (
+                  <div key={idx} className="bg-white border border-[#e5dccf] rounded-xl p-6 shadow-sm flex flex-col h-full">
+                    <span className="text-[10px] font-extrabold uppercase text-[#86bc25] tracking-widest mb-2 block">
+                      Phase 0{idx + 1}
+                    </span>
+                    <h3 className="text-[16px] font-bold text-[#1c1a18] mb-3">{step.step}</h3>
+                    <p className="text-[13.5px] text-[#595248] leading-relaxed font-normal">{step.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Consultation Intake Card */}
-          <div className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#784813] block mb-1">
                 Practice Partner Consultation

@@ -21,7 +21,7 @@ export default function WhatWeDoPage() {
         <div className="relative h-[320px] md:h-[400px] w-full overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=srgb&fm=jpg&q=85"
-            alt="What We Do - TechSensi Technologies"
+            alt="What We Do - VRTANS"
             fill
             priority
             className="object-cover opacity-60"
@@ -40,7 +40,7 @@ export default function WhatWeDoPage() {
             </h1>
             <div className="mt-3 border-l-4 border-[#D4AF37] pl-4 py-1">
               <p className="text-lg md:text-2xl font-light italic text-[#FDF5E6] leading-relaxed">
-                &ldquo;Engineering high-consequence enterprise platforms with zero compromise and senior practitioner delivery.&rdquo;
+                &ldquo;Delivering comprehensive technology solutions designed to address complex enterprise challenges.&rdquo;
               </p>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function WhatWeDoPage() {
                 return (
                   <div
                     key={service.slug}
-                    className="hover-SensiTech-border group flex flex-col justify-between bg-white border border-[#e5dccf] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                    className="hover-VRTANS-border group flex flex-col justify-between bg-white border border-[#e5dccf] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
                   >
                     <div>
                       {/* Service Stock Image Header */}
@@ -171,13 +171,13 @@ export default function WhatWeDoPage() {
           </div>
 
           {/* Consultation Intake Card */}
-          <div className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#784813] block mb-1">
                 Direct Advisory Intake
               </span>
               <h3 className="text-2xl font-light text-[#1c1a18] tracking-tight">
-                Evaluate your architectural roadmap with <span className="font-bold">TechSensi</span>
+                Evaluate your architectural roadmap with <span className="font-bold">VRTANS</span>
               </h3>
               <p className="text-[14px] text-[#6b6255] mt-1 font-normal max-w-2xl">
                 Connect directly with a senior practice partner to evaluate your cloud modernization, AI deployment, or architectural challenges under mutual NDA.

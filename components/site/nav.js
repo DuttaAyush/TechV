@@ -32,13 +32,13 @@ const NAV = [
           'An independent enterprise technology consultancy built on senior practitioners, outcome accountability, and architectural craft.',
       },
       categories: [
-        { label: 'About Us', href: '/who-we-are/about-TechSensi', icon: 'Building2' },
+        { label: 'About Us', href: '/who-we-are/about-VRTANS', icon: 'Building2' },
         { label: 'Mission & Values', href: '/who-we-are/mission-and-values', icon: 'ShieldCheck' },
         { label: 'Our Vision', href: '/who-we-are/our-vision', icon: 'Layers' },
         { label: 'Our Story', href: '/who-we-are', icon: 'Building2' },
       ],
       pages: [
-        { title: 'About Us', desc: 'Global practice hubs and our core operational principles.', href: '/who-we-are/about-TechSensi', icon: 'Building2' },
+        { title: 'About Us', desc: 'Global practice hubs and our core operational principles.', href: '/who-we-are/about-VRTANS', icon: 'Building2' },
         { title: 'Mission & Values', desc: 'Mandate, ethos, and single-pod outcome accountability.', href: '/who-we-are/mission-and-values', icon: 'ShieldCheck' },
         { title: 'Our Vision', desc: 'Architecting sovereign, zero-trust enterprise fabrics for 2030.', href: '/who-we-are/our-vision', icon: 'Layers' },
         { title: 'Our Story', desc: 'Senior leadership, practitioner governance, and founding history.', href: '/who-we-are', icon: 'Building2' },

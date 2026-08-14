@@ -133,7 +133,7 @@ export default function IndustrySubPage({ params }) {
               {ind.deliverables.map((item, idx) => (
                 <div
                   key={idx}
-                  className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-4 sm:p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-start gap-3 sm:gap-5"
+                  className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-4 sm:p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-start gap-3 sm:gap-5"
                 >
                   <span className="text-sm sm:text-2xl font-extrabold text-[#784813] bg-[#f4ece1] px-2.5 sm:px-3.5 py-0.5 sm:py-1.5 rounded shrink-0">
                     0{idx + 1}
@@ -148,7 +148,7 @@ export default function IndustrySubPage({ params }) {
           </div>
 
           {/* Consultation Intake Card */}
-          <div className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#784813] block mb-1">
                 Industry Partner Briefing

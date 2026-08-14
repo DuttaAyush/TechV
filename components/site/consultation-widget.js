@@ -76,7 +76,7 @@ export default function ConsultationWidget() {
             </Link>
 
             <a
-              href="mailto:partners@SensiTech.tech?subject=Enterprise%20Consulting%20Inquiry"
+              href="mailto:partners@VRTANS.tech?subject=Enterprise%20Consulting%20Inquiry"
               onClick={close}
               className="flex items-center gap-3 p-3 rounded-xl bg-[#44174E]/40 text-white text-sm font-medium transition-all hover:bg-[#ED9E59]/15 hover:text-[#ED9E59] hover:translate-x-0.5"
             >

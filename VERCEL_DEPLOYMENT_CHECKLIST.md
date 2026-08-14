@@ -1,6 +1,6 @@
 # Vercel Deployment Checklist ✅
 
-**Project:** TechSensi Enterprise Technology Consulting Website
+**Project:** VRTANS Enterprise Technology Consulting Website
 **Date:** 2026-08-10
 **Build Status:** ✅ Successful (no errors)
 
@@ -70,7 +70,7 @@ git init
 git add .
 
 # Create initial commit
-git commit -m "Initial commit: TechSensi consulting website"
+git commit -m "Initial commit: VRTANS consulting website"
 
 # Add remote (GitHub/GitLab/Bitbucket)
 git remote add origin <your-repo-url>
@@ -90,7 +90,7 @@ git push -u origin main
 **Database (CRITICAL - API will fail without these):**
 ```env
 MONGO_URL=mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority
-DB_NAME=SensiTech
+DB_NAME=VRTANS
 ```
 
 **Client Branding (from .env.example):**

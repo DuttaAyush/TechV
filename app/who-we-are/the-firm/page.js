@@ -6,10 +6,10 @@ import { ArrowUpRight, Building2, CheckCircle } from 'lucide-react';
 import PageShell from '@/components/site/page-shell';
 
 const leaders = [
-  { name: 'Elena Marchetti', role: 'Chief Executive Officer', bio: '25+ years leading enterprise transformation across Tier-1 financial institutions and global infrastructure.' },
-  { name: 'Ravi Nair', role: 'Chief Technology Officer', bio: 'Former principal architect for hyperscale cloud platforms, specializing in sovereign AI & distributed data fabrics.' },
-  { name: 'Amara Osei', role: 'Head of Strategic Advisory', bio: 'Advises FTSE 100 boards on digital operating models, zero-trust security compliance, and cloud economics.' },
-  { name: 'Julien Bertrand', role: 'Head of Cybersecurity', bio: 'National-security background leading defense-grade identity modernization and regulatory compliance perimeters.' },
+  { name: 'Director of Engineering', role: 'Technical Leadership', bio: 'Oversees software delivery practices and technical architecture.' },
+  { name: 'Head of Cloud Infrastructure', role: 'Operations Leadership', bio: 'Directs cloud deployments, focusing on resilient and scalable system design.' },
+  { name: 'Data Architecture Lead', role: 'Data Practice', bio: 'Specializes in the design and implementation of secure enterprise data pipelines.' },
+  { name: 'Security Practice Lead', role: 'Information Security', bio: 'Manages compliance frameworks, access controls, and vulnerability mitigation.' },
 ];
 
 export default function TheFirmPage() {
@@ -20,7 +20,7 @@ export default function TheFirmPage() {
         <div className="relative h-[320px] md:h-[400px] w-full overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1601785491008-d1153dfadd57?crop=entropy&cs=srgb&fm=jpg&q=85"
-            alt="The Firm - TechSensi Technologies"
+            alt="The Firm - VRTANS"
             fill
             priority
             className="object-cover opacity-60"
@@ -65,7 +65,7 @@ export default function TheFirmPage() {
             {leaders.map((l, idx) => (
               <div
                 key={idx}
-                className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center gap-3 mb-4">
@@ -89,13 +89,13 @@ export default function TheFirmPage() {
           </div>
 
           {/* Consultation CTA */}
-          <div className="hover-SensiTech-border bg-gradient-to-r from-[#0a162b] via-[#0e2140] to-[#0a162b] text-white rounded-xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="hover-VRTANS-border bg-gradient-to-r from-[#0a162b] via-[#0e2140] to-[#0a162b] text-white rounded-xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#86bc25] block mb-1">
                 Direct Advisory Channel
               </span>
               <h3 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
-                Initiate a Partner Consultation with <span className="font-bold">TechSensi Technologies</span>
+                Initiate a Partner Consultation with <span className="font-bold">VRTANS</span>
               </h3>
               <p className="text-[14px] text-[#a9c4e6] mt-1 font-light max-w-2xl">
                 Connect directly with a senior practice partner to evaluate your cloud modernization, AI deployment, or architectural challenges under mutual NDA.

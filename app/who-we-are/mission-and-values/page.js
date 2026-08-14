@@ -8,23 +8,23 @@ import PageShell from '@/components/site/page-shell';
 const values = [
   {
     icon: Target,
-    title: 'Impact Over Volume',
-    desc: 'We do not produce information for volume. We engineer high-density technical intelligence specifically designed for high-consequence decision making.',
+    title: 'Objective Value Delivery',
+    desc: 'We focus on clear, objective technical implementation over volume. Our engineering artifacts are designed for informed executive decision making.',
   },
   {
     icon: ShieldCheck,
-    title: 'Radical Integrity & Transparency',
-    desc: 'Clear, direct, and unvarnished architectural truth. We advise against unnecessary tech spend and build only what delivers long-term enterprise value.',
+    title: 'Technical Transparency',
+    desc: 'Clear and direct architectural evaluation. We recommend against unnecessary technology investments and focus solely on systems that deliver verifiable enterprise value.',
   },
   {
     icon: Compass,
-    title: 'Uncompromising Craftsmanship',
-    desc: 'Code quality, systems resilience, and enterprise security perimeters are treated as first-class professional disciplines without compromise.',
+    title: 'Engineering Craftsmanship',
+    desc: 'Code maintainability, system resilience, and strict access controls are treated as foundational engineering disciplines without compromise.',
   },
   {
     icon: Users,
-    title: 'One Accountable Pod',
-    desc: 'Single-point accountability from board-level strategic advisory down to continuous integration, deployment pipelines, and operational handoff.',
+    title: 'End-to-End Accountability',
+    desc: 'Accountability from initial architectural design through to continuous integration, deployment pipelines, and final operational handoff.',
   },
 ];
 
@@ -72,10 +72,10 @@ export default function MissionAndValuesPage() {
               Our Core Mission
             </span>
             <h2 className="text-2xl sm:text-3xl font-light text-[#1c1a18] tracking-tight mb-4">
-              Delivering Auditable Technological Value Without <span className="font-bold">Pass-Through Leverage</span>
+              Delivering Measurable Technological Value Through <span className="font-bold">Direct Engineering</span>
             </h2>
             <p className="text-[15.5px] text-[#5c5449] font-normal leading-relaxed max-w-4xl">
-              Our mission is to empower global enterprise leaders to execute complex digital modernizations, zero-trust cloud architectures, and sovereign AI deployments with total architectural confidence and clear financial returns.
+              Our mission is to empower enterprise leaders to execute complex system modernizations, secure data pipelines, and scalable cloud architectures with structural confidence and clear operational returns.
             </p>
           </div>
 
@@ -94,7 +94,7 @@ export default function MissionAndValuesPage() {
               {values.map((v, i) => (
                 <div
                   key={i}
-                  className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                  className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#f4ece1] text-[#784813] mb-5">
@@ -114,7 +114,7 @@ export default function MissionAndValuesPage() {
           </div>
 
           {/* Consultation Intake Card */}
-          <div className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#784813] block mb-1">
                 Direct Advisory Channel

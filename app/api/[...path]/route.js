@@ -8,7 +8,7 @@ async function getDb() {
     cachedClient = new MongoClient(process.env.MONGO_URL);
     await cachedClient.connect();
   }
-  const dbName = process.env.DB_NAME || 'SensiTech';
+  const dbName = process.env.DB_NAME || 'VRTANS';
   return cachedClient.db(dbName);
 }
 
@@ -18,7 +18,7 @@ export async function GET(request, { params }) {
   const path = (params?.path || []).join('/');
   try {
     if (path === '' || path === 'health') {
-      return json({ status: 'ok', service: 'TechSensi Technologies API', time: new Date().toISOString() });
+      return json({ status: 'ok', service: 'VRTANS API', time: new Date().toISOString() });
     }
     return json({ error: 'Not found' }, { status: 404 });
   } catch (err) {

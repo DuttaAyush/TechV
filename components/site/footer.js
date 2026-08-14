@@ -41,7 +41,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#000000] text-white border-t border-[#1a1a1a] font-sans antialiased">
       <div className="mx-auto max-w-[1600px] px-6 lg:px-12 pt-20 pb-14">
-        {/* TechSensi-inspired Bold Connector Header */}
+        {/* VRTANS-inspired Bold Connector Header */}
         {/* <div className="border-b border-[#1a1a1a] pb-14 mb-14">
           <div className="grid gap-8 lg:grid-cols-12 items-end">
             <div className="lg:col-span-8">
@@ -69,15 +69,15 @@ export default function Footer() {
           <div className="lg:col-span-4 pr-6">
             <Logo />
             <p className="mt-6 text-[14px] leading-relaxed text-[#999999] font-light max-w-sm">
-              TechSensi Technologies is an independent enterprise consulting firm combining strategy, senior technical execution, and strict outcome accountability.
+              VRTANS is an independent enterprise consulting firm combining strategy, senior technical execution, and strict outcome accountability.
             </p>
             <div className="mt-8">
               <span className="text-[11px] uppercase tracking-[0.18em] text-[#999999] block mb-2">Direct Partner Inquiries</span>
               <a
-                href="mailto:partners@SensiTech.tech"
+                href="mailto:partners@VRTANS.tech"
                 className="text-[15px] font-normal text-white hover:text-[#86bc25] transition-colors underline underline-offset-4 decoration-[#86bc25]/50"
               >
-                partners@SensiTech.tech
+                partners@VRTANS.tech
               </a>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function Footer() {
         {/* Legal & Operations Footer Bar */}
         <div className="mt-16 pt-8 border-t border-[#1a1a1a] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-[13px] text-[#999999]">
           <div className="flex flex-wrap items-center gap-6">
-            <p>© {new Date().getFullYear()} TechSensi Technologies. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} VRTANS. All rights reserved.</p>
             <span className="hidden md:block h-3 w-px bg-[#262626]" />
             <Link href="/contact" className="hover:text-[#86bc25] transition-colors">
               Privacy Policy

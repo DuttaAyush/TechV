@@ -28,13 +28,13 @@ export default function Page() {
       toast.success('Thank you. A senior partner will reach out within one business day.');
       setForm({ name: '', email: '', company: '', role: '', interest: 'Cloud Modernization', message: '' });
     } catch {
-      toast.error('Something went wrong. Please email partners@SensiTech.tech.');
+      toast.error('Something went wrong. Please email partners@VRTANS.tech.');
     } finally {
       setSubmitting(false);
     }
   };
 
-  const interests = ['Cloud Modernization', 'AI & Applied Intelligence', 'Cybersecurity & Zero Trust', 'Digital Transformation', 'Data Fabric & Analytics', 'Enterprise Architecture', 'Bespoke Advisory Inquiry'];
+  const interests = ['Cloud Modernization', 'Data Engineering', 'Cybersecurity & Compliance', 'System Architecture', 'Information Retrieval Systems', 'Operational Automation', 'General Advisory Inquiry'];
 
   return (
     <PageShell>
@@ -58,13 +58,13 @@ export default function Page() {
               <span>•</span>
               <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#86bc25]" /> Strict NDA Compliance</span>
               <span>•</span>
-              <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-[#86bc25]" /> Zero Junior Pass-Throughs</span>
+              <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-[#86bc25]" /> Dedicated Engineering Pods</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SPECIAL TRIAL: TechSensi LOGO GRADIENT FIRST SEPARATOR LINE */}
+      {/* SPECIAL TRIAL: VRTANS LOGO GRADIENT FIRST SEPARATOR LINE */}
       <div className="w-full h-[4px] bg-gradient-to-r from-[#ef4444] via-[#ec4899] to-[#a855f7] relative z-20 shadow-[0_2px_20px_rgba(236,72,153,0.35)]" />
 
       {/* 2. LOWER SECTION: LIGHT CREAM THEME FOR FORM & CONTACT DETAILS */}
@@ -77,8 +77,8 @@ export default function Page() {
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Direct Partner Channel</span>
                 <p className="text-[20px] font-bold text-[#1c1a18] tracking-tight mb-2">General Advisory Inquiries</p>
-                <a href="mailto:partners@SensiTech.tech" className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
-                  <Mail className="h-4.5 w-4.5 text-[#1c1a18]" /> partners@SensiTech.tech
+                <a href="mailto:partners@VRTANS.tech" className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
+                  <Mail className="h-4.5 w-4.5 text-[#1c1a18]" /> partners@VRTANS.tech
                 </a>
                 <p className="mt-1.5 text-[13.5px] text-[#635b51] font-light">Monitored 24/7 by global executive coordinators.</p>
               </div>
@@ -86,8 +86,8 @@ export default function Page() {
               <div className="border-t border-[#e8ded2] pt-7">
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Media & Newsroom</span>
                 <p className="text-[18px] font-bold text-[#1c1a18] tracking-tight mb-2">Corporate Press & Analyst Relations</p>
-                <a href="mailto:press@SensiTech.tech" className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
-                  <Mail className="h-4 w-4 text-[#1c1a18]" /> press@SensiTech.tech
+                <a href="mailto:press@VRTANS.tech" className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
+                  <Mail className="h-4 w-4 text-[#1c1a18]" /> press@VRTANS.tech
                 </a>
               </div>
 
@@ -114,11 +114,11 @@ export default function Page() {
               </div>
             </div>
 
-            {/* Right Side: Elevated White Connect Form with Minimalist TechSensi Hover Border */}
+            {/* Right Side: Elevated White Connect Form with Minimalist VRTANS Hover Border */}
             <div className="lg:col-span-8">
               <form
                 onSubmit={onSubmit}
-                className="hover-SensiTech-border bg-white border border-[#e2d8c9] rounded-lg p-8 md:p-12 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:border-transparent transition-all duration-300"
+                className="hover-VRTANS-border bg-white border border-[#e2d8c9] rounded-lg p-8 md:p-12 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:border-transparent transition-all duration-300"
               >
                 <div className="mb-8 border-b border-[#f0e7db] pb-6">
                   <h3 className="text-2xl font-light text-[#1c1a18] tracking-tight">
@@ -170,7 +170,7 @@ export default function Page() {
 
                 <div className="mt-10 pt-6 border-t border-[#f0e7db] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                   <p className="text-[12.5px] text-[#736a5d] font-normal max-w-md leading-relaxed">
-                    By submitting this request, you consent to secure outreach from a TechSensi Technologies practice partner. Zero commercial data sharing.
+                    By submitting this request, you consent to secure outreach from a VRTANS practice partner. Zero commercial data sharing.
                   </p>
 
                   <button

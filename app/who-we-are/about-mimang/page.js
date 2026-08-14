@@ -37,7 +37,7 @@ const principles = [
   },
 ];
 
-export default function AboutTechSensiPage() {
+export default function AboutVRTANSPage() {
   return (
     <PageShell>
       {/* Editorial Top Hero Banner */}
@@ -45,7 +45,7 @@ export default function AboutTechSensiPage() {
         <div className="relative h-[320px] md:h-[400px] w-full overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=srgb&fm=jpg&q=85"
-            alt="About TechSensi Technologies"
+            alt="About VRTANS"
             fill
             priority
             className="object-cover opacity-60"
@@ -55,12 +55,12 @@ export default function AboutTechSensiPage() {
           <div className="absolute top-8 left-6 md:left-12 z-10 flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.2em] text-[#93c5fd]">
             <Link href="/who-we-are" className="hover:underline text-white/70">Who we are</Link>
             <span>&gt;</span>
-            <span className="text-[#86bc25]">About TechSensi</span>
+            <span className="text-[#86bc25]">About VRTANS</span>
           </div>
 
           <div className="absolute bottom-8 left-6 md:left-12 z-10 max-w-4xl">
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-tight">
-              About <span className="font-semibold text-[#86bc25]">TechSensi Technologies</span>
+              About <span className="font-semibold text-[#86bc25]">VRTANS</span>
             </h1>
             <div className="mt-3 border-l-4 border-[#86bc25] pl-4 py-1">
               <p className="text-lg md:text-2xl font-light italic text-[#cbe395] leading-relaxed">
@@ -84,7 +84,7 @@ export default function AboutTechSensiPage() {
               Independent Technology Advisory for <span className="font-bold">Mission-Critical Enterprise Systems</span>
             </h2>
             <p className="text-[15.5px] text-[#5c5449] font-normal leading-relaxed max-w-4xl">
-              TechSensi Technologies is an elite software architecture and executive advisory firm. We bridge boardroom strategy with low-level systems engineering, delivering zero-trust security perimeters, cloud modernization, and sovereign AI retrieval fabrics for financial institutions, defense contractors, healthcare networks, and energy grids worldwide.
+              VRTANS is an elite software architecture and executive advisory firm. We bridge boardroom strategy with low-level systems engineering, delivering zero-trust security perimeters, cloud modernization, and sovereign AI retrieval fabrics for financial institutions, defense contractors, healthcare networks, and energy grids worldwide.
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export default function AboutTechSensiPage() {
               {globalLocations.map((loc, idx) => (
                 <div
                   key={idx}
-                  className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300"
+                  className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#784813] bg-[#f4ece1] px-2.5 py-0.5 rounded">
@@ -135,7 +135,7 @@ export default function AboutTechSensiPage() {
               {principles.map((item) => (
                 <div
                   key={item.number}
-                  className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-7 shadow-sm hover:shadow-lg transition-all duration-300 flex items-start gap-5"
+                  className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-7 shadow-sm hover:shadow-lg transition-all duration-300 flex items-start gap-5"
                 >
                   <span className="text-2xl font-extrabold text-[#784813] bg-[#f4ece1] px-3.5 py-1.5 rounded shrink-0">
                     {item.number}
@@ -150,7 +150,7 @@ export default function AboutTechSensiPage() {
           </div>
 
           {/* Consultation Intake Card in Beige */}
-          <div className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#784813] block mb-1">
                 Direct Advisory Intake

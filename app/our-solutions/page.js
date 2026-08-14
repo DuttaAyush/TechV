@@ -48,16 +48,16 @@ export default function OurSolutionsPage() {
               <span className="text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mt-1">Core Capabilities</span>
             </div>
             <div>
-              <span className="block text-3xl sm:text-4xl font-extrabold text-white tracking-tight">100%</span>
-              <span className="text-[11px] font-bold text-[#93c5fd] uppercase tracking-wider block mt-1">SLA Delivery Record</span>
+              <span className="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Dedicated</span>
+              <span className="text-[11px] font-bold text-[#93c5fd] uppercase tracking-wider block mt-1">Engineering Pods</span>
             </div>
             <div>
-              <span className="block text-3xl sm:text-4xl font-extrabold text-white tracking-tight">14+</span>
-              <span className="text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mt-1">Regulated Global Markets</span>
+              <span className="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Regulated</span>
+              <span className="text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mt-1">Market Focus</span>
             </div>
             <div>
-              <span className="block text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Zero</span>
-              <span className="text-[11px] font-bold text-[#93c5fd] uppercase tracking-wider block mt-1">Junior Pass-Through Pods</span>
+              <span className="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Support</span>
+              <span className="text-[11px] font-bold text-[#93c5fd] uppercase tracking-wider block mt-1">Comprehensive SLAs</span>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function OurSolutionsPage() {
               return (
                 <div
                   key={s.slug}
-                  className="hover-SensiTech-border group bg-white border border-[#e4d7c5] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+                  className="hover-VRTANS-border group bg-white border border-[#e4d7c5] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="relative h-[210px] w-full overflow-hidden bg-[#080d1a]">
@@ -176,7 +176,7 @@ export default function OurSolutionsPage() {
           </div>
   
           {/* 3. EXECUTIVE INTAKE BANNER AT BOTTOM */}
-          <div className="mt-20 hover-SensiTech-border bg-gradient-to-r from-[#080d1a] via-[#0e1d38] to-[#080d1a] text-white rounded-2xl p-8 lg:p-12 shadow-2xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 border border-[#1e3c70]">
+          <div className="mt-20 hover-VRTANS-border bg-gradient-to-r from-[#080d1a] via-[#0e1d38] to-[#080d1a] text-white rounded-2xl p-8 lg:p-12 shadow-2xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 border border-[#1e3c70]">
             <div>
               <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#D4AF37] mb-2">
                 <ShieldCheck className="h-4 w-4" /> 100% Senior Practitioner SLA

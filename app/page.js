@@ -43,7 +43,7 @@ const services = [
     icon: Globe,
     title: 'Web Dev',
     fullTitle: 'Web Development & Digital Platforms',
-    body: 'Next-gen web applications, corporate digital portals, high-performance frontend architectures, and responsive web platforms.',
+    body: 'Custom web applications, corporate digital portals, high-performance frontend architectures, and responsive web platforms.',
     tags: ['Next.js & React', 'High-Perf Frontend', 'Jamstack'],
     tagColor: 'text-[#92400e] bg-[#fffbeb] border-[#fde68a]',
     href: '/what-we-do/web-dev',
@@ -52,7 +52,7 @@ const services = [
     icon: Smartphone,
     title: 'App Dev',
     fullTitle: 'Mobile & Web App Development',
-    body: 'Native iOS & Android apps, cross-platform mobile solutions, progressive web apps (PWAs), and high-throughput mobile backend APIs.',
+    body: 'Native iOS & Android apps, cross-platform mobile solutions, progressive web apps (PWAs), and secure mobile backend APIs.',
     tags: ['iOS & Android Native', 'PWAs & Flutter', 'Mobile APIs'],
     tagColor: 'text-[#047857] bg-[#ecfdf5] border-[#a7f3d0]',
     href: '/what-we-do/app-dev',
@@ -115,7 +115,7 @@ const services = [
     icon: Cpu,
     title: 'AI Consulting',
     fullTitle: 'Applied AI & LLM Advisory',
-    body: 'Sovereign AI strategy, custom LLM fine-tuning, RAG data architectures, autonomous AI agents, and compliance guardrails.',
+    body: 'Data strategy, vector search architectures, machine learning models, and compliance guardrails.',
     tags: ['LLMs & Sovereign RAG', 'Autonomous Agents', 'AI Governance'],
     tagColor: 'text-[#1e40af] bg-[#eff6ff] border-[#bfdbfe]',
     href: '/what-we-do/ai-consulting',
@@ -128,29 +128,29 @@ const work = [
   {
     kicker: 'Financial Services',
     title: 'Modernize complex financial systems with scalable architecture, stronger integration, better data flows, and technology foundations designed for changing regulatory and customer demands.',
-    metric: '45%',
-    metricLabel: 'Faster Integration',
+    metric: 'Design',
+    metricLabel: 'System Architecture',
     href: '/our-solutions',
   },
   {
     kicker: 'Insurance',
     title: 'Use AI and intelligent automation to reduce repetitive work, improve information processing, and give underwriting and claims teams better tools for decision-making.',
-    metric: '30%',
-    metricLabel: 'Efficiency Gain',
+    metric: 'Optimize',
+    metricLabel: 'Processing Workflows',
     href: '/our-solutions',
   },
   {
     kicker: 'Healthcare',
     title: 'Build secure data foundations that allow healthcare organizations to connect information across systems while improving accessibility, interoperability, and operational visibility.',
-    metric: '2.4x',
-    metricLabel: 'Faster Data Access',
+    metric: 'Secure',
+    metricLabel: 'Data Fabrics',
     href: '/our-solutions',
   },
   {
     kicker: 'Logistics',
     title: 'Combine operational data, connected systems, analytics, and AI to improve planning, routing, visibility, and day-to-day supply chain decisions.',
-    metric: '99%',
-    metricLabel: 'Routing Accuracy',
+    metric: 'Scale',
+    metricLabel: 'Supply Chains',
     href: '/our-solutions',
   },
 ];
@@ -170,7 +170,7 @@ const industriesData = [
     href: '/industries/ai-solutions',
     label: 'Enterprise AI',
     description: 'Isolated RAG fabrics, custom LLM fine-tuning, autonomous AI agents, and rigorous enterprise AI safety guardrails.',
-    stats: 'Zero-Trust AI Audited',
+    stats: 'Data Pipeline Engineering',
   },
   {
     title: 'Logistics & Supply Chain',
@@ -178,7 +178,7 @@ const industriesData = [
     href: '/industries/logistics-supply-chain',
     label: 'Supply Chain Ops',
     description: 'IoT telemetry, real-time predictive inventory, and autonomous route dispatch for global logistics networks.',
-    stats: '99.9% Dispatch Accuracy',
+    stats: 'Operational Integration',
   },
   {
     title: 'Retail & Commerce',
@@ -186,7 +186,7 @@ const industriesData = [
     href: '/industries/retail-commerce',
     label: 'Omnichannel Retail',
     description: 'Unified inventory orchestration, composable high-performance storefronts, and digital transaction processing.',
-    stats: '3x Inventory Velocity',
+    stats: 'Transaction Security',
   },
   {
     title: 'Healthcare & Life Sciences',
@@ -194,7 +194,7 @@ const industriesData = [
     href: '/industries/healthcare-life-sciences',
     label: 'Clinical Fabrics',
     description: 'FHIR data interoperability, secure patient data fabrics, and HIPAA-compliant clinical predictive AI compute.',
-    stats: '11.4M Unified Patient Records',
+    stats: 'HIPAA-Compliant Systems',
   },
   {
     title: 'Cloud & Infrastructure',
@@ -202,7 +202,7 @@ const industriesData = [
     href: '/industries/cloud-infrastructure',
     label: 'Platform Engineering',
     description: 'Sovereign landing zones, 5G edge clusters, multi-cloud FinOps governance, and automated Kubernetes control planes.',
-    stats: '99.999% Operational Uptime',
+    stats: 'Infrastructure as Code',
   },
 ];
 
@@ -270,7 +270,7 @@ export default function HomePage() {
         message: '',
       });
     } catch {
-      toast.error('Something went wrong. Please email partners@SensiTech.tech directly.');
+      toast.error('Something went wrong. Please email partners@VRTANS.tech directly.');
     } finally {
       setSubmitting(false);
     }
@@ -332,7 +332,7 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="mt-6 text-[16px] md:text-[17.5px] font-light leading-relaxed text-[#b0cae8] max-w-2xl"
               >
-                TechSensi helps organizations turn complex technology challenges into practical, scalable solutions. We combine technology strategy, software engineering, cloud, data, AI, and cybersecurity to modernize the systems businesses depend on.
+                VRTANS helps organizations turn complex technology challenges into practical, scalable solutions. We combine technology strategy, software engineering, cloud, data, AI, and cybersecurity to modernize the systems businesses depend on.
               </motion.p>
 
               <motion.div
@@ -418,7 +418,7 @@ export default function HomePage() {
               <Link
                 key={i}
                 href={w.href}
-                className="hover-SensiTech-border group relative flex flex-col justify-between rounded-xl border border-[#e4d7c5] bg-white p-4 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:shadow-xl hover:border-transparent hover:-translate-y-1"
+                className="hover-VRTANS-border group relative flex flex-col justify-between rounded-xl border border-[#e4d7c5] bg-white p-4 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:shadow-xl hover:border-transparent hover:-translate-y-1"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -471,7 +471,7 @@ export default function HomePage() {
               <Link
                 key={s.title}
                 href={s.href}
-                className="hover-SensiTech-border group flex flex-col justify-between rounded-2xl border border-[#e8dfcf] bg-white p-4 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:shadow-xl hover:border-transparent hover:-translate-y-1"
+                className="hover-VRTANS-border group flex flex-col justify-between rounded-2xl border border-[#e8dfcf] bg-white p-4 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:shadow-xl hover:border-transparent hover:-translate-y-1"
               >
                 <div>
                   <div className="flex items-center gap-2.5 sm:gap-3.5 mb-3 sm:mb-4 min-w-0">
@@ -511,7 +511,7 @@ export default function HomePage() {
                 A More Focused Way <span className="font-normal bg-gradient-to-r from-[#D4AF37] to-white bg-clip-text text-transparent">To Work With Technology.</span>
               </h2>
               <p className="text-[15px] text-[#b0cae8] font-light leading-relaxed mb-6">
-                Technology transformation does not need unnecessary layers between the people making decisions and the people solving the technical problems. TechSensi brings strategy, engineering, and technology expertise together so clients can work with a team that understands both the business objective and the technical detail behind it.
+                Technology transformation does not need unnecessary layers between the people making decisions and the people solving the technical problems. VRTANS brings strategy, engineering, and technology expertise together so clients can work with a team that understands both the business objective and the technical detail behind it.
               </p>
               <Link href="/who-we-are" className="inline-flex items-center gap-2 font-bold text-[#D4AF37] text-[14.5px] hover:underline">
                 <span>Start a Conversation</span>
@@ -526,7 +526,7 @@ export default function HomePage() {
                 { t: 'Engineering Mindset', d: 'We focus on solutions that can be implemented, operated, maintained, and improved in the real world.' },
                 { t: 'One Connected Team', d: 'Strategy, architecture, engineering, data, cloud, and AI can work together instead of becoming disconnected workstreams.' }
               ].map((p, idx) => (
-                <div key={idx} className="hover-SensiTech-border bg-[#0a192f] p-6 border border-[#1b3563] rounded-2xl shadow-md hover:border-transparent transition-all">
+                <div key={idx} className="hover-VRTANS-border bg-[#0a192f] p-6 border border-[#1b3563] rounded-2xl shadow-md hover:border-transparent transition-all">
                   <div className="flex items-center gap-2.5 mb-2">
                     <CheckCircle className="h-5 w-5 text-[#D4AF37] shrink-0" />
                     <h4 className="text-[17px] font-bold text-white">{p.t}</h4>
@@ -562,7 +562,7 @@ export default function HomePage() {
               <Link
                 key={i}
                 href={item.href}
-                className="hover-SensiTech-border group flex flex-col justify-between bg-white border border-[#e4d7c5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                className="hover-VRTANS-border group flex flex-col justify-between bg-white border border-[#e4d7c5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
               >
                 <div>
                   <div className="relative h-[120px] sm:h-[210px] w-full overflow-hidden bg-[#071326]">
@@ -628,7 +628,7 @@ export default function HomePage() {
             {whyChooseUsData.map((item, idx) => (
               <div
                 key={idx}
-                className="hover-SensiTech-border group flex flex-col justify-between bg-[#0a192f]/90 border border-[#1b3563] rounded-xl p-4 sm:p-6 shadow-lg hover:border-transparent hover:bg-[#0f2447] transition-all duration-300"
+                className="hover-VRTANS-border group flex flex-col justify-between bg-[#0a192f]/90 border border-[#1b3563] rounded-xl p-4 sm:p-6 shadow-lg hover:border-transparent hover:bg-[#0f2447] transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -720,10 +720,10 @@ export default function HomePage() {
 
               <div className="flex flex-wrap items-center gap-6 pt-1 text-[13.5px] text-[#554e44]">
                 <a
-                  href="mailto:partners@SensiTech.tech"
+                  href="mailto:partners@VRTANS.tech"
                   className="inline-flex items-center gap-2 font-bold text-[#8c6b12] hover:underline"
                 >
-                  <Mail className="h-4 w-4 text-[#1c1a18]" /> partners@SensiTech.tech
+                  <Mail className="h-4 w-4 text-[#1c1a18]" /> partners@VRTANS.tech
                 </a>
                 <span className="flex items-center gap-2 font-bold text-[#1c1a18]">
                   <Phone className="h-4 w-4 text-[#8c6b12]" /> +1 (212) 555–0117
@@ -736,7 +736,7 @@ export default function HomePage() {
             <div className="lg:col-span-6">
               <form
                 onSubmit={onSubmit}
-                className="hover-SensiTech-border bg-white border border-[#e2d8c9] rounded-xl p-6 md:p-7 shadow-[0_8px_25px_rgba(0,0,0,0.03)] hover:border-transparent transition-all duration-300"
+                className="hover-VRTANS-border bg-white border border-[#e2d8c9] rounded-xl p-6 md:p-7 shadow-[0_8px_25px_rgba(0,0,0,0.03)] hover:border-transparent transition-all duration-300"
               >
                 <div className="mb-5 border-b border-[#f0e7db] pb-4">
                   <h3 className="text-xl font-cabinet font-medium text-[#1c1a18] tracking-tight">

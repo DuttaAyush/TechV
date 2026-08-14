@@ -145,7 +145,7 @@ export default function CareersPage() {
       {/* GRADIENT SEPARATOR LINE */}
       <div className="w-full h-[4px] bg-gradient-to-r from-[#ef4444] via-[#ec4899] to-[#a855f7] relative z-20 shadow-[0_2px_20px_rgba(236,72,153,0.35)]" />
 
-      {/* 2. ABOUT TechSensi & WORK CULTURE SECTION */}
+      {/* 2. ABOUT VRTANS & WORK CULTURE SECTION */}
       <section className="bg-gradient-to-b from-[#080d1a] via-[#0a162b] to-[#080d1a] text-white py-16 lg:py-24 border-b border-[#1c3969] font-sans">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-12">
           <div className="max-w-3xl mb-12 border-l-4 border-[#86bc25] pl-5">
@@ -164,7 +164,7 @@ export default function CareersPage() {
             {CULTURE_PILLARS.map((item, idx) => (
               <div
                 key={idx}
-                className="hover-SensiTech-border group flex flex-col justify-between bg-[#0b1830]/90 border border-[#1d3969] rounded-xl p-6 shadow-lg hover:border-transparent hover:bg-[#102447] transition-all duration-300"
+                className="hover-VRTANS-border group flex flex-col justify-between bg-[#0b1830]/90 border border-[#1d3969] rounded-xl p-6 shadow-lg hover:border-transparent hover:bg-[#102447] transition-all duration-300"
               >
                 <div>
                   <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#142c54] text-[#86bc25] group-hover:bg-[#86bc25] group-hover:text-black transition-colors mb-5">
@@ -205,7 +205,7 @@ export default function CareersPage() {
             {ROLES.map((role) => (
               <div
                 key={role.id}
-                className="hover-SensiTech-border group flex flex-col justify-between bg-white border border-[#e4d7c5] rounded-xl p-7 shadow-sm hover:shadow-xl transition-all duration-300"
+                className="hover-VRTANS-border group flex flex-col justify-between bg-white border border-[#e4d7c5] rounded-xl p-7 shadow-sm hover:shadow-xl transition-all duration-300"
               >
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">

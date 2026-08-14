@@ -27,7 +27,7 @@ export default function OurStoryPage() {
         <div className="relative h-[320px] md:h-[400px] w-full overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1601785491008-d1153dfadd57?crop=entropy&cs=srgb&fm=jpg&q=85"
-            alt="Our Story - TechSensi Technologies"
+            alt="Our Story - VRTANS"
             fill
             priority
             className="object-cover opacity-60"
@@ -71,10 +71,10 @@ export default function OurStoryPage() {
             <div className="grid lg:grid-cols-12 gap-10 items-center bg-white border border-[#e5dccf] rounded-xl p-8 md:p-12 shadow-sm">
               <div className="lg:col-span-7 space-y-5">
                 <p className="text-[16px] text-[#4a4338] font-normal leading-relaxed">
-                  TechSensi Technologies was established with a singular objective: to provide Tier-1 enterprise clients with direct access to senior technology leaders who actually write production code and design resilient architectures.
+                  VRTANS was established with a singular objective: to provide Tier-1 enterprise clients with direct access to senior technology leaders who actually write production code and design resilient architectures.
                 </p>
                 <p className="text-[15px] text-[#6b6255] leading-relaxed font-normal">
-                  We rejected the traditional consulting pyramid model—where senior partners pitch contracts and then pass execution down to inexperienced junior teams. Instead, every TechSensi engagement is staffed 100% by battle-tested practitioners with decades of domain experience.
+                  We rejected the traditional consulting pyramid model—where senior partners pitch contracts and then pass execution down to inexperienced junior teams. Instead, every VRTANS engagement is staffed 100% by battle-tested practitioners with decades of domain experience.
                 </p>
 
                 <div className="pt-4 grid sm:grid-cols-2 gap-4">
@@ -98,7 +98,7 @@ export default function OurStoryPage() {
               <div className="lg:col-span-5 relative h-[300px] md:h-[360px] rounded-xl overflow-hidden bg-[#1c1a18]">
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=srgb&fm=jpg&q=85"
-                  alt="TechSensi Founders"
+                  alt="VRTANS Founders"
                   fill
                   className="object-cover opacity-85"
                 />
@@ -128,7 +128,7 @@ export default function OurStoryPage() {
               {milestones.map((m, idx) => (
                 <div
                   key={idx}
-                  className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300"
+                  className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <span className="text-2xl sm:text-4xl font-extrabold text-[#1c1a18] block mb-1">{m.metric}</span>
                   <span className="text-[10px] sm:text-[12px] font-extrabold uppercase tracking-wider text-[#784813] block mb-1.5 sm:mb-2 truncate">{m.label}</span>
@@ -153,7 +153,7 @@ export default function OurStoryPage() {
               {leaders.map((l, idx) => (
                 <div
                   key={idx}
-                  className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                  className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
@@ -178,13 +178,13 @@ export default function OurStoryPage() {
           </div>
 
           {/* Section D: Intake Banner */}
-          <div className="hover-SensiTech-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="hover-VRTANS-border bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#784813] block mb-1">
                 Direct Advisory intake
               </span>
               <h3 className="text-2xl font-light text-[#1c1a18] tracking-tight">
-                Initiate a Partner Consultation with <span className="font-bold">TechSensi</span>
+                Initiate a Partner Consultation with <span className="font-bold">VRTANS</span>
               </h3>
               <p className="text-[14px] text-[#6b6255] mt-1 font-normal max-w-2xl">
                 Connect directly with a senior practice partner to evaluate your cloud modernization, AI deployment, or architectural challenges under mutual NDA.

@@ -1,8 +1,8 @@
-# TechSensi Technologies — Design System & Page Architecture (design.md)
+# VRTANS — Design System & Page Architecture (design.md)
 
 ## Executive Summary & Design Philosophy
 
-**TechSensi Technologies** is an enterprise technology consulting and executive advisory platform engineered for C-Suite technology leaders (CIOs, CTOs, CISOs, and Heads of Infrastructure). The platform's visual identity balances **high-density technical rigor** with **executive elegance**, intentionally contrasting against traditional, generic corporate templates.
+**VRTANS** is an enterprise technology consulting and executive advisory platform engineered for C-Suite technology leaders (CIOs, CTOs, CISOs, and Heads of Infrastructure). The platform's visual identity balances **high-density technical rigor** with **executive elegance**, intentionally contrasting against traditional, generic corporate templates.
 
 ### Core Positioning
 - **Senior Practitioner Model**: Engagements are architected and delivered exclusively by senior practice leads. Zero junior pass-throughs or layered consultancy bloat.
@@ -25,9 +25,9 @@ The application utilizes a **Dual-Theme High-Contrast Architectural Design Syste
 | **Rail Grey** | `#1a1a1a` / `0 0% 10%` | `--iv-rail` | Card borders, dividers, subtle hover backgrounds in dark mode. |
 | **Warm Editorial Beige**| `#faf7f2` / `0 0% 98%` | `--surface` (Light) | Warm cream background for readable content, capability grids, and forms. |
 | **Warm Card Border** | `#e5dccf` / `0 0% 88%` | `--border` (Light) | Subtle warm borders framing content cards and form elements. |
-| **TechSensi Accent Green**| `#86bc25` / `82 52% 44%` | `--accent` / `--ring` | Primary brand accent color; used for active highlights, focus rings, and badge indicators. |
+| **VRTANS Accent Green**| `#86bc25` / `82 52% 44%` | `--accent` / `--ring` | Primary brand accent color; used for active highlights, focus rings, and badge indicators. |
 | **Deep Sapphire Blue** | `#080d1a` / `#0b1830` | Custom utility | Background for whitepaper/research sections, culture pillars, and deep technical features. |
-| **Brand Gradient Logo**| `linear-gradient(90deg, #ef4444 0%, #ec4899 50%, #a855f7 100%)` | `.hover-SensiTech-border` | Signature brand gradient used in hover borders, logo text, and section divider rails. |
+| **Brand Gradient Logo**| `linear-gradient(90deg, #ef4444 0%, #ec4899 50%, #a855f7 100%)` | `.hover-VRTANS-border` | Signature brand gradient used in hover borders, logo text, and section divider rails. |
 
 ---
 
@@ -63,7 +63,7 @@ body {
 
 ### 1.3 Component Mechanics & Visual Utilities
 
-1. **Hover SensiTech Border (`.hover-SensiTech-border`)**:
+1. **Hover VRTANS Border (`.hover-VRTANS-border`)**:
    - A custom CSS pseudo-element utility that projects a multi-color gradient boundary (`#ef4444` → `#ec4899` → `#a855f7`) on hover while keeping the interior background clean.
 2. **Metallic Texture CTA Buttons**:
    - High-contrast action buttons featuring a subtle metallic background texture (`/images/metallic_bg.png`) combined with bold text and smooth hover scale effects.
@@ -81,7 +81,7 @@ body {
 ### 2.1 Sticky Executive Header (`Nav`)
 - **Location**: `components/site/nav.js`
 - **Behavior**: Sticky header with dynamic background blur and shadow transition on scroll.
-- **Brand Mark**: `Logo` component featuring dynamic SVG text gradient (`TechSensi`) paired with clean "Technologies" typography.
+- **Brand Mark**: `Logo` component featuring dynamic SVG text gradient (`VRTANS`) paired with clean "Technologies" typography.
 - **Navigation Links**:
   - **Who We Are** (Mega-menu dropdown)
   - **What We Do** (Mega-menu dropdown)
@@ -99,7 +99,7 @@ body {
 ### 2.2 Global Footer (`Footer`)
 - **Location**: `components/site/footer.js`
 - **Style**: Executive Deep Black (`#000000`) with subtle top border (`#1a1a1a`).
-- **Brand Column**: Logo, company description, direct partner inquiry email link (`partners@SensiTech.tech`).
+- **Brand Column**: Logo, company description, direct partner inquiry email link (`partners@VRTANS.tech`).
 - **Navigation Columns**:
   - **Company**: Links to Who We Are, Our Work, Careers, Contact.
   - **Capabilities**: Cloud Modernization, AI & Applied Intelligence, Cybersecurity & Zero Trust, Digital Transformation.
@@ -119,7 +119,7 @@ graph TD
   
   AppRoot --> Home["Home Page (/)"]
   AppRoot --> WhoWeAre["Who We Are (/who-we-are)"]
-  AppRoot --> AboutTechSensi["About TechSensi (/who-we-are/about-TechSensi)"]
+  AppRoot --> AboutVRTANS["About VRTANS (/who-we-are/about-VRTANS)"]
   AppRoot --> WhatWeDo["What We Do (/what-we-do)"]
   AppRoot --> ServiceDetail["Service Detail (/what-we-do/[slug])"]
   AppRoot --> Industries["Industries (/industries)"]
@@ -152,7 +152,7 @@ graph TD
    - **Grid**: 6 practice cards (Cloud Modernization, AI & Applied Intelligence, Cybersecurity & Zero Trust, Digital Transformation, Data Fabric & Analytics, Enterprise Architecture) with practice icons, body copy, and colored capability pills.
 5. **Firm Model & Core Guarantees**:
    - **Background**: Deep Sapphire Blue gradient (`#0a162b` to `#0e2140`).
-   - **Content**: "Why TechSensi Firm Model" 4-column checkmark list detailing senior-practitioner delivery, vendor independence, audited outcome accountability, and boardroom-to-production ownership.
+   - **Content**: "Why VRTANS Firm Model" 4-column checkmark list detailing senior-practitioner delivery, vendor independence, audited outcome accountability, and boardroom-to-production ownership.
 6. **Industries We Serve**:
    - **Background**: Warm Beige (`#faf7f2`).
    - **Grid**: 6-card vertical domain grid with stock image headers, description, and stats badge (`€1.9B Infra Savings Delivered`, `Zero-Trust Audited`, etc.).
@@ -179,8 +179,8 @@ graph TD
 
 ---
 
-### 3.3 About TechSensi (`/who-we-are/about-TechSensi`)
-- **File**: `app/who-we-are/about-TechSensi/page.js`
+### 3.3 About VRTANS (`/who-we-are/about-VRTANS`)
+- **File**: `app/who-we-are/about-VRTANS/page.js`
 - **Theme**: Dark Hero Banner → Warm Beige Body.
 - **Key Sections**:
   - **Hero Banner**: Image background with quote slogan ("Global presence, senior practitioner accountability, and unvarnished engineering craft").
@@ -273,7 +273,7 @@ graph TD
 
 ### 3.9 Careers Page (`/careers`)
 - **File**: `app/careers/page.js`
-- **Theme**: Executive Black Hero → TechSensi Logo Gradient Bar → Deep Sapphire Culture → Warm Beige Roles.
+- **Theme**: Executive Black Hero → VRTANS Logo Gradient Bar → Deep Sapphire Culture → Warm Beige Roles.
 - **Key Sections**:
   - **Hero Banner**: Slogan ("Do the best engineering work of your life alongside senior peers.").
   - **Gradient Separator Bar**: Multi-color gradient divider (`#ef4444` → `#ec4899` → `#a855f7`).
@@ -291,11 +291,11 @@ graph TD
 
 ### 3.10 Contact & Confidential Briefing Page (`/contact`)
 - **File**: `app/contact/page.js`
-- **Theme**: Executive Deep Black Hero → TechSensi Logo Gradient Bar → Warm Beige Form Section.
+- **Theme**: Executive Deep Black Hero → VRTANS Logo Gradient Bar → Warm Beige Form Section.
 - **Key Sections**:
   - **Hero Header**: Confidential advisory dialogue slogan, subhead, and 3 key guarantees (24-Hour Partner SLA, Strict NDA Compliance, Zero Junior Pass-Throughs).
   - **Gradient Separator Bar**: Multi-color gradient divider (`#ef4444` → `#ec4899` → `#a855f7`).
-  - **Left Sidebar**: Clear typography for direct partner email (`partners@SensiTech.tech`), media inquiries (`press@SensiTech.tech`), 6 global practice locations list, and immediate escalation hotline (`+1 (212) 555-0117`).
+  - **Left Sidebar**: Clear typography for direct partner email (`partners@VRTANS.tech`), media inquiries (`press@VRTANS.tech`), 6 global practice locations list, and immediate escalation hotline (`+1 (212) 555-0117`).
   - **Right Form Card**: Elevated white form with custom dropdown select for transformation capabilities, text fields, text area, and submit handler with sonner toast notifications.
 
 ---

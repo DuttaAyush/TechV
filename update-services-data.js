@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const services = [
   {
     slug: 'web-dev',
@@ -269,7 +271,7 @@ const services = [
     quote: '"Providing objective, uncompromising technical analysis to inform critical infrastructure, security, and capital investment decisions."',
     overview: [
       'Our advisory services deliver entirely objective evaluations of existing enterprise technology environments. We meticulously analyze overall architecture, codebase quality, deployment pipelines, and security postures to identify hidden operational risks and recommend structural, pragmatic improvements.',
-      'For organizations undergoing mergers or acquisitions, we provide rapid, deep-dive technical due diligence. We assess the target companyâ€™s technology debt, scalability limits, and compliance gaps, translating complex technical realities into clear financial and operational risks for the board.',
+      'For organizations undergoing mergers or acquisitions, we provide rapid, deep-dive technical due diligence. We assess the target company’s technology debt, scalability limits, and compliance gaps, translating complex technical realities into clear financial and operational risks for the board.',
       'We also assist CIOs and CTOs in formulating long-term IT strategies. By mapping out multi-year modernization roadmaps, we help organizations transition from legacy on-premise systems to resilient cloud infrastructures while ensuring continuous business operations and strict budget adherence.'
     ],
     capabilities: [
@@ -356,7 +358,7 @@ const services = [
     overview: [
       'Our data practice builds the foundational infrastructure required for advanced analytics and applied machine learning. We construct secure, scalable data pipelines (ETL/ELT) that ingest massive volumes of information from diverse sources, transforming and loading it into highly optimized data warehouses.',
       'We recognize that AI initiatives fail without pristine data. Therefore, we implement rigorous data governance, master data management, and strict validation rules. Once the data foundation is solid, we implement vector search capabilities and Retrieval-Augmented Generation (RAG) architectures to unlock the value of unstructured enterprise data.',
-      'Our machine learning integrations are highly pragmatic. We avoid experimental AI in favor of deploying proven, specialized models to address specific, constrained business problemsâ€”such as predictive maintenance, fraud detection, or dynamic pricingâ€”ensuring tangible return on investment and strict operational safety.'
+      'Our machine learning integrations are highly pragmatic. We avoid experimental AI in favor of deploying proven, specialized models to address specific, constrained business problems—such as predictive maintenance, fraud detection, or dynamic pricing—ensuring tangible return on investment and strict operational safety.'
     ],
     capabilities: [
       'Data Pipeline Engineering (ETL/ELT)',
