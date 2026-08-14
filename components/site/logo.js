@@ -1,9 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['700', '800'],
+  display: 'swap',
+});
 
 export default function Logo({ className = '', size = 'md' }) {
-  const height = size === 'sm' ? 18 : size === 'lg' ? 28 : 22;
+  const textSize = size === 'sm' ? 'text-xl' : size === 'lg' ? 'text-4xl' : 'text-3xl';
+  const tagSize = size === 'sm' ? 'text-[10px]' : size === 'lg' ? 'text-[15px]' : 'text-[13px]';
 
   return (
     <Link
@@ -11,46 +19,16 @@ export default function Logo({ className = '', size = 'md' }) {
       aria-label="VRTANS"
       className={`group inline-flex items-center gap-1.5 ${className}`}
     >
-      <svg
-        width={height * 3.1}
-        height={height}
-        viewBox="0 0 155 50"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="transition-opacity group-hover:opacity-90"
-        aria-hidden="true"
-      >
-        <defs>
-          <linearGradient
-            id="VRTANSLogoGrad"
-            x1="0"
-            y1="0"
-            x2="220"
-            y2="0"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0" stopColor="#ef4444" />
-            <stop offset="0.5" stopColor="#ec4899" />
-            <stop offset="1" stopColor="#a855f7" />
-          </linearGradient>
-        </defs>
-
-        <text
-          x="0"
-          y="38"
-          fontFamily="'Inter', system-ui, sans-serif"
-          fontWeight="700"
-          fontSize="42"
-          letterSpacing="-1.5"
-          fill="url(#VRTANSLogoGrad)"
+      <div className="flex items-baseline gap-2 transition-opacity group-hover:opacity-90">
+        <span
+          className={`${montserrat.className} ${textSize} font-extrabold tracking-[-0.03em] bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] via-[#FFF8DC] to-[#AA771C] drop-shadow-sm`}
         >
           VRTANS
-        </text>
-      </svg>
-
-      <span className="hidden sm:inline text-[13px] font-normal tracking-tight text-muted-foreground">
-        Technologies
-      </span>
+        </span>
+        <span className={`hidden sm:inline ${tagSize} font-normal tracking-tight text-muted-foreground`}>
+          Technologies
+        </span>
+      </div>
     </Link>
   );
 }
