@@ -11,7 +11,7 @@ const testimonials = [
     name: 'Dr. Marcus Vance',
     role: 'Chief Technology Officer',
     company: 'Apex Capital Markets',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=srgb&fm=jpg&q=85',
+    avatar: '/images/testimonials/avatar-1.jpg',
     metric: '€1.9B Saved',
     metricDesc: 'annual run-cost',
     quote:
@@ -24,7 +24,7 @@ const testimonials = [
     name: 'Elena Rostova',
     role: 'SVP Infrastructure & Security',
     company: 'Horizon Health Systems',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=srgb&fm=jpg&q=85',
+    avatar: '/images/testimonials/avatar-2.jpg',
     metric: '11.4M Records',
     metricDesc: 'patient fabric unified',
     quote:
@@ -37,7 +37,7 @@ const testimonials = [
     name: 'Julian Sterling',
     role: 'Chief Information Officer',
     company: 'Aegis Defense & Aerospace',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&q=85',
+    avatar: '/images/testimonials/avatar-3.jpg',
     metric: '38% Acceleration',
     metricDesc: 'claims resolution throughput',
     quote:
@@ -50,7 +50,7 @@ const testimonials = [
     name: 'Sarah Lin',
     role: 'Global VP of Grid Tech',
     company: 'Vanguard Power & Energy',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&q=85',
+    avatar: '/images/testimonials/avatar-4.jpg',
     metric: '99.999% SLA',
     metricDesc: 'zero-downtime migration',
     quote:
@@ -63,7 +63,7 @@ const testimonials = [
     name: 'Arthur Pendelton',
     role: 'Managing Director & CIO',
     company: 'Sovereign Wealth Partners',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=srgb&fm=jpg&q=85',
+    avatar: '/images/testimonials/avatar-5.jpg',
     metric: '4.2x Throughput',
     metricDesc: 'real-time trade settlement',
     quote:
@@ -76,7 +76,7 @@ const testimonials = [
     name: 'Claire DeWitt',
     role: 'VP Cloud Architecture',
     company: 'OmniGlobal Supply Chain',
-    avatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=srgb&fm=jpg&q=85',
+    avatar: '/images/testimonials/avatar-6.jpg',
     metric: '62% Latency Drop',
     metricDesc: 'edge telemetry processing',
     quote:

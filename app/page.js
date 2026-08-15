@@ -36,7 +36,7 @@ import RotatingTestimonials from '@/components/site/rotating-testimonials';
 import { clientConfig } from '@/lib/config';
 
 const HERO_IMG =
-  'https://images.unsplash.com/photo-1615225164633-69f53b1dfd74?crop=entropy&cs=srgb&fm=jpg&q=85';
+  '/images/landing-page/landing-1.jpg';
 
 const services = [
   {
@@ -47,7 +47,7 @@ const services = [
     tags: ['Next.js & React', 'High-Perf Frontend', 'Jamstack'],
     tagColor: 'text-[#92400e] bg-[#fffbeb] border-[#fde68a]',
     href: '/what-we-do/web-dev',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
+    image: '/images/landing-page/landing-2.jpg',
   },
   {
     icon: Smartphone,
@@ -57,7 +57,7 @@ const services = [
     tags: ['iOS & Android Native', 'PWAs & Flutter', 'Mobile APIs'],
     tagColor: 'text-[#047857] bg-[#ecfdf5] border-[#a7f3d0]',
     href: '/what-we-do/app-dev',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
+    image: '/images/landing-page/landing-3.jpg',
   },
   {
     icon: Code,
@@ -67,7 +67,7 @@ const services = [
     tags: ['Enterprise Code', 'Microservices APIs', 'Legacy Refactoring'],
     tagColor: 'text-[#1e40af] bg-[#eff6ff] border-[#bfdbfe]',
     href: '/what-we-do/software-dev',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
+    image: '/images/landing-page/landing-4.jpg',
   },
   {
     icon: TrendingUp,
@@ -77,7 +77,7 @@ const services = [
     tags: ['Technical SEO', 'Performance PPC', 'Conversion Funnels'],
     tagColor: 'text-[#92400e] bg-[#fffbeb] border-[#fde68a]',
     href: '/what-we-do/digital-marketing',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
+    image: '/images/landing-page/landing-5.jpg',
   },
   {
     icon: Users,
@@ -87,7 +87,7 @@ const services = [
     tags: ['Salesforce & HubSpot', 'Automated Lead Routing', 'Customer 360°'],
     tagColor: 'text-[#047857] bg-[#ecfdf5] border-[#a7f3d0]',
     href: '/what-we-do/crm-dev',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
+    image: '/images/landing-page/landing-6.jpg',
   },
   {
     icon: Briefcase,
@@ -97,7 +97,7 @@ const services = [
     tags: ['SAP & Oracle ERP', 'Supply Chain Automation', 'Financial Workflows'],
     tagColor: 'text-[#1e40af] bg-[#eff6ff] border-[#bfdbfe]',
     href: '/what-we-do/erp-sol',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
+    image: '/images/landing-page/landing-7.jpg',
   },
   {
     icon: MonitorCheck,
@@ -107,7 +107,7 @@ const services = [
     tags: ['CIO Advisory', 'Infrastructure Audit', 'DevOps Governance'],
     tagColor: 'text-[#92400e] bg-[#fffbeb] border-[#fde68a]',
     href: '/what-we-do/it-consulting',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
+    image: '/images/landing-page/landing-8.jpg',
   },
   {
     icon: LineChart,
@@ -117,7 +117,7 @@ const services = [
     tags: ['Operating Model TOM', 'Process Automation', 'Digital Strategy'],
     tagColor: 'text-[#047857] bg-[#ecfdf5] border-[#a7f3d0]',
     href: '/what-we-do/business-consulting',
-    image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
+    image: '/images/landing-page/landing-9.jpg',
   },
   {
     icon: Cpu,
@@ -127,7 +127,7 @@ const services = [
     tags: ['LLMs & Sovereign RAG', 'Autonomous Agents', 'AI Governance'],
     tagColor: 'text-[#1e40af] bg-[#eff6ff] border-[#bfdbfe]',
     href: '/what-we-do/ai-consulting',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
+    image: '/images/landing-page/landing-10.jpg',
   },
 ];
 
@@ -167,7 +167,7 @@ const work = [
 const industriesData = [
   {
     title: 'BFSI & Capital Markets',
-    image: 'https://images.unsplash.com/photo-1561233835-f937539b95b9?crop=entropy&cs=srgb&fm=jpg&q=85',
+    image: '/images/landing-page/landing-11.jpg',
     href: '/industries/bfsi',
     label: 'Financial Infrastructure',
     description: 'Core banking strangler patterns, real-time ledger orchestration, and instant payments across global jurisdictions.',
@@ -175,7 +175,7 @@ const industriesData = [
   },
   {
     title: 'AI Solutions & Agents',
-    image: 'https://images.unsplash.com/photo-1615225164633-69f53b1dfd74?crop=entropy&cs=srgb&fm=jpg&q=85',
+    image: '/images/landing-page/landing-1.jpg',
     href: '/industries/ai-solutions',
     label: 'Enterprise AI',
     description: 'Isolated RAG fabrics, custom LLM fine-tuning, autonomous AI agents, and rigorous enterprise AI safety guardrails.',
@@ -183,7 +183,7 @@ const industriesData = [
   },
   {
     title: 'Logistics & Supply Chain',
-    image: 'https://images.unsplash.com/photo-1580106815433-a5b1d1d53d85?crop=entropy&cs=srgb&fm=jpg&q=85',
+    image: '/images/landing-page/landing-12.jpg',
     href: '/industries/logistics-supply-chain',
     label: 'Supply Chain Ops',
     description: 'IoT telemetry, real-time predictive inventory, and autonomous route dispatch for global logistics networks.',
@@ -191,7 +191,7 @@ const industriesData = [
   },
   {
     title: 'Retail & Commerce',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=srgb&fm=jpg&q=85',
+    image: '/images/landing-page/landing-13.jpg',
     href: '/industries/retail-commerce',
     label: 'Omnichannel Retail',
     description: 'Unified inventory orchestration, composable high-performance storefronts, and digital transaction processing.',
@@ -199,7 +199,7 @@ const industriesData = [
   },
   {
     title: 'Healthcare & Life Sciences',
-    image: 'https://images.unsplash.com/photo-1708651949057-34781b3cbdcd?crop=entropy&cs=srgb&fm=jpg&q=85',
+    image: '/images/landing-page/landing-14.jpg',
     href: '/industries/healthcare-life-sciences',
     label: 'Clinical Fabrics',
     description: 'FHIR data interoperability, secure patient data fabrics, and HIPAA-compliant clinical predictive AI compute.',
@@ -207,7 +207,7 @@ const industriesData = [
   },
   {
     title: 'Cloud & Infrastructure',
-    image: 'https://images.unsplash.com/photo-1601785491008-d1153dfadd57?crop=entropy&cs=srgb&fm=jpg&q=85',
+    image: '/images/landing-page/landing-15.jpg',
     href: '/industries/cloud-infrastructure',
     label: 'Platform Engineering',
     description: 'Sovereign landing zones, 5G edge clusters, multi-cloud FinOps governance, and automated Kubernetes control planes.',
