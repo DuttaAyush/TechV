@@ -16,4 +16,12 @@ async function getOrdersByUser(email) {
   return db.collection('orders').find({ userEmail: email.toLowerCase() }).toArray();
 }
 
-module.exports = { createOrder, getOrdersByUser };
+async function updateOrdersEmail(oldEmail, newEmail) {
+  const { db } = await connectToDatabase();
+  return db.collection('orders').updateMany(
+    { userEmail: oldEmail.toLowerCase() },
+    { $set: { userEmail: newEmail.toLowerCase() } }
+  );
+}
+
+module.exports = { createOrder, getOrdersByUser, updateOrdersEmail };

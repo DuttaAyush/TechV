@@ -12,6 +12,7 @@ import { toast } from 'sonner';
 import Logo from './logo';
 import RenderIcon from './icon-map';
 import { useCart } from '@/lib/cart-context';
+import { useAuth } from '@/lib/auth-context';
 import { clientConfig } from '@/lib/config';
 import LoginModal from './login-modal';
 
@@ -133,15 +134,8 @@ export default function Nav() {
   const pathname = usePathname();
   const navRef = useRef(null);
   const { totalItems, setIsCartOpen } = useCart();
+  const { user, logout } = useAuth();
   const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem('user');
-      if (stored) setUser(JSON.parse(stored));
-    } catch(e) {}
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -156,11 +150,7 @@ export default function Nav() {
     setMobileOpen(false);
   }, [pathname]);
 
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    setUser(null);
-    toast.success('Successfully logged out.');
-  };
+
 
   const activeItem = NAV.find((n) => n.label === active);
 
@@ -243,16 +233,26 @@ export default function Nav() {
             </button>
 
             <div className="flex items-center gap-1">
-              <button
-                onClick={() => user ? null : setIsLoginOpen(true)}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md border border-[#2b4c80] text-[13.5px] font-bold text-white hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#0c1f3d] transition-all"
-              >
-                <User className="h-4 w-4 text-[#D4AF37]" />
-                <span>{user ? `Hey, ${user.name.split(' ')[0]}` : 'Login'}</span>
-              </button>
+              {!user ? (
+                <button
+                  onClick={() => setIsLoginOpen(true)}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md border border-[#2b4c80] text-[13.5px] font-bold text-white hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#0c1f3d] transition-all"
+                >
+                  <User className="h-4 w-4 text-[#D4AF37]" />
+                  <span>Login</span>
+                </button>
+              ) : (
+                <Link
+                  href="/dashboard"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md border border-[#2b4c80] text-[13.5px] font-bold text-white hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#0c1f3d] transition-all"
+                >
+                  <User className="h-4 w-4 text-[#D4AF37]" />
+                  <span>Hey, {user.name.split(' ')[0]}</span>
+                </Link>
+              )}
               {user && (
                 <button
-                  onClick={handleLogout}
+                  onClick={logout}
                   className="p-1.5 text-zinc-300 hover:text-red-400 hover:bg-[#0c1f3d] rounded-md transition-all ml-1"
                   title="Logout"
                 >
@@ -464,20 +464,31 @@ export default function Nav() {
                     </Link>
 
                     <div className="flex items-center gap-1.5">
-                      <button
-                        onClick={() => {
-                          setMobileOpen(false);
-                          if (!user) setIsLoginOpen(true);
-                        }}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#2b4c80] text-sm font-bold text-[#D4AF37]"
-                      >
-                        <User className="h-4 w-4" />
-                        {user ? `Hey, ${user.name.split(' ')[0]}` : 'Login'}
-                      </button>
+                      {!user ? (
+                        <button
+                          onClick={() => {
+                            setMobileOpen(false);
+                            setIsLoginOpen(true);
+                          }}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#2b4c80] text-sm font-bold text-[#D4AF37]"
+                        >
+                          <User className="h-4 w-4" />
+                          Login
+                        </button>
+                      ) : (
+                        <Link
+                          href="/dashboard"
+                          onClick={() => setMobileOpen(false)}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#2b4c80] text-sm font-bold text-[#D4AF37]"
+                        >
+                          <User className="h-4 w-4" />
+                          Hey, {user.name.split(' ')[0]}
+                        </Link>
+                      )}
                       {user && (
                         <button
                           onClick={() => {
-                            handleLogout();
+                            logout();
                             setMobileOpen(false);
                           }}
                           className="p-1.5 text-zinc-400 hover:text-red-400 border border-transparent rounded"
@@ -506,7 +517,7 @@ export default function Nav() {
         )}
       </AnimatePresence>
       </header>
-      <LoginModal isOpen={isLoginOpen} setIsOpen={setIsLoginOpen} onLogin={setUser} />
+      <LoginModal isOpen={isLoginOpen} setIsOpen={setIsLoginOpen} />
     </>
   );
 }
