@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { useAuth } from '@/lib/auth-context';
 import { useRouter } from 'next/navigation';
-import { User, LogOut, Package, Settings, Loader2, Download, Eye, EyeOff } from 'lucide-react';
+import { User, LogOut, Package, Settings, Loader2, Download, Eye, EyeOff, ChevronDown, ChevronUp } from 'lucide-react';
 import { toast } from 'sonner';
 import Nav from '@/components/site/nav';
 
@@ -15,6 +15,7 @@ export default function DashboardPage() {
   const [profile, setProfile] = useState(null);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [expandedOrder, setExpandedOrder] = useState(null);
 
   // Form states
   const [name, setName] = useState('');
@@ -207,21 +208,64 @@ export default function DashboardPage() {
                         </thead>
                         <tbody className="text-[14px] text-[#5c5449]">
                           {orders.map((order) => (
-                            <tr key={order.orderId} className="border-b border-[#f0e7db] hover:bg-[#faf7f2] transition-colors">
-                              <td className="py-4 font-semibold text-[#1c1a18]">{order.orderId}</td>
-                              <td className="py-4">{new Date(order.createdAt).toLocaleDateString()}</td>
-                              <td className="py-4">
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#ecfdf5] text-[#059669] border border-[#a7f3d0]">
-                                  {order.status}
-                                </span>
-                              </td>
-                              <td className="py-4 text-right font-semibold text-[#1c1a18]">₹{order.totalPrice.toLocaleString()}</td>
-                              <td className="py-4 text-right">
-                                <button className="text-[#8c6b12] hover:text-[#1c1a18] transition-colors" title="Download Receipt">
-                                  <Download className="h-4 w-4 inline-block" />
-                                </button>
-                              </td>
-                            </tr>
+                            <Fragment key={order.orderId}>
+                              <tr 
+                                onClick={() => setExpandedOrder(expandedOrder === order.orderId ? null : order.orderId)}
+                                className={`border-b border-[#f0e7db] hover:bg-[#faf7f2] transition-colors cursor-pointer ${expandedOrder === order.orderId ? 'bg-[#faf7f2]' : ''}`}
+                              >
+                                <td className="py-4 font-semibold text-[#1c1a18]">
+                                  <div className="flex items-center gap-2">
+                                    {expandedOrder === order.orderId ? (
+                                      <ChevronUp className="h-4 w-4 text-[#8c6b12]" />
+                                    ) : (
+                                      <ChevronDown className="h-4 w-4 text-[#a0978b]" />
+                                    )}
+                                    {order.orderId}
+                                  </div>
+                                </td>
+                                <td className="py-4">{new Date(order.createdAt).toLocaleDateString()}</td>
+                                <td className="py-4">
+                                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#ecfdf5] text-[#059669] border border-[#a7f3d0]">
+                                    {order.status}
+                                  </span>
+                                </td>
+                                <td className="py-4 text-right font-semibold text-[#1c1a18]">₹{order.totalPrice.toLocaleString()}</td>
+                                <td className="py-4 text-right">
+                                  <button onClick={(e) => e.stopPropagation()} className="text-[#8c6b12] hover:text-[#1c1a18] transition-colors" title="Download Receipt">
+                                    <Download className="h-4 w-4 inline-block" />
+                                  </button>
+                                </td>
+                              </tr>
+                              {expandedOrder === order.orderId && (
+                                <tr className="bg-[#fdfcfb] border-b border-[#f0e7db]">
+                                  <td colSpan="5" className="p-0">
+                                    <div className="p-6 text-[13.5px]">
+                                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                          <h4 className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-[#71675b] mb-2">Transaction Details</h4>
+                                          <p className="mb-1"><span className="font-semibold text-[#1c1a18]">Transaction ID:</span> {order.transactionId || `TXN-${order.orderId.replace('ORD-', '')}`}</p>
+                                          <p className="mb-1"><span className="font-semibold text-[#1c1a18]">Date of Purchase:</span> {new Date(order.createdAt).toLocaleString()}</p>
+                                        </div>
+                                        <div>
+                                          <h4 className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-[#71675b] mb-2">Items Purchased</h4>
+                                          <ul className="list-disc list-inside space-y-1">
+                                            {order.items?.map((item, idx) => (
+                                              <li key={idx}><span className="font-semibold text-[#1c1a18]">{item.title}</span> - ₹{item.price.toLocaleString()}</li>
+                                            )) || <li>Standard Consultation</li>}
+                                          </ul>
+                                        </div>
+                                        <div className="md:col-span-2">
+                                          <h4 className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-[#71675b] mb-2">Notes & Descriptions</h4>
+                                          <div className="bg-white border border-[#e5dccf] p-4 rounded-md text-[#5c5449] italic">
+                                            {order.notes || order.message || "No additional notes or scope descriptions were provided for this order."}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              )}
+                            </Fragment>
                           ))}
                         </tbody>
                       </table>
