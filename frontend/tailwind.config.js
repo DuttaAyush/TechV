@@ -3,10 +3,10 @@
 module.exports = {
   darkMode: ['class'],
   content: [
-    './app/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './pages/**/*.{js,jsx}',
-    './reference_ui/**/*.{js,jsx,css}',
+    './frontend/app/**/*.{js,jsx}',
+    './frontend/components/**/*.{js,jsx}',
+    './frontend/pages/**/*.{js,jsx}',
+    './frontend/reference_ui/**/*.{js,jsx,css}',
   ],
   theme: {
     extend: {
