@@ -1,6 +1,11 @@
+const path = require('path');
+const dotenv = require('dotenv');
+const envConfig = dotenv.config({ path: path.join(__dirname, '../.env.local') }).parsed || {};
+
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  env: envConfig,
   output: 'standalone',
 
   images: {
