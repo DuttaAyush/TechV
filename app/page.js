@@ -47,6 +47,7 @@ const services = [
     tags: ['Next.js & React', 'High-Perf Frontend', 'Jamstack'],
     tagColor: 'text-[#92400e] bg-[#fffbeb] border-[#fde68a]',
     href: '/what-we-do/web-dev',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
   },
   {
     icon: Smartphone,
@@ -56,6 +57,7 @@ const services = [
     tags: ['iOS & Android Native', 'PWAs & Flutter', 'Mobile APIs'],
     tagColor: 'text-[#047857] bg-[#ecfdf5] border-[#a7f3d0]',
     href: '/what-we-do/app-dev',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
   },
   {
     icon: Code,
@@ -65,6 +67,7 @@ const services = [
     tags: ['Enterprise Code', 'Microservices APIs', 'Legacy Refactoring'],
     tagColor: 'text-[#1e40af] bg-[#eff6ff] border-[#bfdbfe]',
     href: '/what-we-do/software-dev',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
   },
   {
     icon: TrendingUp,
@@ -74,6 +77,7 @@ const services = [
     tags: ['Technical SEO', 'Performance PPC', 'Conversion Funnels'],
     tagColor: 'text-[#92400e] bg-[#fffbeb] border-[#fde68a]',
     href: '/what-we-do/digital-marketing',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
   },
   {
     icon: Users,
@@ -83,6 +87,7 @@ const services = [
     tags: ['Salesforce & HubSpot', 'Automated Lead Routing', 'Customer 360°'],
     tagColor: 'text-[#047857] bg-[#ecfdf5] border-[#a7f3d0]',
     href: '/what-we-do/crm-dev',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
   },
   {
     icon: Briefcase,
@@ -92,6 +97,7 @@ const services = [
     tags: ['SAP & Oracle ERP', 'Supply Chain Automation', 'Financial Workflows'],
     tagColor: 'text-[#1e40af] bg-[#eff6ff] border-[#bfdbfe]',
     href: '/what-we-do/erp-sol',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
   },
   {
     icon: MonitorCheck,
@@ -101,6 +107,7 @@ const services = [
     tags: ['CIO Advisory', 'Infrastructure Audit', 'DevOps Governance'],
     tagColor: 'text-[#92400e] bg-[#fffbeb] border-[#fde68a]',
     href: '/what-we-do/it-consulting',
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
   },
   {
     icon: LineChart,
@@ -110,6 +117,7 @@ const services = [
     tags: ['Operating Model TOM', 'Process Automation', 'Digital Strategy'],
     tagColor: 'text-[#047857] bg-[#ecfdf5] border-[#a7f3d0]',
     href: '/what-we-do/business-consulting',
+    image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
   },
   {
     icon: Cpu,
@@ -119,6 +127,7 @@ const services = [
     tags: ['LLMs & Sovereign RAG', 'Autonomous Agents', 'AI Governance'],
     tagColor: 'text-[#1e40af] bg-[#eff6ff] border-[#bfdbfe]',
     href: '/what-we-do/ai-consulting',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=srgb&fm=jpg&q=85&w=800',
   },
 ];
 
@@ -384,7 +393,7 @@ export default function HomePage() {
               <motion.div
                 animate={{ y: [-12, 12, -12] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-[-15%] w-[130%] h-[130%]"
+                className="absolute inset-[-8%] w-[116%] h-[116%]"
               >
                 {/* Glowing background effect behind the image */}
                 <div className="absolute inset-0 bg-[#D4AF37]/15 blur-[70px] rounded-full scale-[0.8] animate-pulse" />
@@ -471,9 +480,19 @@ export default function HomePage() {
               <Link
                 key={s.title}
                 href={s.href}
-                className="hover-VRTANS-border group flex flex-col justify-between rounded-2xl border border-[#e8dfcf] bg-white p-4 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:shadow-xl hover:border-transparent hover:-translate-y-1"
+                className="hover-VRTANS-border group relative flex flex-col justify-between rounded-2xl border border-[#e8dfcf] bg-white p-4 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:shadow-xl hover:border-transparent hover:-translate-y-1 overflow-hidden min-h-[280px]"
               >
-                <div>
+                {/* Background Image & Overlay */}
+                <Image
+                  src={s.image}
+                  alt={s.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-white/85 group-hover:bg-white/75 transition-colors duration-300" />
+                
+                <div className="relative z-10 flex-1 flex flex-col">
                   <div className="flex items-center gap-2.5 sm:gap-3.5 mb-3 sm:mb-4 min-w-0">
                     <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-[#071326] text-[#D4AF37] font-bold group-hover:bg-[#D4AF37] group-hover:text-black transition-colors shadow-sm">
                       <s.icon className="h-4.5 w-4.5 sm:h-5.5 sm:w-5.5" />
@@ -482,12 +501,12 @@ export default function HomePage() {
                       {s.title}
                     </h3>
                   </div>
-                  <p className="text-[12px] sm:text-[14px] text-[#5c564e] font-normal leading-relaxed mb-4 sm:mb-6 line-clamp-3 sm:line-clamp-none mt-2">
+                  <p className="text-[13px] sm:text-[15px] text-[#1c1a18] font-semibold leading-relaxed mb-4 sm:mb-6 line-clamp-3 sm:line-clamp-none mt-2">
                     {s.body}
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-1 sm:gap-1.5 pt-3 sm:pt-4 border-t border-[#f2ece1]">
+                <div className="relative z-10 flex flex-wrap gap-1 sm:gap-1.5 pt-3 sm:pt-4 border-t border-[#1c1a18]/15 mt-auto">
                   {s.tags.slice(0, 2).map((t) => (
                     <span key={t} className={`text-[9.5px] sm:text-[11px] font-semibold tracking-wide border rounded-md px-1.5 sm:px-2.5 py-0.5 ${s.tagColor}`}>
                       {t}

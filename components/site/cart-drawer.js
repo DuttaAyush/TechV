@@ -97,7 +97,7 @@ export default function CartDrawer() {
                             {item.title}
                           </h4>
                           <span className="text-[11px] font-mono text-[#D4AF37] mt-0.5 block">
-                            ${item.price.toLocaleString()} / unit
+                            ₹{item.price.toLocaleString()} / unit
                           </span>
                         </div>
                       </div>
@@ -134,7 +134,7 @@ export default function CartDrawer() {
                       <div className="text-right">
                         <span className="text-[10px] text-white/50 block uppercase tracking-wider">Subtotal</span>
                         <span className="text-sm font-bold text-white">
-                          ${(item.price * item.quantity).toLocaleString()}
+                          ₹{(item.price * item.quantity).toLocaleString()}
                         </span>
                       </div>
                     </div>
@@ -149,7 +149,7 @@ export default function CartDrawer() {
                 <div className="space-y-2">
                   <div className="flex justify-between text-xs text-white/70">
                     <span>Selected Services ({totalItems})</span>
-                    <span>${totalPrice.toLocaleString()}</span>
+                    <span>₹{totalPrice.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between text-xs text-white/70">
                     <span>Consultation & Scoping</span>
@@ -157,7 +157,7 @@ export default function CartDrawer() {
                   </div>
                   <div className="flex justify-between text-sm font-bold text-white pt-2 border-t border-[#1c3560]">
                     <span>Total Investment</span>
-                    <span className="text-[#D4AF37] font-mono text-base">${totalPrice.toLocaleString()} USD</span>
+                    <span className="text-[#D4AF37] font-mono text-base">₹{totalPrice.toLocaleString()} INR</span>
                   </div>
                 </div>
 
@@ -170,11 +170,11 @@ export default function CartDrawer() {
                   </button>
 
                   <Link
-                    href="/contact"
+                    href="/checkout"
                     onClick={() => setIsCartOpen(false)}
                     className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#D4AF37] via-[#f3e092] to-[#D4AF37] px-4 py-3 text-xs font-extrabold uppercase tracking-wider text-black shadow-lg hover:brightness-110 transition-all text-center"
                   >
-                    <span>Request Proposal</span>
+                    <span>Checkout</span>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>

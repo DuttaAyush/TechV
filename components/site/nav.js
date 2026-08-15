@@ -6,8 +6,9 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  Menu, X, ArrowUpRight, ChevronDown, ChevronRight, Download, ShoppingCart, User
+  Menu, X, ArrowUpRight, ChevronDown, ChevronRight, Download, ShoppingCart, User, LogOut
 } from 'lucide-react';
+import { toast } from 'sonner';
 import Logo from './logo';
 import RenderIcon from './icon-map';
 import { useCart } from '@/lib/cart-context';
@@ -155,11 +156,18 @@ export default function Nav() {
     setMobileOpen(false);
   }, [pathname]);
 
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+    toast.success('Successfully logged out.');
+  };
+
   const activeItem = NAV.find((n) => n.label === active);
 
   return (
-    <header
-      ref={navRef}
+    <>
+      <header
+        ref={navRef}
       onMouseLeave={() => setActive(null)}
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
@@ -214,8 +222,12 @@ export default function Nav() {
             Careers
           </Link>
 
-          {/* Cart Icon & Login Button beside Careers */}
-          <div className="flex items-center gap-2.5 ml-2 border-l border-[#1b3563] pl-3">
+
+        </nav>
+
+        {/* Action CTAs: User Controls & Contact Us */}
+        <div className="hidden lg:flex items-center gap-4">
+          <div className="flex items-center gap-2.5 border-r border-[#1b3563] pr-4">
             <button
               aria-label="Cart"
               onClick={() => setIsCartOpen(true)}
@@ -230,18 +242,25 @@ export default function Nav() {
               )}
             </button>
 
-            <button
-              onClick={() => user ? null : setIsLoginOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md border border-[#2b4c80] text-[13.5px] font-bold text-white hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#0c1f3d] transition-all"
-            >
-              <User className="h-4 w-4 text-[#D4AF37]" />
-              <span>{user ? `Hello, ${user.name}` : 'Login'}</span>
-            </button>
+            <div className="flex items-center gap-1">
+              <button
+                onClick={() => user ? null : setIsLoginOpen(true)}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md border border-[#2b4c80] text-[13.5px] font-bold text-white hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#0c1f3d] transition-all"
+              >
+                <User className="h-4 w-4 text-[#D4AF37]" />
+                <span>{user ? `Hey, ${user.name.split(' ')[0]}` : 'Login'}</span>
+              </button>
+              {user && (
+                <button
+                  onClick={handleLogout}
+                  className="p-1.5 text-zinc-300 hover:text-red-400 hover:bg-[#0c1f3d] rounded-md transition-all ml-1"
+                  title="Logout"
+                >
+                  <LogOut className="h-4.5 w-4.5" />
+                </button>
+              )}
+            </div>
           </div>
-        </nav>
-
-        {/* Action CTAs: Contact Us */}
-        <div className="hidden lg:flex items-center gap-4">
           <a
             href="#contact-form"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-[#D4AF37] via-[#C5A059] to-[#B8860B] text-black hover:opacity-95 text-[13.5px] font-extrabold px-5 py-2.5 rounded shadow transition-all duration-200 hover:shadow-lg hover:shadow-[#D4AF37]/20"
@@ -444,16 +463,30 @@ export default function Nav() {
                       Careers
                     </Link>
 
-                    <button
-                      onClick={() => {
-                        setMobileOpen(false);
-                        if (!user) setIsLoginOpen(true);
-                      }}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#2b4c80] text-sm font-bold text-[#D4AF37]"
-                    >
-                      <User className="h-4 w-4" />
-                      {user ? `Hello, ${user.name}` : 'Login'}
-                    </button>
+                    <div className="flex items-center gap-1.5">
+                      <button
+                        onClick={() => {
+                          setMobileOpen(false);
+                          if (!user) setIsLoginOpen(true);
+                        }}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-[#2b4c80] text-sm font-bold text-[#D4AF37]"
+                      >
+                        <User className="h-4 w-4" />
+                        {user ? `Hey, ${user.name.split(' ')[0]}` : 'Login'}
+                      </button>
+                      {user && (
+                        <button
+                          onClick={() => {
+                            handleLogout();
+                            setMobileOpen(false);
+                          }}
+                          className="p-1.5 text-zinc-400 hover:text-red-400 border border-transparent rounded"
+                          title="Logout"
+                        >
+                          <LogOut className="h-4.5 w-4.5" />
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -472,7 +505,8 @@ export default function Nav() {
           </>
         )}
       </AnimatePresence>
+      </header>
       <LoginModal isOpen={isLoginOpen} setIsOpen={setIsLoginOpen} onLogin={setUser} />
-    </header>
+    </>
   );
 }

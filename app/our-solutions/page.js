@@ -135,7 +135,7 @@ export default function OurSolutionsPage() {
   
                     {/* MIDDLE: Price */}
                     <div className="font-extrabold text-[#D4AF37] text-[15px] mx-2">
-                      ${s.price.toLocaleString()}
+                      ₹{s.price.toLocaleString()}
                     </div>
   
                     {/* RIGHT: Add to Cart / - 1 + */}

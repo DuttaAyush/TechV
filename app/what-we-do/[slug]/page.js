@@ -137,7 +137,7 @@ export default function ServiceSubPage({ params }) {
                 <div className="pt-5 border-t border-[#e8dfd1] flex flex-col gap-3">
                   <div className="flex items-end justify-between">
                     <span className="text-[13px] font-extrabold uppercase text-[#784813] tracking-widest">Pricing Model</span>
-                    <span className="text-3xl font-extrabold text-[#1c1a18]">${service.price.toLocaleString()}</span>
+                    <span className="text-3xl font-extrabold text-[#1c1a18]">₹{service.price.toLocaleString()}</span>
                   </div>
                   {qty === 0 ? (
                     <button

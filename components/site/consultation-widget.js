@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Calendar, Mail, PhoneCall, MessageSquare } from 'lucide-react';
+import { useCart } from '@/lib/cart-context';
 
 export default function ConsultationWidget() {
   const pathname = usePathname();
@@ -11,6 +12,11 @@ export default function ConsultationWidget() {
   const [open, setOpen] = useState(false);
   const [homeScrollReady, setHomeScrollReady] = useState(true);
   const widgetRef = useRef(null);
+  const { isCartOpen } = useCart();
+
+  useEffect(() => {
+    if (isCartOpen) setOpen(false);
+  }, [isCartOpen]);
 
   useEffect(() => {
     if (!open) return;
@@ -51,16 +57,22 @@ export default function ConsultationWidget() {
 
   if (!homeScrollReady) return null;
 
+  const shouldCollapse = isCartOpen && !open;
+
   return (
     <div
       ref={widgetRef}
-      className={`fixed right-4 bottom-6 sm:right-8 sm:bottom-8 z-50 flex flex-col items-stretch rounded-2xl overflow-hidden bg-[#1B1931] border border-[#662249]/50 shadow-2xl transition-all duration-300 ${
+      className={`fixed bottom-6 sm:bottom-8 z-50 flex flex-col items-end overflow-hidden shadow-2xl transition-all duration-300 ${
+        isCartOpen ? 'right-4 md:right-[464px]' : 'right-4 sm:right-8'
+      } ${
+        shouldCollapse ? 'rounded-full bg-transparent border-none pointer-events-none' : 'rounded-2xl bg-[#1B1931] border border-[#662249]/50 pointer-events-auto'
+      } ${
         open ? 'shadow-[#ED9E59]/30 ring-1 ring-[#ED9E59]/40' : 'hover:border-[#ED9E59]/50 hover:shadow-[#ED9E59]/20'
       }`}
     >
       {/* Expandable Shutter Menu */}
       <div
-        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out pointer-events-auto ${
           open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
         }`}
       >
@@ -92,10 +104,13 @@ export default function ConsultationWidget() {
         type="button"
         onClick={() => setOpen((val) => !val)}
         aria-expanded={open}
-        className="flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-[#ED9E59] hover:bg-[#E28945] text-black text-[14.5px] font-bold tracking-tight transition-all border-t border-black/10"
+        className={`flex items-center justify-center gap-2.5 bg-[#ED9E59] hover:bg-[#E28945] text-black text-[14.5px] font-bold tracking-tight transition-all pointer-events-auto ${
+          shouldCollapse ? 'w-14 h-14 p-0 rounded-full shadow-lg' : 'w-full px-6 py-3.5 border-t border-black/10'
+        }`}
+        title={shouldCollapse ? 'Schedule a consultation' : undefined}
       >
-        <MessageSquare className="h-4 w-4 text-black" />
-        <span>{open ? 'Close options' : 'Schedule a consultation'}</span>
+        {!shouldCollapse && <span>{open ? 'Close options' : 'Schedule a consultation'}</span>}
+        <MessageSquare className={`${shouldCollapse ? 'h-6 w-6' : 'h-4 w-4'} text-black shrink-0`} />
       </button>
     </div>
   );

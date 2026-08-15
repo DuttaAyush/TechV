@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <CartProvider>
             {children}
-            <Toaster position="bottom-right" />
+            <Toaster position="bottom-right" closeButton />
           </CartProvider>
         </ThemeProvider>
       </body>

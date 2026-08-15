@@ -25,7 +25,7 @@ export default function Logo({ className = '', size = 'md' }) {
         >
           VRTANS
         </span>
-        <span className={`hidden sm:inline ${tagSize} font-bold text-white tracking-tight text-muted-foreground`}>
+        <span className={`hidden sm:inline ${textSize} font-bold text-white tracking-tight text-muted-foreground`}>
           Technologies
         </span>
       </div>
