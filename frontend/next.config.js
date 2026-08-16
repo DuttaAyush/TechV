@@ -1,6 +1,6 @@
 const path = require('path');
 const dotenv = require('dotenv');
-const envConfig = dotenv.config({ path: path.join(__dirname, '../.env.local') }).parsed || {};
+const envConfig = dotenv.config({ path: path.join(__dirname, '.env.local') }).parsed || {};
 
 // Next.js manages NODE_ENV internally and forbids overriding it in next.config.js
 if (envConfig.NODE_ENV) {

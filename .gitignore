@@ -48,3 +48,4 @@ CLIENT_NAME_SETUP.md
 frontend/.env.local
 frontend/.next
 frontend/out
+backend/.env
