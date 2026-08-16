@@ -42,7 +42,7 @@ export default function DashboardPage() {
       if (!user) return;
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('http://localhost:5000/api/user/profile', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/user/profile`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -68,7 +68,7 @@ export default function DashboardPage() {
     setSaving(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:5000/api/user/profile', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/user/profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

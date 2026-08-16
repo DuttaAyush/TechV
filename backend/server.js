@@ -10,7 +10,12 @@ const leadRoutes = require('./routes/leadRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: '*' }));
+// Read frontend origin from .env (defaults to localhost:3001 for local development)
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || 'http://localhost:3001',
+  credentials: true,
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);

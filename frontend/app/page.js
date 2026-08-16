@@ -264,7 +264,7 @@ export default function HomePage() {
     }
     setSubmitting(true);
     try {
-      const res = await fetch('http://localhost:5000/api/leads', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/leads`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
