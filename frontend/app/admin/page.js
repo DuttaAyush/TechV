@@ -89,19 +89,19 @@ export default function AdminPage() {
   };
 
   // 3. Handlers
-  const updateLeadStatus = async (id, status) => {
+  const updateLeadField = async (id, data) => {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/admin/leads/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
-        body: JSON.stringify({ status })
+        body: JSON.stringify(data)
       });
       if (res.ok) {
-        toast.success('Status updated');
+        toast.success('Lead updated successfully');
         fetchAllData(token);
       }
     } catch (e) {
-      toast.error('Failed to update status');
+      toast.error('Failed to update lead');
     }
   };
 
@@ -230,7 +230,15 @@ export default function AdminPage() {
         {/* LEADS */}
         {activeTab === 'leads' && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <h2 className="text-2xl font-cabinet font-medium mb-6">Leads Pipeline</h2>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-cabinet font-medium">Leads Pipeline</h2>
+              <button 
+                onClick={() => window.open(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/admin/leads/export?token=${token}`, '_blank')}
+                className="bg-[#047857] hover:bg-[#036246] text-white px-4 py-2 rounded text-[12px] font-bold transition-colors"
+              >
+                Download CSV
+              </button>
+            </div>
             <div className="bg-white rounded-xl shadow-sm border border-[#e5dccf] overflow-hidden">
               <table className="w-full text-left text-[13.5px]">
                 <thead className="bg-[#fcfbfa] border-b border-[#e5dccf] text-[11px] font-extrabold uppercase tracking-widest text-[#71675b]">
@@ -238,6 +246,7 @@ export default function AdminPage() {
                     <th className="px-6 py-4">Prospect</th>
                     <th className="px-6 py-4">Company</th>
                     <th className="px-6 py-4">Interest</th>
+                    <th className="px-6 py-4">Notes</th>
                     <th className="px-6 py-4">Status</th>
                   </tr>
                 </thead>
@@ -249,11 +258,20 @@ export default function AdminPage() {
                         <div className="text-[#6b6257] text-[12px]">{lead.email}</div>
                       </td>
                       <td className="px-6 py-4 font-medium">{lead.company || '-'}</td>
-                      <td className="px-6 py-4"><span className="bg-[#f0e7db] px-2 py-0.5 rounded text-[11px] font-bold text-[#8c6b12]">{lead.interest}</span></td>
+                      <td className="px-6 py-4"><span className="bg-[#f0e7db] px-2 py-0.5 rounded text-[11px] font-bold text-[#8c6b12]">{lead.serviceOfInterest || lead.interest}</span></td>
                       <td className="px-6 py-4">
+                        <input 
+                          type="text"
+                          placeholder="Add note..."
+                          defaultValue={lead.notes || ''}
+                          onBlur={(e) => updateLeadField(lead._id, { notes: e.target.value })}
+                          className="bg-white border border-[#dad2c3] rounded px-2 py-1 text-[12px] w-full max-w-[150px] focus:outline-none focus:border-[#D4AF37]"
+                        />
+                      </td>
+                      <td className="px-6 py-4 flex items-center justify-between gap-4">
                         <select 
                           value={lead.status || 'New'} 
-                          onChange={(e) => updateLeadStatus(lead._id, e.target.value)}
+                          onChange={(e) => updateLeadField(lead._id, { status: e.target.value })}
                           className="bg-white border border-[#dad2c3] rounded px-2 py-1 text-[12px] font-bold text-[#071326] cursor-pointer focus:outline-none"
                         >
                           <option value="New">New</option>
@@ -262,6 +280,13 @@ export default function AdminPage() {
                           <option value="Reconnect">Reconnect</option>
                           <option value="Approved">Approved</option>
                         </select>
+                        <button 
+                          onClick={() => { if(window.confirm('Hide this lead from the pipeline?')) updateLeadField(lead._id, { archived: true }) }} 
+                          className="text-[#a0978b] hover:text-[#f87171] transition-colors"
+                          title="Archive Lead"
+                        >
+                          ✕
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -318,7 +343,7 @@ export default function AdminPage() {
                 <tbody className="divide-y divide-[#e5dccf]">
                   {data.orders.map(o => (
                     <tr key={o._id} className="hover:bg-[#fcfbfa] cursor-pointer" onClick={() => setSelectedOrder(o)}>
-                      <td className="px-6 py-4 font-bold text-[#1c1a18]">{o.items?.map(i => i.name || i.id).join(', ')}</td>
+                      <td className="px-6 py-4 font-bold text-[#1c1a18]">{o.items?.map(i => i.shortTitle || i.title || i.name || i.id).join(', ')}</td>
                       <td className="px-6 py-4 text-[#6b6257]">{o.userEmail}</td>
                       <td className="px-6 py-4 font-bold text-[#047857]">₹ {o.totalPrice}</td>
                       <td className="px-6 py-4 text-[#6b6257]">{new Date(o.createdAt).toLocaleDateString()}</td>
@@ -357,7 +382,7 @@ export default function AdminPage() {
                       <div className="space-y-3">
                         {selectedOrder.items?.map((item, idx) => (
                           <div key={idx} className="flex justify-between items-center bg-[#fcfbfa] p-3 rounded-lg border border-[#e5dccf]">
-                            <div className="font-bold">{item.name || item.id}</div>
+                            <div className="font-bold">{item.shortTitle || item.title || item.name || item.id}</div>
                             <div className="font-medium text-[#6b6257]">x{item.quantity || 1}</div>
                           </div>
                         ))}

@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "6a80b972180cbf29dbcb79c2",
+    "email": "ayushdutta230@gmail.com",
+    "password": "$2b$10$/oFmfjbslTgh0xRzdsVg5OmbVBvDhjZQ0ddAH6UXcQXAe8i6gRPwK",
+    "name": "AYUSH DUTTA",
+    "createdAt": "2026-08-15T19:09:38.019Z",
+    "company": ".com",
+    "phone": "09039117061"
+  },
+  {
+    "_id": "6a80c368a7b9aef22a4e66da",
+    "name": "Jane Doe",
+    "email": "director@acmecorp.com",
+    "company": "Acme Corp",
+    "password": "$2b$10$8HUXiBu.JQybcFsZY34S5eaL/N.l2AfbN4OOmxW3uOpSEj5u2xC4m",
+    "createdAt": "2026-08-15T19:52:08.983Z"
+  },
+  {
+    "_id": "6a80c368a7b9aef22a4e66db",
+    "name": "Tony Stark",
+    "email": "vp@starkindustries.com",
+    "company": "Stark Industries",
+    "password": "$2b$10$8HUXiBu.JQybcFsZY34S5eaL/N.l2AfbN4OOmxW3uOpSEj5u2xC4m",
+    "createdAt": "2026-08-15T19:52:08.983Z"
+  }
+]

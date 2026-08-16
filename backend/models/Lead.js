@@ -14,17 +14,17 @@ async function createLead(leadData) {
 
 async function getAllLeads() {
   const { db } = await connectToDatabase();
-  return await db.collection('leads').find({}).sort({ createdAt: -1 }).toArray();
+  return await db.collection('leads').find({ archived: { $ne: true } }).sort({ createdAt: -1 }).toArray();
 }
 
-async function updateLeadStatus(id, status) {
+async function updateLeadDetails(id, updates) {
   const { db } = await connectToDatabase();
   const { ObjectId } = require('mongodb');
   const result = await db.collection('leads').updateOne(
     { _id: new ObjectId(id) },
-    { $set: { status, updatedAt: new Date() } }
+    { $set: { ...updates, updatedAt: new Date() } }
   );
   return result.modifiedCount > 0;
 }
 
-module.exports = { createLead, getAllLeads, updateLeadStatus };
+module.exports = { createLead, getAllLeads, updateLeadDetails };

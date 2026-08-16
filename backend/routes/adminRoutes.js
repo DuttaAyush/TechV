@@ -3,6 +3,7 @@ const { adminAuthMiddleware } = require('../middlewares/adminMiddleware');
 const {
   loginAdmin,
   getLeads,
+  exportLeadsCSV,
   updateLead,
   getUsers,
   getOrders,
@@ -24,6 +25,7 @@ router.get('/services', getServices);
 router.use(adminAuthMiddleware);
 
 router.get('/leads', getLeads);
+router.get('/leads/export', exportLeadsCSV);
 router.put('/leads/:id', updateLead);
 
 router.get('/users', getUsers);

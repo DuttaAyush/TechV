@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "6a8183e9a2bbe0d9cce98344",
+    "firstName": "Michael",
+    "lastName": "Scott",
+    "email": "michael.scott@dundermifflin.com",
+    "company": "Dunder Mifflin",
+    "serviceOfInterest": "CRM Configuration & Extension",
+    "message": "We need to upgrade our paper sales tracking systems. Current CRM is a mess.",
+    "status": null,
+    "createdAt": "2026-08-15T05:46:49.334Z",
+    "updatedAt": "2026-08-16T11:39:56.143Z",
+    "notes": ""
+  },
+  {
+    "_id": "6a8183e9a2bbe0d9cce98345",
+    "firstName": "Sarah",
+    "lastName": "Connor",
+    "email": "s.connor@cyberdyne-resistance.org",
+    "company": "Tech Resistance",
+    "serviceOfInterest": "Data Engineering & Applied Machine Learning",
+    "message": "Looking for a secure, offline-first data infrastructure to manage decentralized communications.",
+    "status": "Approved",
+    "createdAt": "2026-08-12T22:13:29.334Z",
+    "updatedAt": "2026-08-16T11:40:00.363Z",
+    "notes": ""
+  },
+  {
+    "_id": "6a8183e9a2bbe0d9cce98346",
+    "firstName": "Bruce",
+    "lastName": "Wayne",
+    "email": "bwayne@wayneenterprises.com",
+    "company": "Wayne Enterprises",
+    "serviceOfInterest": "Technology Strategy & Architecture Assessment",
+    "message": "Need a full security audit of our logistics division infrastructure before our next board meeting.",
+    "status": "Qualified",
+    "createdAt": "2026-08-10T14:40:09.334Z"
+  },
+  {
+    "_id": "6a8183e9a2bbe0d9cce98347",
+    "firstName": "Tony",
+    "lastName": "Stark",
+    "email": "t.stark@starkindustries.com",
+    "company": "Stark Industries",
+    "serviceOfInterest": "Custom Software & Systems Engineering",
+    "message": "Integrating JARVIS with legacy enterprise systems. Need high-level middleware engineers.",
+    "status": null,
+    "createdAt": "2026-08-15T09:33:29.334Z",
+    "updatedAt": "2026-08-16T11:39:55.530Z",
+    "notes": ""
+  }
+]

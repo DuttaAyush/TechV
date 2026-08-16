@@ -1,0 +1,81 @@
+[
+  {
+    "_id": "6a8184a584abe882e3bde5d1",
+    "orderId": "ORD-1786872497179",
+    "userEmail": "client1@example.com",
+    "items": [
+      {
+        "shortTitle": "Web Development",
+        "price": 3499,
+        "quantity": 1
+      },
+      {
+        "shortTitle": "Digital Marketing",
+        "price": 2499,
+        "quantity": 2
+      }
+    ],
+    "totalPrice": 8497,
+    "status": "Completed",
+    "createdAt": "2026-08-09T10:56:37.179Z"
+  },
+  {
+    "_id": "6a8184a584abe882e3bde5d2",
+    "orderId": "ORD-1786872797179",
+    "userEmail": "client2@example.com",
+    "items": [
+      {
+        "shortTitle": "CRM Integration",
+        "price": 5999,
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 5999,
+    "status": "Processing",
+    "createdAt": "2026-08-14T02:03:17.179Z"
+  },
+  {
+    "_id": "6a8184a584abe882e3bde5d3",
+    "orderId": "ORD-1786872987179",
+    "userEmail": "client3@example.com",
+    "items": [
+      {
+        "shortTitle": "ERP Services",
+        "price": 8999,
+        "quantity": 1
+      },
+      {
+        "shortTitle": "IT Strategy",
+        "price": 4499,
+        "quantity": 1
+      },
+      {
+        "shortTitle": "Data Engineering",
+        "price": 7999,
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 21497,
+    "status": "Pending",
+    "createdAt": "2026-08-15T19:43:17.179Z"
+  },
+  {
+    "_id": "6a81a1f2d150d119f846319b",
+    "userEmail": "ayushdutta230@gmail.com",
+    "items": [
+      {
+        "slug": "web-dev",
+        "title": "Web Application & Platform Engineering",
+        "shortTitle": "Web Development",
+        "price": 3499,
+        "icon": "Globe",
+        "image": "/images/services/service-2.jpg",
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 3499,
+    "status": "success",
+    "orderId": "ORD-1786880498968",
+    "createdAt": "2026-08-16T11:41:38.968Z"
+  }
+]

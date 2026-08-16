@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { getAllLeads, updateLeadStatus } = require('../models/Lead');
+const { getAllLeads, updateLeadDetails } = require('../models/Lead');
 const { getAllUsers } = require('../models/User');
 const { getAllOrders } = require('../models/Order');
 const { getAllServices, createService, deleteService, seedDefaultServices } = require('../models/Service');
@@ -18,7 +18,24 @@ async function loginAdmin(req, res) {
   return res.status(401).json({ error: 'Invalid credentials or OTP' });
 }
 
+const { Parser } = require('json2csv');
+
 // Leads
+async function exportLeadsCSV(req, res) {
+  try {
+    const leads = await getAllLeads();
+    const fields = ['firstName', 'lastName', 'email', 'company', 'serviceOfInterest', 'status', 'notes', 'createdAt'];
+    const json2csvParser = new Parser({ fields });
+    const csv = json2csvParser.parse(leads);
+    
+    res.header('Content-Type', 'text/csv');
+    res.attachment('leads.csv');
+    return res.send(csv);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to export CSV' });
+  }
+}
+
 async function getLeads(req, res) {
   try {
     const leads = await getAllLeads();
@@ -31,10 +48,15 @@ async function getLeads(req, res) {
 async function updateLead(req, res) {
   try {
     const { id } = req.params;
-    const { status } = req.body;
-    const updated = await updateLeadStatus(id, status);
+    
+    const updates = {};
+    if (req.body.status !== undefined) updates.status = req.body.status;
+    if (req.body.notes !== undefined) updates.notes = req.body.notes;
+    if (req.body.archived !== undefined) updates.archived = req.body.archived;
+
+    const updated = await updateLeadDetails(id, updates);
     if (updated) {
-      res.json({ success: true, message: 'Status updated' });
+      res.json({ success: true, message: 'Lead updated' });
     } else {
       res.status(404).json({ error: 'Lead not found' });
     }
@@ -109,6 +131,7 @@ async function editService(req, res) {
 module.exports = {
   loginAdmin,
   getLeads,
+  exportLeadsCSV,
   updateLead,
   getUsers,
   getOrders,

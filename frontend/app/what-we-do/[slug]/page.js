@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight, CheckCircle, ShoppingCart, Minus, Plus } from 'lucide-react';
 import PageShell from '@/components/site/page-shell';
-import { getServiceBySlug } from '@/lib/services-data';
+import { getServiceBySlug, SERVICES } from '@/lib/services-data';
 import RenderIcon from '@/components/site/icon-map';
 import { useCart } from '@/lib/cart-context';
 import { toast } from 'sonner';

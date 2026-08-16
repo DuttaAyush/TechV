@@ -314,7 +314,7 @@ export default function HomePage() {
               <motion.div
                 animate={{ y: [-12, 12, -12] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-[-8%] w-[116%] h-[116%]"
+                className="absolute inset-0 w-full h-full"
               >
                 {/* Glowing background effect behind the image */}
                 <div className="absolute inset-0 bg-[#D4AF37]/15 blur-[70px] rounded-full scale-[0.8] animate-pulse" />

@@ -1,57 +1,50 @@
-# Enterprise Technology Consulting Website
+# VRTANS (TechSensi) - Full-Stack Enterprise Platform
 
-A configurable enterprise technology consulting website with dynamic client name support.
+Welcome to the **VRTANS** project repository. This is a robust, decoupled full-stack web application designed for high performance, excellent SEO, and enterprise-grade security.
 
-## Key Features
+## 🏗️ Architecture Overview
 
-- **Fully Configurable Client Name**: All client references are controlled via environment variables
-- **Modern Technology Stack**: Built with Next.js 15, React 19, and Tailwind CSS
-- **Responsive Design**: Mobile-first approach with responsive navigation
-- **Dynamic SEO**: Metadata updates automatically based on client configuration
-- **Clean Architecture**: Modular components and reusable patterns
+The platform uses a separated frontend and backend architecture:
+- **/frontend**: A Next.js 15 (App Router) client application running on port `3001`.
+- **/backend**: A custom Node.js + Express.js REST API running on port `5000`.
 
-## Client Configuration
+*Note: They are hosted in the same repository for convenience but operate independently. The root `package.json` uses `concurrently` to run both simultaneously during development.*
 
-This website is designed to be easily rebranded for different clients. All client-specific content is controlled through environment variables.
+## ✨ Core Features
 
-### Quick Setup
+* **Dynamic Service Engine**: Service listings and prices are synced in real-time from the database to the frontend.
+* **Secure Admin Dashboard**: JWT-protected command center to manage leads, view platform orders, and edit services.
+* **Data Exporting**: 1-click CSV generation for all lead pipeline data.
+* **Hardened Security**: Includes `helmet` (security headers), `express-rate-limit` (DDoS protection), and `zod` (strict input validation).
+* **Production Logging**: Winston and Morgan write automated crash and request logs to `.log` files.
+* **SEO Optimized**: Dynamically generated `sitemap.xml` and `robots.txt`.
+* **Automated Cleanup**: Background cron-style jobs that purge archived leads every 7 days.
 
-1. Copy the environment template:
+## 🚀 Getting Started (Local Development)
+
+1. Ensure you have Node.js and MongoDB installed locally.
+2. Install dependencies in all directories:
    ```bash
-   cp .env.example .env.local
+   npm install
+   cd frontend && npm install
+   cd ../backend && npm install
    ```
-
-2. Update `.env.local` with your client's information:
-   ```env
-   NEXT_PUBLIC_CLIENT_NAME="Your Client Name Technologies"
-   NEXT_PUBLIC_CLIENT_SHORT_NAME="YourClient"
-   NEXT_PUBLIC_CLIENT_URL="https://yourclient.example.com"
-   ```
-
-3. Restart the development server:
+3. Set up your `.env` files (see backend and frontend READMEs for exact variables).
+4. From the **root** folder, boot both servers simultaneously:
    ```bash
    npm run dev
    ```
 
-For detailed instructions, see [CLIENT_NAME_SETUP.md](./CLIENT_NAME_SETUP.md).
+## 🌐 Production Deployment (VPS)
 
-## Technology Stack
+This project is pre-configured for **PM2** deployment on a Linux VPS. 
+An `ecosystem.config.js` file is located at the root of the project.
 
-- **Framework:** Next.js 15 (App Router)
-- **Library:** React 19
-- **Styling:** Tailwind CSS & Custom Design System
-- **Animations:** Framer Motion & Lucide Icons
-
-## Local Development
-
-1. Install project dependencies:
+To deploy on a VPS:
 ```bash
-npm install
+npm install -g pm2
+pm2 start ecosystem.config.js
+pm2 save
+pm2 startup
 ```
-
-2. Start the local development server:
-```bash
-npm run dev
-```
-
-3. Open [http://localhost:3000](http://localhost:3000) (or the designated localhost port) in your browser to view the application.
+This will automatically launch the Next.js frontend in cluster mode (utilizing all CPU cores) and keep the Express backend alive, automatically restarting them on server reboot.
