@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -18,6 +18,23 @@ import { useCart } from '@/lib/cart-context';
 
 export default function OurSolutionsPage() {
   const { addToCart, updateQuantity, getItemQuantity } = useCart();
+  const [dbPrices, setDbPrices] = useState({});
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/admin/services`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.success && data.services) {
+          const map = {};
+          data.services.forEach(s => {
+            const slug = s.href.split('/').pop();
+            if (s.price) map[slug] = Number(s.price);
+          });
+          setDbPrices(map);
+        }
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <PageShell>
@@ -44,7 +61,7 @@ export default function OurSolutionsPage() {
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-[#1c3868]">
             <div>
-              <span className="block text-3xl sm:text-4xl font-extrabold text-white tracking-tight">9</span>
+              <span className="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Multiple</span>
               <span className="text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mt-1">Core Capabilities</span>
             </div>
             <div>
@@ -135,7 +152,7 @@ export default function OurSolutionsPage() {
   
                     {/* MIDDLE: Price */}
                     <div className="font-extrabold text-[#D4AF37] text-[15px] mx-2">
-                      ₹{s.price.toLocaleString()}
+                      ₹{(dbPrices[s.slug] || s.price).toLocaleString()}
                     </div>
   
                     {/* RIGHT: Add to Cart / - 1 + */}
@@ -160,7 +177,7 @@ export default function OurSolutionsPage() {
                         </div>
                       ) : (
                         <button
-                          onClick={() => addToCart(s)}
+                          onClick={() => addToCart({ ...s, price: dbPrices[s.slug] || s.price })}
                           className="inline-flex items-center gap-1.5 bg-[#071326] text-white font-bold px-3 py-1.5 rounded-md hover:bg-[#D4AF37] hover:text-[#071326] transition-all shadow-sm"
                         >
                           <ShoppingCart className="h-3.5 w-3.5" />

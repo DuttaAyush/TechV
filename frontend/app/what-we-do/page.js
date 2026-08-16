@@ -57,7 +57,7 @@ export default function WhatWeDoPage() {
               Services Architecture
             </span>
             <h2 className="text-2xl sm:text-3xl font-light text-[#1c1a18] tracking-tight mb-3">
-              Nine Core Services. <span className="font-bold">One Accountable Partner.</span>
+              Multiple Core Capabilities. <span className="font-bold">One Accountable Partner.</span>
             </h2>
             <p className="text-[15.5px] text-[#5c5449] font-normal leading-relaxed max-w-4xl">
               Our core services span the entire digital and enterprise landscape—from Web Dev, App Dev, and Custom Software Engineering to Digital Marketing, CRM, ERP, and strategic IT, Business, and AI Advisory.
@@ -66,15 +66,12 @@ export default function WhatWeDoPage() {
 
           {/* Services Grid */}
           <div>
-            <div className="flex items-center justify-between border-b border-[#e5dccf] pb-4 mb-8">
-              <span className="text-[12px] font-extrabold text-[#784813] uppercase tracking-wider">
-                Showing {visibleServices.length} of {SERVICES.length} Practices
-              </span>
+            <div className="flex items-center justify-end border-b border-[#e5dccf] pb-4 mb-8">
               <button
                 onClick={() => setShowAll(!showAll)}
                 className="inline-flex items-center gap-2 text-[13px] font-bold text-[#1c1a18] bg-white border border-[#e5dccf] px-4 py-2 rounded-lg hover:border-[#86bc25] hover:text-[#5e8817] transition-all shadow-sm"
               >
-                <span>{showAll ? 'Show Featured Practices (4)' : `View All Services (${SERVICES.length})`}</span>
+                <span>{showAll ? 'Show Featured Practices' : 'View All Services'}</span>
                 <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} />
               </button>
             </div>
@@ -163,7 +160,7 @@ export default function WhatWeDoPage() {
                   onClick={() => setShowAll(true)}
                   className="inline-flex items-center gap-2 bg-[#1c1a18] text-white text-[14px] font-bold px-8 py-4 rounded-lg shadow-md hover:bg-[#86bc25] hover:text-black transition-all"
                 >
-                  <span>View All {SERVICES.length} Capabilities</span>
+                  <span>View All Capabilities</span>
                   <ChevronDown className="h-4.5 w-4.5" />
                 </button>
               </div>

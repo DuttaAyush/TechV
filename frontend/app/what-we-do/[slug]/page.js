@@ -1,6 +1,6 @@
 'use client';
 
-import { use } from 'react';
+import { use, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -15,12 +15,30 @@ export default function ServiceSubPage({ params }) {
   const resolvedParams = use(params);
   const service = getServiceBySlug(resolvedParams.slug);
   const { items, addToCart, updateQuantity } = useCart();
+  const [dbPrice, setDbPrice] = useState(null);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/admin/services`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.success && data.services) {
+          const dbService = data.services.find(s => s.href.endsWith(resolvedParams.slug));
+          if (dbService && dbService.price) {
+            setDbPrice(Number(dbService.price));
+          }
+        }
+      })
+      .catch(console.error);
+  }, [resolvedParams.slug]);
+
+  const displayPrice = dbPrice || service?.price || 0;
+  const serviceWithPrice = service ? { ...service, price: displayPrice } : null;
 
   const cartItem = items.find((i) => i.slug === service.slug);
   const qty = cartItem ? cartItem.quantity : 0;
 
   const handleAddToCart = () => {
-    addToCart(service);
+    addToCart(serviceWithPrice);
     toast.success(`${service.shortTitle} added to your cart.`);
   };
 
@@ -137,7 +155,7 @@ export default function ServiceSubPage({ params }) {
                 <div className="pt-5 border-t border-[#e8dfd1] flex flex-col gap-3">
                   <div className="flex items-end justify-between">
                     <span className="text-[13px] font-extrabold uppercase text-[#784813] tracking-widest">Pricing Model</span>
-                    <span className="text-3xl font-extrabold text-[#1c1a18]">₹{service.price.toLocaleString()}</span>
+                    <span className="text-3xl font-extrabold text-[#1c1a18]">₹{displayPrice.toLocaleString()}</span>
                   </div>
                   {qty === 0 ? (
                     <button

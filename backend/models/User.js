@@ -32,4 +32,9 @@ async function updateUser(email, updateData) {
   );
 }
 
-module.exports = { getUserByEmail, createUser, updateUser };
+async function getAllUsers() {
+  const { db } = await connectToDatabase();
+  return await db.collection('users').find({}, { projection: { password: 0 } }).sort({ createdAt: -1 }).toArray();
+}
+
+module.exports = { getUserByEmail, createUser, updateUser, getAllUsers };

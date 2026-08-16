@@ -23,7 +23,7 @@ const COLS = [
       { label: 'Digital Marketing', href: '/what-we-do/digital-marketing' },
       { label: 'CRM & ERP Solutions', href: '/what-we-do/crm-dev' },
       { label: 'IT, Business & AI Consulting', href: '/what-we-do/ai-consulting' },
-      { label: 'View All 9 Services →', href: '/what-we-do' },
+      { label: 'View All Services →', href: '/what-we-do' },
     ],
   },
   {

@@ -12,6 +12,7 @@ if (envConfig.NODE_ENV) {
 const nextConfig = {
   env: envConfig,
   output: 'standalone',
+  distDir: '../.next',
 
   images: {
     unoptimized: true,

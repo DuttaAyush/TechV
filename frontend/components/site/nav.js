@@ -67,7 +67,7 @@ const NAV = [
         { label: 'Web Dev', href: '/what-we-do/web-dev', icon: 'Globe' },
         { label: 'App Dev', href: '/what-we-do/app-dev', icon: 'Smartphone' },
         { label: 'Software Dev', href: '/what-we-do/software-dev', icon: 'Code' },
-        { label: 'View All 9 Services', href: '/what-we-do', icon: 'Globe' },
+        { label: 'View All Services', href: '/what-we-do', icon: 'Globe' },
       ],
       pages: [
         { title: 'Web Dev', desc: 'Next.js web apps and digital platforms.', href: '/what-we-do/web-dev', icon: 'Globe' },
