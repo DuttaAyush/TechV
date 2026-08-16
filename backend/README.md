@@ -26,10 +26,10 @@ This directory contains the highly-optimized Node.js & Express server that power
 ## 🔑 Environment Variables
 Create a `.env` file in this `/backend` directory (or at the root):
 ```env
-PORT=5000
+PORT=5015
 MONGODB_URI=mongodb://localhost:27017
 JWT_SECRET=supersecretjwtkey_vrtans_change_me_in_production
-FRONTEND_URL=http://localhost:3001
+FRONTEND_URL=http://localhost:5016
 ```
 
 ## 🏃‍♂️ Running Independently
@@ -37,4 +37,4 @@ If you only want to boot the Express backend:
 ```bash
 node server.js
 ```
-*(Server listens on http://localhost:5000 by default)*
+*(Server listens on http://localhost:5015 by default)*

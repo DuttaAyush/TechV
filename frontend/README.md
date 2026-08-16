@@ -18,7 +18,7 @@ This directory contains the user-facing website and the Admin Dashboard interfac
 ## 🔑 Environment Variables
 Create a `.env.local` file in this `/frontend` directory:
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:5000
+NEXT_PUBLIC_API_URL=http://localhost:5015
 ```
 *(In production on a VPS, change this to your live backend domain if applicable, or leave it if reverse-proxying via Nginx).*
 
@@ -27,4 +27,4 @@ If you only want to run the frontend server:
 ```bash
 npm run dev
 ```
-*(App runs on http://localhost:3001 by default)*
+*(App runs on http://localhost:5016 by default)*

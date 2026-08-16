@@ -43,7 +43,7 @@ const killFrontend = startProcess(
   'FRONTEND', 
   'node', 
   ['frontend/.next/standalone/server.js'], 
-  { PORT: 3001, NODE_ENV: 'production' }, 
+  { PORT: 5016, NODE_ENV: 'production' }, 
   '\x1b[36m' // Cyan color
 );
 
@@ -52,7 +52,7 @@ const killBackend = startProcess(
   'BACKEND', 
   'node', 
   ['backend/server.js'], 
-  { PORT: 5000, NODE_ENV: 'production' }, 
+  { PORT: 5015, NODE_ENV: 'production' }, 
   '\x1b[33m' // Yellow color
 );
 

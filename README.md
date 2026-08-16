@@ -5,7 +5,7 @@ Welcome to the **VRTANS** project repository. This is a robust, decoupled full-s
 ## 🏗️ Architecture Overview
 
 The platform uses a separated frontend and backend architecture:
-- **/frontend**: A Next.js 15 (App Router) client application running on port `3001`.
+- **/frontend**: A Next.js 15 (App Router) client application running on port `5016`.
 - **/backend**: A custom Node.js + Express.js REST API running on port `5000`.
 
 *Note: They are hosted in the same repository for convenience but operate independently. The root `package.json` uses `concurrently` to run both simultaneously during development.*

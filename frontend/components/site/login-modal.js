@@ -21,7 +21,7 @@ export default function LoginModal({ isOpen, setIsOpen }) {
     setLoading(true);
 
     try {
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015';
       const endpoint = isLogin ? `${baseUrl}/api/auth/login` : `${baseUrl}/api/auth/register`;
       const payload = isLogin ? { email, password } : { name, email, password };
 

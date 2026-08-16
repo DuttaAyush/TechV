@@ -48,11 +48,11 @@ setInterval(async () => {
   }
 }, 7 * 24 * 60 * 60 * 1000); // 7 days in milliseconds
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5015;
 
-// Read frontend origin from .env (defaults to localhost:3001 for local development)
+// Read frontend origin from .env (defaults to localhost:5016 for local development)
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:3001',
+  origin: process.env.FRONTEND_URL || 'http://localhost:5016',
   credentials: true,
 };
 app.use(cors(corsOptions));
