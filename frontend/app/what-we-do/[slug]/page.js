@@ -18,7 +18,7 @@ export default function ServiceSubPage({ params }) {
   const [dbPrice, setDbPrice] = useState(null);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015'}/api/admin/services`)
+    fetch(`${''}/api/admin/services`)
       .then(res => res.json())
       .then(data => {
         if (data.success && data.services) {

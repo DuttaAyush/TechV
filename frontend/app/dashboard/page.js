@@ -42,7 +42,7 @@ export default function DashboardPage() {
       if (!user) return;
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015'}/api/user/profile`, {
+        const res = await fetch(`${''}/api/user/profile`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -68,7 +68,7 @@ export default function DashboardPage() {
     setSaving(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015'}/api/user/profile`, {
+      const res = await fetch(`${''}/api/user/profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ export default function DashboardPage() {
                     className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-[13.5px] font-semibold transition-all ${activeTab === 'orders' ? 'bg-[#faf7f2] text-[#8c6b12] border border-[#e5dccf]' : 'text-[#5c5449] hover:bg-[#faf7f2]/50 hover:text-[#1c1a18] border border-transparent'}`}
                   >
                     <Package className="h-4 w-4" />
-                    Consultation History
+                    Order History
                   </button>
                   <button
                     onClick={() => setActiveTab('settings')}
@@ -185,14 +185,14 @@ export default function DashboardPage() {
               {activeTab === 'orders' && (
                 <div className="bg-white border border-[#e5dccf] shadow-[0_4px_20px_rgba(0,0,0,0.02)] rounded-xl p-8">
                   <div className="mb-6 border-b border-[#e5dccf] pb-4">
-                    <h3 className="text-xl font-cabinet font-medium text-[#1c1a18] tracking-tight">Consultation History</h3>
-                    <p className="text-[13px] text-[#71675b] mt-1 font-light">View your past strategy and architecture consultations.</p>
+                    <h3 className="text-xl font-cabinet font-medium text-[#1c1a18] tracking-tight">Order History</h3>
+                    <p className="text-[13px] text-[#71675b] mt-1 font-light">View your past orders and their status.</p>
                   </div>
                   
                   {orders.length === 0 ? (
                     <div className="text-center py-16 text-[#71675b]">
                       <Package className="h-10 w-10 mx-auto mb-4 text-[#dad2c3]" />
-                      <p className="text-[14px]">You have no past consultations.</p>
+                      <p className="text-[14px]">You have no past orders.</p>
                     </div>
                   ) : (
                     <div className="overflow-x-auto">
@@ -251,7 +251,7 @@ export default function DashboardPage() {
                                           <ul className="list-disc list-inside space-y-1">
                                             {order.items?.map((item, idx) => (
                                               <li key={idx}><span className="font-semibold text-[#1c1a18]">{item.title}</span> - ₹{item.price.toLocaleString()}</li>
-                                            )) || <li>Standard Consultation</li>}
+                                            )) || <li>Standard Order</li>}
                                           </ul>
                                         </div>
                                         <div className="md:col-span-2">

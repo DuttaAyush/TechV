@@ -1,0 +1,4 @@
+[
+  { "_id": "u1", "name": "John Doe", "email": "john@example.com", "company": "Acme Corp", "password": "password123", "createdAt": "2026-08-17T00:00:00.000Z" },
+  { "_id": "u2", "name": "Sarah Connor", "email": "sarah@skynet.com", "company": "Cyberdyne", "password": "password123", "createdAt": "2026-08-17T00:00:00.000Z" }
+]

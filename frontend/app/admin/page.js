@@ -30,7 +30,7 @@ export default function AdminPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015'}/api/admin/login`, {
+      const res = await fetch(`${''}/api/admin/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password, otp })
@@ -58,7 +58,7 @@ export default function AdminPage() {
   // 2. Data Fetching
   const fetchAllData = async (jwt) => {
     const headers = { 'Authorization': `Bearer ${jwt}` };
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015';
+    const baseUrl = '';
     try {
       const [leadsRes, usersRes, ordersRes, servicesRes] = await Promise.all([
         fetch(`${baseUrl}/api/admin/leads`, { headers }),
@@ -91,7 +91,7 @@ export default function AdminPage() {
   // 3. Handlers
   const updateLeadField = async (id, data) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015'}/api/admin/leads/${id}`, {
+      const res = await fetch(`${''}/api/admin/leads/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify(data)
@@ -117,8 +117,8 @@ export default function AdminPage() {
       
       const method = editingServiceId ? 'PUT' : 'POST';
       const url = editingServiceId 
-        ? `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015'}/api/admin/services/${editingServiceId}`
-        : `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015'}/api/admin/services`;
+        ? `${''}/api/admin/services/${editingServiceId}`
+        : `${''}/api/admin/services`;
         
       const res = await fetch(url, {
         method,
@@ -139,7 +139,7 @@ export default function AdminPage() {
 
   const removeService = async (id) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015'}/api/admin/services/${id}`, {
+      const res = await fetch(`${''}/api/admin/services/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -233,7 +233,7 @@ export default function AdminPage() {
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-cabinet font-medium">Leads Pipeline</h2>
               <button 
-                onClick={() => window.open(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015'}/api/admin/leads/export?token=${token}`, '_blank')}
+                onClick={() => window.open(`${''}/api/admin/leads/export?token=${token}`, '_blank')}
                 className="bg-[#047857] hover:bg-[#036246] text-white px-4 py-2 rounded text-[12px] font-bold transition-colors"
               >
                 Download CSV

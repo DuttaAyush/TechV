@@ -1,0 +1,26 @@
+[
+  { 
+    "_id": "s1", 
+    "title": "Web Dev", 
+    "fullTitle": "Enterprise Web Development", 
+    "body": "Full-stack application modernization and microservices architecture.", 
+    "price": "15000", 
+    "icon": "Globe",
+    "image": "/images/landing-page/landing-1.jpg",
+    "tags": ["Full-Stack", "React", "Node.js"],
+    "tagColor": "text-[#047857] bg-[#ecfdf5] border-[#a7f3d0]",
+    "href": "/what-we-do/web-dev"
+  },
+  { 
+    "_id": "s2", 
+    "title": "Cloud", 
+    "fullTitle": "Cloud Infrastructure", 
+    "body": "Zero-trust network architecture and scalable data pipelines.", 
+    "price": "25000", 
+    "icon": "Layers",
+    "image": "/images/landing-page/landing-2.jpg",
+    "tags": ["AWS", "Zero-Trust", "Kubernetes"],
+    "tagColor": "text-[#4f46e5] bg-[#e0e7ff] border-[#c7d2fe]",
+    "href": "/what-we-do/cloud-infrastructure"
+  }
+]

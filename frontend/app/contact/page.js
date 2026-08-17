@@ -19,7 +19,7 @@ export default function Page() {
     }
     setSubmitting(true);
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5015'}/api/leads`, {
+      const res = await fetch(`${''}/api/leads`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

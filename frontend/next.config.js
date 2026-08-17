@@ -11,8 +11,7 @@ if (envConfig.NODE_ENV) {
 
 const nextConfig = {
   env: envConfig,
-  output: 'export',
-  // distDir: '../.next',
+  distDir: '../.next',
 
   images: {
     unoptimized: true,

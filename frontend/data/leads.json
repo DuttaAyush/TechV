@@ -1,0 +1,4 @@
+[
+  { "_id": "l1", "name": "Jane Smith", "email": "jane@enterprise.com", "company": "Global Tech", "interest": "Cloud Modernization", "status": "New", "notes": "Needs urgent migration", "createdAt": "2026-08-17T00:00:00.000Z" },
+  { "_id": "l2", "name": "Bob Ross", "email": "bob@painting.com", "company": "Art Inc", "interest": "Data Engineering", "status": "Contacted", "notes": "", "createdAt": "2026-08-17T00:00:00.000Z" }
+]
