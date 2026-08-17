@@ -6,7 +6,7 @@
     "frontend": "next dev frontend --hostname 0.0.0.0 --port 5016",
     "backend": "node backend/server.js",
     "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
-    "build": "next build frontend",
+    "build": "next build frontend && node -e \"require('fs').cpSync('frontend/public', 'public', {recursive: true})\",
     "start": "concurrently \"next start frontend\" \"npm run backend\"",
     "start:prod": "node boot.js"
   },
