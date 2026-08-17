@@ -49,3 +49,5 @@ frontend/.env.local
 frontend/.next
 frontend/out
 backend/.env
+*/node_modules
+*/.next

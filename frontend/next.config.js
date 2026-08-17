@@ -11,7 +11,6 @@ if (envConfig.NODE_ENV) {
 
 const nextConfig = {
   env: envConfig,
-  distDir: '../.next',
 
   images: {
     unoptimized: true,
