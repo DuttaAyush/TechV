@@ -1,10 +1,12 @@
-// Client configuration
 export const clientConfig = {
   // Website URL
-  url: process.env.NEXT_PUBLIC_CLIENT_URL || 'https://VRTANS.tech',
+  url: process.env.NEXT_PUBLIC_CLIENT_URL || 'https://vrtanstech.in',
 
-  // Contact email
-  contactEmail: process.env.NEXT_PUBLIC_CLIENT_CONTACT_EMAIL || 'contact@VRTANS.tech',
+  // Contact email & info
+  contactEmail: process.env.NEXT_PUBLIC_CLIENT_CONTACT_EMAIL || 'info@vrtanstech.in',
+  careEmail: 'care@vrtanstech.in',
+  phone: '+91 9272342803',
+  address: 'Plot no 106, Gorewada Road, Nagpur-440013',
 
   // Social media handles 
   social: {

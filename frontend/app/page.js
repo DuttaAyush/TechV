@@ -35,6 +35,7 @@ import { toast } from 'sonner';
 import PageShell from '@/components/site/page-shell';
 import RotatingTestimonials from '@/components/site/rotating-testimonials';
 import { clientConfig } from '@/lib/config';
+import initialServices from '@/data/services.json';
 
 const HERO_IMG =
   '/images/landing-page/landing-1.jpg';
@@ -153,13 +154,15 @@ const whyChooseUsData = [
 ];
 
 export default function HomePage() {
-  const [services, setServices] = useState([]);
+  const [services, setServices] = useState(initialServices);
 
   useEffect(() => {
     fetch(`${''}/api/admin/services`)
       .then(res => res.json())
       .then(data => {
-        if (data.success) setServices(data.services);
+        if (data.success && Array.isArray(data.services) && data.services.length > 0) {
+          setServices(data.services);
+        }
       })
       .catch(console.error);
   }, []);
@@ -660,14 +663,17 @@ export default function HomePage() {
 
               <div className="flex flex-wrap items-center gap-6 pt-1 text-[13.5px] text-[#554e44]">
                 <a
-                  href="mailto:partners@VRTANS.tech"
+                  href="mailto:info@vrtanstech.in"
                   className="inline-flex items-center gap-2 font-bold text-[#8c6b12] hover:underline"
                 >
-                  <Mail className="h-4 w-4 text-[#1c1a18]" /> partners@VRTANS.tech
+                  <Mail className="h-4 w-4 text-[#1c1a18]" /> info@vrtanstech.in
                 </a>
-                <span className="flex items-center gap-2 font-bold text-[#1c1a18]">
-                  <Phone className="h-4 w-4 text-[#8c6b12]" /> +1 (212) 555–0117
-                </span>
+                <a
+                  href="tel:+919272342803"
+                  className="flex items-center gap-2 font-bold text-[#1c1a18] hover:text-[#8c6b12] transition-colors"
+                >
+                  <Phone className="h-4 w-4 text-[#8c6b12]" /> +91 9272342803
+                </a>
                 <span className="flex items-center gap-1.5 font-bold text-[#1c1a18]"><Clock className="h-4 w-4 text-[#D4AF37]" /> 24h Partner SLA</span>
               </div>
             </div>

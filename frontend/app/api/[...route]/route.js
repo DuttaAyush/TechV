@@ -33,6 +33,10 @@ export async function GET(request, { params }) {
   const url = new URL(request.url);
   const route = params.route.join('/');
   
+  if (route === 'admin' || route === 'admin/profile') {
+    return NextResponse.json({ success: true, admin: { name: 'Super Admin', email: 'info@vrtanstech.in' } });
+  }
+
   if (route === 'admin/users') return NextResponse.json({ success: true, users: getStore('users') });
   if (route === 'admin/leads') return NextResponse.json({ success: true, leads: getStore('leads') });
   if (route === 'admin/orders') return NextResponse.json({ success: true, orders: getStore('orders') });
@@ -40,9 +44,10 @@ export async function GET(request, { params }) {
 
   if (route === 'user/profile') {
     const token = request.headers.get('authorization')?.replace('Bearer ', '');
-    const user = getStore('users').find(u => 'mock-token-' + u._id === token);
+    const users = getStore('users');
+    const user = users.find(u => 'mock-token-' + u._id === token) || users[0] || { name: 'Valued Client', email: 'client@vrtanstech.in' };
     const orders = getStore('orders').filter(o => o.userEmail === user?.email);
-    return NextResponse.json({ success: true, profile: user, orders });
+    return NextResponse.json({ success: true, user, profile: user, orders });
   }
 
   return NextResponse.json({ error: 'Not Found' }, { status: 404 });

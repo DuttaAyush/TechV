@@ -75,42 +75,35 @@ export default function Page() {
             {/* Left Sidebar: Clearly Visible Typography Beside Form */}
             <div className="lg:col-span-4 space-y-9 border-l-4 border-[#86bc25] pl-6 py-1">
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Direct Partner Channel</span>
-                <p className="text-[20px] font-bold text-[#1c1a18] tracking-tight mb-2">General Advisory Inquiries</p>
-                <a href="mailto:partners@VRTANS.tech" className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
-                  <Mail className="h-4.5 w-4.5 text-[#1c1a18]" /> partners@VRTANS.tech
-                </a>
-                <p className="mt-1.5 text-[13.5px] text-[#635b51] font-light">Monitored 24/7 by global executive coordinators.</p>
-              </div>
-
-              <div className="border-t border-[#e8ded2] pt-7">
-                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Media & Newsroom</span>
-                <p className="text-[18px] font-bold text-[#1c1a18] tracking-tight mb-2">Corporate Press & Analyst Relations</p>
-                <a href="mailto:press@VRTANS.tech" className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
-                  <Mail className="h-4 w-4 text-[#1c1a18]" /> press@VRTANS.tech
-                </a>
-              </div>
-
-              <div className="border-t border-[#e8ded2] pt-7">
-                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-2">Global Operations</span>
-                <p className="text-[18px] font-bold text-[#1c1a18] tracking-tight mb-3.5">Six Regional Practice Headquarters</p>
-                <ul className="grid grid-cols-2 gap-y-3 text-[14.5px] font-medium text-[#2d2923]">
-                  {['New York', 'London', 'Frankfurt', 'Dubai', 'Singapore', 'Toronto'].map((city) => (
-                    <li key={city} className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-[#86bc25] fill-[#1c1a18]" />
-                      <span>{city}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="border-t border-[#e8ded2] pt-7">
-                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Immediate Escalations</span>
-                <p className="text-[18px] font-bold text-[#1c1a18] tracking-tight mb-2">Client Architecture Hotline</p>
-                <div className="flex items-center gap-2.5 text-[16px] font-bold text-[#1c1a18]">
-                  <Phone className="h-4 w-4 text-[#5e8817]" /> +1 (212) 555–0117
+                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Direct Contact Channel</span>
+                <p className="text-[20px] font-bold text-[#1c1a18] tracking-tight mb-2">General Advisory & Care</p>
+                <div className="space-y-1">
+                  <a href="mailto:info@vrtanstech.in" className="flex items-center gap-2 text-[15px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
+                    <Mail className="h-4 w-4 text-[#1c1a18]" /> info@vrtanstech.in
+                  </a>
+                  <a href="mailto:care@vrtanstech.in" className="flex items-center gap-2 text-[15px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
+                    <Mail className="h-4 w-4 text-[#1c1a18]" /> care@vrtanstech.in
+                  </a>
                 </div>
-                <p className="mt-1 text-[13px] text-[#786f64] font-light">Available for active SLA client accounts.</p>
+                <p className="mt-2 text-[13.5px] text-[#635b51] font-light">Monitored 24/7 by global executive coordinators.</p>
+              </div>
+
+              <div className="border-t border-[#e8ded2] pt-7">
+                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Corporate Headquarters</span>
+                <p className="text-[17px] font-bold text-[#1c1a18] tracking-tight mb-1">Nagpur Office</p>
+                <p className="text-[14px] text-[#2d2923] font-medium leading-snug flex items-start gap-2">
+                  <MapPin className="h-4 w-4 text-[#86bc25] shrink-0 mt-0.5" />
+                  Plot no 106, Gorewada Road, Nagpur-440013
+                </p>
+              </div>
+
+              <div className="border-t border-[#e8ded2] pt-7">
+                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Direct Phone Line</span>
+                <p className="text-[18px] font-bold text-[#1c1a18] tracking-tight mb-2">Client Advisory Hotline</p>
+                <a href="tel:+919272342803" className="flex items-center gap-2.5 text-[16px] font-bold text-[#1c1a18] hover:text-[#5e8817] transition-colors">
+                  <Phone className="h-4 w-4 text-[#5e8817]" /> +91 9272342803
+                </a>
+                <p className="mt-1 text-[13px] text-[#786f64] font-light">Available for all inquiries & SLA client accounts.</p>
               </div>
             </div>
 

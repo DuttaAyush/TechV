@@ -71,14 +71,29 @@ export default function Footer() {
             <p className="mt-6 text-[14px] leading-relaxed text-[#999999] font-light max-w-sm">
               VRTANS is an independent enterprise consulting firm combining strategy, senior technical execution, and strict outcome accountability.
             </p>
-            <div className="mt-8">
-              <span className="text-[11px] uppercase tracking-[0.18em] text-[#999999] block mb-2">Direct Partner Inquiries</span>
-              <a
-                href="mailto:partners@VRTANS.tech"
-                className="text-[15px] font-normal text-white hover:text-[#86bc25] transition-colors underline underline-offset-4 decoration-[#86bc25]/50"
-              >
-                partners@VRTANS.tech
-              </a>
+            <div className="mt-8 space-y-2">
+              <span className="text-[11px] uppercase tracking-[0.18em] text-[#999999] block">Direct Contact & Inquiries</span>
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href="mailto:info@vrtanstech.in"
+                  className="text-[14px] font-normal text-white hover:text-[#86bc25] transition-colors underline underline-offset-4 decoration-[#86bc25]/50"
+                >
+                  info@vrtanstech.in
+                </a>
+                <span className="text-[#666666]">|</span>
+                <a
+                  href="mailto:care@vrtanstech.in"
+                  className="text-[14px] font-normal text-white hover:text-[#86bc25] transition-colors underline underline-offset-4 decoration-[#86bc25]/50"
+                >
+                  care@vrtanstech.in
+                </a>
+              </div>
+              <p className="text-[13.5px] text-[#cccccc] font-medium pt-1">
+                Phone: <a href="tel:+919272342803" className="hover:text-white transition-colors">+91 9272342803</a>
+              </p>
+              <p className="text-[13px] text-[#999999] font-light">
+                Plot no 106, Gorewada Road, Nagpur-440013
+              </p>
             </div>
           </div>
 

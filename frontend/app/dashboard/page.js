@@ -48,15 +48,22 @@ export default function DashboardPage() {
           }
         });
         const data = await res.json();
-        if (data.success) {
-          setProfile(data.user);
-          setOrders(data.orders);
-          setName(data.user.name || '');
-          setCompany(data.user.company || '');
-          setEditEmail(data.user.email || '');
+        const profileObj = data.profile || data.user || user;
+        if (profileObj) {
+          setProfile(profileObj);
+          setOrders(data.orders || []);
+          setName(profileObj.name || user?.name || '');
+          setCompany(profileObj.company || '');
+          setEditEmail(profileObj.email || user?.email || '');
         }
       } catch (err) {
-        toast.error('Failed to load profile data');
+        if (user) {
+          setProfile(user);
+          setName(user.name || '');
+          setEditEmail(user.email || '');
+        } else {
+          toast.error('Failed to load profile data');
+        }
       } finally {
         setLoading(false);
       }
