@@ -83,30 +83,30 @@ export default function ServiceSubPage({ params }) {
       </section>
 
       {/* Clean Unified Beige Content Area */}
-      <section className="bg-[#faf7f2] text-[#1c1a18] py-20 font-sans border-b border-[#e3ded4]">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-12 space-y-20">
+      <section className="bg-[#faf7f2] text-[#1c1a18] py-10 sm:py-20 font-sans border-b border-[#e3ded4]">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-12 space-y-12 sm:space-y-20">
           
           {/* Practice Overview & Strategic Intent */}
           <div>
-            <div className="mb-10 border-l-4 border-[#86bc25] pl-5">
+            <div className="mb-6 sm:mb-10 border-l-4 border-[#86bc25] pl-4 sm:pl-5">
               <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#784813] block mb-1">
                 Executive Practice Overview
               </span>
-              <h2 className="text-3xl sm:text-4xl font-light text-[#1c1a18] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-light text-[#1c1a18] tracking-tight">
                 Architectural <span className="font-bold text-black">Rigor & Execution</span>
               </h2>
             </div>
 
-            <div className="grid lg:grid-cols-12 gap-10 items-center bg-white border border-[#e5dccf] rounded-xl p-8 md:p-12 shadow-sm">
-              <div className="lg:col-span-7 space-y-5">
+            <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 items-center bg-white border border-[#e5dccf] rounded-xl p-5 sm:p-8 md:p-12 shadow-sm">
+              <div className="lg:col-span-7 space-y-4 sm:space-y-5">
                 {Array.isArray(service.overview) ? (
                   service.overview.map((para, i) => (
-                    <p key={i} className="text-[16px] text-[#4a4338] font-normal leading-relaxed">
+                    <p key={i} className="text-[15px] sm:text-[16px] text-[#4a4338] font-normal leading-relaxed">
                       {para}
                     </p>
                   ))
                 ) : (
-                  <p className="text-[16px] text-[#4a4338] font-normal leading-relaxed">
+                  <p className="text-[15px] sm:text-[16px] text-[#4a4338] font-normal leading-relaxed">
                     {service.overview}
                   </p>
                 )}
@@ -126,7 +126,7 @@ export default function ServiceSubPage({ params }) {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 bg-[#faf7f2] border border-[#e5dccf] rounded-xl p-6 space-y-4">
+              <div className="lg:col-span-5 bg-[#faf7f2] border border-[#e5dccf] rounded-xl p-5 sm:p-6 space-y-4">
                 <div className="flex items-center gap-3 pb-4 border-b border-[#e8dfd1]">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[#1c1a18] text-[#86bc25]">
                     <RenderIcon name={service.icon} className="h-5 w-5" />
@@ -155,7 +155,7 @@ export default function ServiceSubPage({ params }) {
                 <div className="pt-5 border-t border-[#e8dfd1] flex flex-col gap-3">
                   <div className="flex items-end justify-between">
                     <span className="text-[13px] font-extrabold uppercase text-[#784813] tracking-widest">Pricing Model</span>
-                    <span className="text-3xl font-extrabold text-[#1c1a18]">₹{displayPrice.toLocaleString()}</span>
+                    <span className="text-2xl sm:text-3xl font-extrabold text-[#1c1a18]">₹{displayPrice.toLocaleString()}</span>
                   </div>
                   {qty === 0 ? (
                     <button
@@ -167,7 +167,7 @@ export default function ServiceSubPage({ params }) {
                     </button>
                   ) : (
                     <div className="w-full flex justify-end mt-2">
-                      <div className="flex items-center justify-between bg-[#071326] text-white rounded-lg px-4 py-2.5 shadow-md w-3/5 min-w-[140px]">
+                      <div className="flex items-center justify-between bg-[#071326] text-white rounded-lg px-4 py-2.5 shadow-md w-full sm:w-3/5 min-w-[140px]">
                         <button
                           onClick={() => updateQuantity(service.slug, -1)}
                           className="p-1.5 hover:text-[#D4AF37] transition-colors bg-white/10 rounded-md"
@@ -196,16 +196,16 @@ export default function ServiceSubPage({ params }) {
 
           {/* Practice Deliverables Grid */}
           <div>
-            <div className="mb-10 border-l-4 border-[#86bc25] pl-5">
+            <div className="mb-6 sm:mb-10 border-l-4 border-[#86bc25] pl-4 sm:pl-5">
               <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#784813] block mb-1">
                 Engineering Output
               </span>
-              <h2 className="text-3xl sm:text-4xl font-light text-[#1c1a18] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-light text-[#1c1a18] tracking-tight">
                 Core <span className="font-bold text-black">Deliverables & Blueprints</span>
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {service.deliverables.map((item, idx) => (
                 <div
                   key={idx}

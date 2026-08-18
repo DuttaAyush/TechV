@@ -39,8 +39,8 @@ export default function Page() {
   return (
     <PageShell>
       {/* 1. TOPMOST SECTION: EXECUTIVE DEEP BLACK HERO */}
-      <section className="bg-[#000000] text-white py-16 lg:py-24 border-b border-[#1a1a1a] font-sans">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-12">
+      <section className="bg-[#000000] text-white py-12 sm:py-16 lg:py-24 border-b border-[#1a1a1a] font-sans">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-12">
           <div className="max-w-4xl">
             <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#86bc25] mb-3">
               <span className="h-2 w-2 rounded-full bg-[#86bc25] animate-pulse" />
@@ -49,16 +49,16 @@ export default function Page() {
             <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-light leading-[1.08] tracking-[-0.02em] text-white">
               Connect Directly With A <strong className="font-semibold text-[#86bc25]">Senior Practice Partner.</strong>
             </h1>
-            <p className="mt-5 max-w-2xl text-[16px] md:text-[17.5px] font-light leading-relaxed text-[#a3a3a3]">
+            <p className="mt-4 sm:mt-5 max-w-2xl text-[15px] sm:text-[17.5px] font-light leading-relaxed text-[#a3a3a3]">
               Tell us about your mission-critical initiative or structural technology challenge. Every inquiry is evaluated strictly by practice directors and answered within 24 hours.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-6 pt-6 border-t border-[#222222] text-[13px] text-[#cccccc]">
-              <span className="flex items-center gap-2"><Clock className="h-4 w-4 text-[#86bc25]" /> 24-Hour Partner SLA</span>
-              <span>•</span>
-              <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#86bc25]" /> Strict NDA Compliance</span>
-              <span>•</span>
-              <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-[#86bc25]" /> Dedicated Engineering Pods</span>
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-6 pt-4 sm:pt-6 border-t border-[#222222] text-[12px] sm:text-[13px] text-[#cccccc]">
+              <span className="flex items-center gap-1.5"><Clock className="h-4 w-4 text-[#86bc25]" /> 24-Hour Partner SLA</span>
+              <span className="hidden sm:inline">•</span>
+              <span className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-[#86bc25]" /> Strict NDA Compliance</span>
+              <span className="hidden sm:inline">•</span>
+              <span className="flex items-center gap-1.5"><CheckCircle className="h-4 w-4 text-[#86bc25]" /> Dedicated Engineering Pods</span>
             </div>
           </div>
         </div>
@@ -68,39 +68,39 @@ export default function Page() {
       <div className="w-full h-[4px] bg-gradient-to-r from-[#ef4444] via-[#ec4899] to-[#a855f7] relative z-20 shadow-[0_2px_20px_rgba(236,72,153,0.35)]" />
 
       {/* 2. LOWER SECTION: LIGHT CREAM THEME FOR FORM & CONTACT DETAILS */}
-      <section className="bg-[#faf7f2] text-[#1c1a18] py-20 lg:py-28 font-sans min-h-[700px] border-b border-[#e6ded2]">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <section className="bg-[#faf7f2] text-[#1c1a18] py-10 sm:py-20 lg:py-28 font-sans min-h-[700px] border-b border-[#e6ded2]">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             
             {/* Left Sidebar: Clearly Visible Typography Beside Form */}
-            <div className="lg:col-span-4 space-y-9 border-l-4 border-[#86bc25] pl-6 py-1">
+            <div className="lg:col-span-4 space-y-7 sm:space-y-9 border-l-4 border-[#86bc25] pl-4 sm:pl-6 py-1">
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Direct Contact Channel</span>
-                <p className="text-[20px] font-bold text-[#1c1a18] tracking-tight mb-2">General Advisory & Care</p>
+                <p className="text-[18px] sm:text-[20px] font-bold text-[#1c1a18] tracking-tight mb-2">General Advisory & Care</p>
                 <div className="space-y-1">
-                  <a href="mailto:info@vrtanstech.in" className="flex items-center gap-2 text-[15px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
+                  <a href="mailto:info@vrtanstech.in" className="flex items-center gap-2 text-[14px] sm:text-[15px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
                     <Mail className="h-4 w-4 text-[#1c1a18]" /> info@vrtanstech.in
                   </a>
-                  <a href="mailto:care@vrtanstech.in" className="flex items-center gap-2 text-[15px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
+                  <a href="mailto:care@vrtanstech.in" className="flex items-center gap-2 text-[14px] sm:text-[15px] font-semibold text-[#5e8817] hover:underline hover:text-black transition-colors">
                     <Mail className="h-4 w-4 text-[#1c1a18]" /> care@vrtanstech.in
                   </a>
                 </div>
                 <p className="mt-2 text-[13.5px] text-[#635b51] font-light">Monitored 24/7 by global executive coordinators.</p>
               </div>
 
-              <div className="border-t border-[#e8ded2] pt-7">
+              <div className="border-t border-[#e8ded2] pt-5 sm:pt-7">
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Corporate Headquarters</span>
-                <p className="text-[17px] font-bold text-[#1c1a18] tracking-tight mb-1">Nagpur Office</p>
-                <p className="text-[14px] text-[#2d2923] font-medium leading-snug flex items-start gap-2">
+                <p className="text-[16px] sm:text-[17px] font-bold text-[#1c1a18] tracking-tight mb-1">Nagpur Office</p>
+                <p className="text-[13.5px] sm:text-[14px] text-[#2d2923] font-medium leading-snug flex items-start gap-2">
                   <MapPin className="h-4 w-4 text-[#86bc25] shrink-0 mt-0.5" />
                   Plot no 106, Gorewada Road, Nagpur-440013
                 </p>
               </div>
 
-              <div className="border-t border-[#e8ded2] pt-7">
+              <div className="border-t border-[#e8ded2] pt-5 sm:pt-7">
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85531b] block mb-1">Direct Phone Line</span>
-                <p className="text-[18px] font-bold text-[#1c1a18] tracking-tight mb-2">Client Advisory Hotline</p>
-                <a href="tel:+919272342803" className="flex items-center gap-2.5 text-[16px] font-bold text-[#1c1a18] hover:text-[#5e8817] transition-colors">
+                <p className="text-[17px] sm:text-[18px] font-bold text-[#1c1a18] tracking-tight mb-2">Client Advisory Hotline</p>
+                <a href="tel:+919272342803" className="flex items-center gap-2.5 text-[15px] sm:text-[16px] font-bold text-[#1c1a18] hover:text-[#5e8817] transition-colors">
                   <Phone className="h-4 w-4 text-[#5e8817]" /> +91 9272342803
                 </a>
                 <p className="mt-1 text-[13px] text-[#786f64] font-light">Available for all inquiries & SLA client accounts.</p>
@@ -111,7 +111,7 @@ export default function Page() {
             <div className="lg:col-span-8">
               <form
                 onSubmit={onSubmit}
-                className="hover-VRTANS-border bg-white border border-[#e2d8c9] rounded-lg p-8 md:p-12 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:border-transparent transition-all duration-300"
+                className="hover-VRTANS-border bg-white border border-[#e2d8c9] rounded-lg p-5 sm:p-8 md:p-12 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:border-transparent transition-all duration-300"
               >
                 <div className="mb-8 border-b border-[#f0e7db] pb-6">
                   <h3 className="text-2xl font-light text-[#1c1a18] tracking-tight">

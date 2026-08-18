@@ -48,25 +48,25 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Clean Unified Beige Content Area */}
-      <section className="bg-[#faf7f2] text-[#1c1a18] py-20 font-sans border-b border-[#e3ded4]">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-12 space-y-16">
+      <section className="bg-[#faf7f2] text-[#1c1a18] py-10 sm:py-20 font-sans border-b border-[#e3ded4]">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-12 space-y-10 sm:space-y-16">
           
           {/* Practice Overview Statement */}
-          <div className="bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-sm">
+          <div className="bg-white border border-[#e5dccf] rounded-xl p-5 sm:p-8 md:p-10 shadow-sm">
             <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#8c6b12] block mb-2">
               Services Architecture
             </span>
             <h2 className="text-2xl sm:text-3xl font-light text-[#1c1a18] tracking-tight mb-3">
               Multiple Core Capabilities. <span className="font-bold">One Accountable Partner.</span>
             </h2>
-            <p className="text-[15.5px] text-[#5c5449] font-normal leading-relaxed max-w-4xl">
+            <p className="text-[14.5px] sm:text-[15.5px] text-[#5c5449] font-normal leading-relaxed max-w-4xl">
               Our core services span the entire digital and enterprise landscape—from Web Dev, App Dev, and Custom Software Engineering to Digital Marketing, CRM, ERP, and strategic IT, Business, and AI Advisory.
             </p>
           </div>
 
           {/* Services Grid */}
           <div>
-            <div className="flex items-center justify-end border-b border-[#e5dccf] pb-4 mb-8">
+            <div className="flex items-center justify-end border-b border-[#e5dccf] pb-4 mb-6 sm:mb-8">
               <button
                 onClick={() => setShowAll(!showAll)}
                 className="inline-flex items-center gap-2 text-[13px] font-bold text-[#1c1a18] bg-white border border-[#e5dccf] px-4 py-2 rounded-lg hover:border-[#86bc25] hover:text-[#5e8817] transition-all shadow-sm"
@@ -76,7 +76,7 @@ export default function WhatWeDoPage() {
               </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
               {visibleServices.map((service) => {
                 return (
                   <div

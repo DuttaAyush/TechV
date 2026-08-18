@@ -48,26 +48,26 @@ export default function IndustriesPage() {
       </section>
 
       {/* Clean Unified Beige Content Area */}
-      <section className="bg-[#faf7f2] text-[#1c1a18] py-20 font-sans border-b border-[#e3ded4]">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-12 space-y-16">
+      <section className="bg-[#faf7f2] text-[#1c1a18] py-10 sm:py-20 font-sans border-b border-[#e3ded4]">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-12 space-y-10 sm:space-y-16">
           
           {/* Practice Overview Statement */}
-          <div className="bg-white border border-[#e5dccf] rounded-xl p-8 md:p-10 shadow-sm">
+          <div className="bg-white border border-[#e5dccf] rounded-xl p-5 sm:p-8 md:p-10 shadow-sm">
             <span className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#784813] block mb-2">
               Domain Fluency & Expertise
             </span>
             <h2 className="text-2xl sm:text-3xl font-light text-[#1c1a18] tracking-tight mb-3">
               Sector-Specific Engineering for <span className="font-bold">Regulated & Mission-Critical Verticals</span>
             </h2>
-            <p className="text-[15.5px] text-[#5c5449] font-normal leading-relaxed max-w-4xl">
+            <p className="text-[14.5px] sm:text-[15.5px] text-[#5c5449] font-normal leading-relaxed max-w-4xl">
               We bring specialized technical solutions tailored to the strict security, compliance, and latency mandates of Tier-1 financial institutions, healthcare networks, defense contractors, logistics providers, and cloud infrastructure operators.
             </p>
           </div>
 
           {/* Industries Grid */}
           <div>
-            <div className="flex items-center justify-between border-b border-[#e5dccf] pb-4 mb-8">
-              <span className="text-[12px] font-extrabold text-[#784813] uppercase tracking-wider">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-[#e5dccf] pb-4 mb-6 sm:mb-8">
+              <span className="text-[11px] sm:text-[12px] font-extrabold text-[#784813] uppercase tracking-wider">
                 Showing {visibleIndustries.length} of {INDUSTRIES.length} Industry Verticals
               </span>
               <button
@@ -79,7 +79,7 @@ export default function IndustriesPage() {
               </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
               {visibleIndustries.map((ind) => {
                 return (
                   <div

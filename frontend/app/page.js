@@ -233,7 +233,7 @@ export default function HomePage() {
         <div className="absolute top-0 right-1/4 w-[500px] h-[300px] bg-[#D4AF37]/10 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-0 left-1/3 w-[600px] h-[350px] bg-[#1e40af]/15 blur-[140px] pointer-events-none" />
 
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-12 pt-16 lg:pt-16 pb-14 lg:pb-20 relative z-10">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-12 pt-10 sm:pt-16 pb-10 lg:pb-20 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Executive Advisory Copy */}
             <div className="lg:col-span-7">
@@ -291,7 +291,7 @@ export default function HomePage() {
               </motion.div>
 
               {/* EXECUTIVE TRUST BAR */}
-              <div className="hidden md:grid mt-14 grid-cols-1 sm:grid-cols-3 gap-6 border-t border-[#1b3563] pt-7">
+              <div className="grid mt-10 md:mt-14 grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 border-t border-[#1b3563] pt-5 sm:pt-7">
                 <div>
                   <span className="block text-[15px] font-bold text-white tracking-tight">Revenue-Linked</span>
                   <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#D4AF37]">EVERY ENGAGEMENT</span>

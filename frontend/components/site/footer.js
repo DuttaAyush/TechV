@@ -65,8 +65,8 @@ export default function Footer() {
         </div> */}
 
         {/* Navigation Grid */}
-        <div className="grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4 pr-6">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4 pr-0 lg:pr-6">
             <Logo />
             <p className="mt-6 text-[14px] leading-relaxed text-[#999999] font-light max-w-sm">
               VRTANS is an independent enterprise consulting firm combining strategy, senior technical execution, and strict outcome accountability.
@@ -97,7 +97,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {COLS.map((c) => (
               <div key={c.title}>
                 <h4 className="text-[13px] font-semibold uppercase tracking-[0.15em] text-[#ffffff] border-l-2 border-[#86bc25] pl-3 mb-6">
@@ -121,8 +121,8 @@ export default function Footer() {
         </div>
 
         {/* Legal & Operations Footer Bar */}
-        <div className="mt-16 pt-8 border-t border-[#1a1a1a] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-[13px] text-[#999999]">
-          <div className="flex flex-wrap items-center gap-6">
+        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-[#1a1a1a] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-[13px] text-[#999999]">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <p>© {new Date().getFullYear()} VRTANS. All rights reserved.</p>
             <span className="hidden md:block h-3 w-px bg-[#262626]" />
             <Link href="/privacy-policy" className="hover:text-[#86bc25] transition-colors">

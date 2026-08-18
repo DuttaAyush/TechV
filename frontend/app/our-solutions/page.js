@@ -43,7 +43,7 @@ export default function OurSolutionsPage() {
         <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-[#86bc25]/10 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-0 left-1/3 w-[500px] h-[250px] bg-[#3b82f6]/10 blur-[110px] pointer-events-none" />
 
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-12 pt-16 pb-20 relative z-10">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-12 pt-12 sm:pt-16 pb-16 sm:pb-20 relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#132440] border border-[#23477d] mb-6">
             <Sparkles className="h-3.5 w-3.5 text-[#D4AF37]" />
             <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#93c5fd]">
@@ -51,40 +51,40 @@ export default function OurSolutionsPage() {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light text-white tracking-tight leading-[1.05] max-w-5xl">
+          <h1 className="text-3xl sm:text-6xl lg:text-7xl font-light text-white tracking-tight leading-[1.05] max-w-5xl">
             Solutions That <span className="font-semibold text-white">Perform</span> — And <em className="italic text-[#D4AF37] font-normal">Scale With You</em>
           </h1>
 
-          <p className="mt-6 max-w-3xl text-[16px] sm:text-[18px] text-[#b0cbef] font-light leading-relaxed">
+          <p className="mt-4 sm:mt-6 max-w-3xl text-[15px] sm:text-[18px] text-[#b0cbef] font-light leading-relaxed">
             A selection of complex cloud architecture, AI platform, and strategic services delivered with Fortune 100 leaders and state institutions. 
           </p>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-[#1c3868]">
+          <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-[#1c3868]">
             <div>
-              <span className="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Multiple</span>
-              <span className="text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mt-1">Core Capabilities</span>
+              <span className="block text-xl sm:text-3xl font-extrabold text-white tracking-tight">Multiple</span>
+              <span className="text-[10px] sm:text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mt-1">Core Capabilities</span>
             </div>
             <div>
-              <span className="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Dedicated</span>
-              <span className="text-[11px] font-bold text-[#93c5fd] uppercase tracking-wider block mt-1">Engineering Pods</span>
+              <span className="block text-xl sm:text-3xl font-extrabold text-white tracking-tight">Dedicated</span>
+              <span className="text-[10px] sm:text-[11px] font-bold text-[#93c5fd] uppercase tracking-wider block mt-1">Engineering Pods</span>
             </div>
             <div>
-              <span className="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Regulated</span>
-              <span className="text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mt-1">Market Focus</span>
+              <span className="block text-xl sm:text-3xl font-extrabold text-white tracking-tight">Regulated</span>
+              <span className="text-[10px] sm:text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mt-1">Market Focus</span>
             </div>
             <div>
-              <span className="block text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Support</span>
-              <span className="text-[11px] font-bold text-[#93c5fd] uppercase tracking-wider block mt-1">Comprehensive SLAs</span>
+              <span className="block text-xl sm:text-3xl font-extrabold text-white tracking-tight">Support</span>
+              <span className="text-[10px] sm:text-[11px] font-bold text-[#93c5fd] uppercase tracking-wider block mt-1">Comprehensive SLAs</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* 2. MAIN CONTENT GRID */}
-      <section className="bg-[#faf7f2] text-[#1c1a18] py-16 lg:py-24 font-sans border-b border-[#e3ded4]">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-12">
+      <section className="bg-[#faf7f2] text-[#1c1a18] py-10 sm:py-16 lg:py-24 font-sans border-b border-[#e3ded4]">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-12">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {SERVICES.map((s) => {
               const qty = getItemQuantity(s.slug);
 
@@ -94,7 +94,7 @@ export default function OurSolutionsPage() {
                   className="hover-VRTANS-border group bg-white border border-[#e4d7c5] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="relative h-[210px] w-full overflow-hidden bg-[#080d1a]">
+                    <div className="relative h-[180px] sm:h-[210px] w-full overflow-hidden bg-[#080d1a]">
                       <Image
                         src={s.image}
                         alt={s.title}
@@ -117,15 +117,15 @@ export default function OurSolutionsPage() {
                       </div>
                     </div>
   
-                    <div className="p-6">
-                      <h3 className="text-[18px] font-bold text-[#1c1a18] leading-snug tracking-tight group-hover:text-[#D4AF37] transition-colors mb-3">
+                    <div className="p-5 sm:p-6">
+                      <h3 className="text-[17px] sm:text-[18px] font-bold text-[#1c1a18] leading-snug tracking-tight group-hover:text-[#D4AF37] transition-colors mb-2 sm:mb-3">
                         {s.title}
                       </h3>
-                      <p className="text-[13.5px] text-[#595248] font-normal leading-relaxed mb-6 line-clamp-3">
+                      <p className="text-[13px] sm:text-[13.5px] text-[#595248] font-normal leading-relaxed mb-4 sm:mb-6 line-clamp-3">
                         {s.summary}
                       </p>
   
-                      <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#f2ece2]">
+                      <div className="flex flex-wrap gap-1.5 pt-3 sm:pt-4 border-t border-[#f2ece2]">
                         {s.capabilities.slice(0, 3).map((cap, i) => (
                           <span
                             key={i}
@@ -139,7 +139,7 @@ export default function OurSolutionsPage() {
                   </div>
   
                   {/* CARD FOOTER CTA */}
-                  <div className="px-6 py-4 bg-[#faf7f2] border-t border-[#f0e8dc] flex items-center justify-between text-[13px]">
+                  <div className="px-4 py-3 sm:px-6 sm:py-4 bg-[#faf7f2] border-t border-[#f0e8dc] flex items-center justify-between gap-2 text-[13px]">
                     
                     {/* LEFT: View More */}
                     <Link

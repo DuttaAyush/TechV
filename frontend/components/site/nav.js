@@ -150,7 +150,17 @@ export default function Nav() {
     setMobileOpen(false);
   }, [pathname]);
 
-
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
 
   const activeItem = NAV.find((n) => n.label === active);
 
@@ -158,14 +168,14 @@ export default function Nav() {
     <>
       <header
         ref={navRef}
-      onMouseLeave={() => setActive(null)}
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#050c1a]/95 backdrop-blur-md border-b border-[#1b3563] shadow-2xl py-3'
-          : 'bg-[#071326] border-b border-[#1b3563] py-4'
-      }`}
-    >
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12 flex items-center justify-between">
+        onMouseLeave={() => setActive(null)}
+        className={`sticky top-0 z-50 transition-colors duration-200 ${
+          scrolled
+            ? 'bg-[#050c1a]/95 backdrop-blur-md border-b border-[#1b3563] shadow-2xl py-3'
+            : 'bg-[#071326] border-b border-[#1b3563] py-3.5 sm:py-4'
+        }`}
+      >
+        <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-12 flex items-center justify-between">
         {/* Brand Logo */}
         <Logo />
 
@@ -270,14 +280,30 @@ export default function Nav() {
           </Link>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-zinc-300 hover:text-white focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Mobile Header Action Controls */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            aria-label="Cart"
+            onClick={() => setIsCartOpen(true)}
+            className="relative p-2 text-zinc-300 hover:text-[#D4AF37] hover:bg-[#0c1f3d] rounded-md transition-all flex items-center justify-center"
+            title="View Cart"
+          >
+            <ShoppingCart className="h-5 w-5 text-zinc-200" />
+            {totalItems > 0 && (
+              <span className="absolute top-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#D4AF37] text-[10px] font-bold text-black border border-[#071326]">
+                {totalItems}
+              </span>
+            )}
+          </button>
+
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="p-2 text-zinc-300 hover:text-white focus:outline-none rounded-md hover:bg-[#0c1f3d]"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -287,7 +313,7 @@ export default function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
-            className="absolute top-full left-0 right-0 bg-[#071326] border-b border-[#1b3563] shadow-2xl text-white overflow-hidden"
+            className="hidden lg:block absolute top-full left-0 right-0 bg-[#071326] border-b border-[#1b3563] shadow-2xl text-white overflow-hidden"
           >
             <div className="mx-auto max-w-[1600px] border-t border-[#1b3563]">
               <div className="grid grid-cols-12 min-h-[380px]">
@@ -408,14 +434,14 @@ export default function Nav() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 lg:hidden"
+              className="fixed inset-0 bg-black/80 backdrop-blur-md z-[90] lg:hidden"
             />
             <motion.aside
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed inset-y-0 right-0 z-50 w-[90%] max-w-[400px] bg-[#090b0f] border-l border-[#1a1a1a] text-white flex flex-col justify-between overflow-y-auto lg:hidden"
+              className="fixed inset-y-0 right-0 z-[100] w-[90%] max-w-[400px] bg-[#090b0f] border-l border-[#1a1a1a] text-white flex flex-col justify-between overflow-y-auto lg:hidden shadow-2xl"
             >
               <div>
                 <div className="sticky top-0 z-10 flex h-16 items-center justify-between px-6 border-b border-[#1a1a1a] bg-[#090b0f]">
