@@ -424,6 +424,8 @@ export default function Nav() {
         )}
       </AnimatePresence>
 
+      </header>
+
       {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileOpen && (
@@ -434,14 +436,14 @@ export default function Nav() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 bg-black/80 backdrop-blur-md z-[90] lg:hidden"
+              className="fixed inset-0 bg-black/80 backdrop-blur-md z-[9990] lg:hidden"
             />
             <motion.aside
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed inset-y-0 right-0 z-[100] w-[90%] max-w-[400px] bg-[#090b0f] border-l border-[#1a1a1a] text-white flex flex-col justify-between overflow-y-auto lg:hidden shadow-2xl"
+              className="fixed inset-y-0 right-0 z-[9999] w-[90%] max-w-[400px] bg-[#090b0f] border-l border-[#1a1a1a] text-white flex flex-col justify-between overflow-y-auto lg:hidden shadow-2xl"
             >
               <div>
                 <div className="sticky top-0 z-10 flex h-16 items-center justify-between px-6 border-b border-[#1a1a1a] bg-[#090b0f]">
@@ -542,7 +544,7 @@ export default function Nav() {
           </>
         )}
       </AnimatePresence>
-      </header>
+
       <LoginModal isOpen={isLoginOpen} setIsOpen={setIsLoginOpen} />
     </>
   );

@@ -37,21 +37,8 @@ export default function ConsultationWidget() {
   }, [open]);
 
   useEffect(() => {
-    if (!isHome) {
-      setHomeScrollReady(true);
-      return;
-    }
-    const checkScroll = () => {
-      if (window.matchMedia('(min-width: 769px)').matches) {
-        setHomeScrollReady(true);
-      } else {
-        setHomeScrollReady(window.scrollY > 150);
-      }
-    };
-    checkScroll();
-    window.addEventListener('scroll', checkScroll, { passive: true });
-    return () => window.removeEventListener('scroll', checkScroll);
-  }, [isHome]);
+    setHomeScrollReady(true);
+  }, []);
 
   const close = () => setOpen(false);
 

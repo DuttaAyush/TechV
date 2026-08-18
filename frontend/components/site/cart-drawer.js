@@ -28,7 +28,7 @@ export default function CartDrawer() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsCartOpen(false)}
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-[9990] bg-black/60 backdrop-blur-sm"
           />
 
           {/* Slide-Over Panel */}
@@ -37,7 +37,7 @@ export default function CartDrawer() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 250 }}
-            className="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-[#071326] text-white shadow-2xl border-l border-[#1c3560] flex flex-col font-sans"
+            className="fixed inset-y-0 right-0 z-[9998] w-full max-w-md bg-[#071326] text-white shadow-2xl border-l border-[#1c3560] flex flex-col font-sans"
           >
             {/* Drawer Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-[#1c3560] bg-[#050c1a]">
