@@ -298,7 +298,7 @@ export default function DashboardPage() {
                           type="text"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          className="w-full bg-[#fcfbfa] border border-[#dad2c3] rounded px-3.5 py-2.5 text-[14px] text-[#1c1a18] font-medium focus:outline-none focus:border-[#D4AF37] focus:bg-white transition-colors"
+                          className="w-full bg-[#fcfbfa] border border-[#dad2c3] rounded px-3.5 py-2.5 text-[14px] text-black font-medium focus:outline-none focus:border-[#D4AF37] focus:bg-white transition-colors"
                         />
                       </div>
                       <div className="space-y-1.5">
@@ -307,7 +307,7 @@ export default function DashboardPage() {
                           type="text"
                           value={company}
                           onChange={(e) => setCompany(e.target.value)}
-                          className="w-full bg-[#fcfbfa] border border-[#dad2c3] rounded px-3.5 py-2.5 text-[14px] text-[#1c1a18] font-medium focus:outline-none focus:border-[#D4AF37] focus:bg-white transition-colors"
+                          className="w-full bg-[#fcfbfa] border border-[#dad2c3] rounded px-3.5 py-2.5 text-[14px] text-black font-medium focus:outline-none focus:border-[#D4AF37] focus:bg-white transition-colors"
                         />
                       </div>
                     </div>
@@ -335,7 +335,7 @@ export default function DashboardPage() {
                         value={editEmail}
                         disabled={!isEmailEditing}
                         onChange={(e) => setEditEmail(e.target.value)}
-                        className={`w-full bg-[#fcfbfa] border border-[#dad2c3] rounded px-3.5 py-2.5 text-[14px] font-medium focus:outline-none focus:border-[#D4AF37] focus:bg-white transition-colors ${!isEmailEditing ? 'opacity-70 cursor-not-allowed text-[#71675b]' : 'text-[#1c1a18]'}`}
+                        className={`w-full bg-[#fcfbfa] border border-[#dad2c3] rounded px-3.5 py-2.5 text-[14px] font-medium focus:outline-none focus:border-[#D4AF37] focus:bg-white transition-colors text-black ${!isEmailEditing ? 'opacity-70 cursor-not-allowed' : ''}`}
                       />
                       {isEmailEditing && (
                         <p className="text-[12.5px] text-[#8c6b12] mt-2 font-medium">If you update your email, you will remain logged in and your orders will be migrated safely.</p>
@@ -401,7 +401,7 @@ export default function DashboardPage() {
                               value={password}
                               onChange={(e) => setPassword(e.target.value)}
                               placeholder="Enter new password"
-                              className="w-full bg-[#fcfbfa] border border-[#dad2c3] rounded px-3.5 py-2.5 pr-12 text-[14px] text-[#1c1a18] font-medium focus:outline-none focus:border-[#D4AF37] focus:bg-white transition-colors"
+                              className="w-full bg-[#fcfbfa] border border-[#dad2c3] rounded px-3.5 py-2.5 pr-12 text-[14px] text-black font-medium focus:outline-none focus:border-[#D4AF37] focus:bg-white transition-colors"
                             />
                             <button
                               type="button"
@@ -421,7 +421,7 @@ export default function DashboardPage() {
                               value={confirmPassword}
                               onChange={(e) => setConfirmPassword(e.target.value)}
                               placeholder="Confirm new password"
-                              className="w-full bg-[#fcfbfa] border border-[#dad2c3] rounded px-3.5 py-2.5 pr-12 text-[14px] text-[#1c1a18] font-medium focus:outline-none focus:border-[#D4AF37] focus:bg-white transition-colors"
+                              className="w-full bg-[#fcfbfa] border border-[#dad2c3] rounded px-3.5 py-2.5 pr-12 text-[14px] text-black font-medium focus:outline-none focus:border-[#D4AF37] focus:bg-white transition-colors"
                             />
                           </div>
                         </div>

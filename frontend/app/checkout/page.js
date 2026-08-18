@@ -105,52 +105,52 @@ export default function CheckoutPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-1.5 md:col-span-2">
                   <label className="text-sm font-bold text-[#4a4338]">Name *</label>
-                  <input required type="text" name="name" placeholder="Name" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
+                  <input required type="text" name="name" placeholder="Name" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm text-black outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
                 </div>
                 
                 <div className="space-y-1.5">
                   <label className="text-sm font-bold text-[#4a4338]">Email *</label>
-                  <input required type="email" name="email" placeholder="Email" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
+                  <input required type="email" name="email" placeholder="Email" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm text-black outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
                 </div>
 
                 <div className="space-y-1.5">
                   <label className="text-sm font-bold text-[#4a4338]">Phone Number *</label>
-                  <input required type="tel" name="phone" placeholder="Phone Number" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
+                  <input required type="tel" name="phone" placeholder="Phone Number" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm text-black outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
                 </div>
 
                 <div className="space-y-1.5 md:col-span-2">
                   <label className="text-sm font-bold text-[#4a4338]">Company Name *</label>
-                  <input required type="text" name="company" placeholder="Company Name" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
+                  <input required type="text" name="company" placeholder="Company Name" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm text-black outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
                 </div>
 
                 <div className="space-y-1.5 md:col-span-2">
                   <label className="text-sm font-bold text-[#4a4338]">Country *</label>
-                  <input required type="text" name="country" placeholder="Country" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
+                  <input required type="text" name="country" placeholder="Country" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm text-black outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
                 </div>
 
                 <div className="space-y-1.5 md:col-span-2">
                   <label className="text-sm font-bold text-[#4a4338]">Street Address *</label>
-                  <input required type="text" name="street" placeholder="Street Address" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
+                  <input required type="text" name="street" placeholder="Street Address" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm text-black outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
                 </div>
 
                 <div className="space-y-1.5 md:col-span-2">
                   <label className="text-sm font-bold text-[#4a4338]">Apartment</label>
-                  <input type="text" name="apartment" placeholder="Apartment, suite, etc. (optional)" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
+                  <input type="text" name="apartment" placeholder="Apartment, suite, etc. (optional)" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm text-black outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
                 </div>
 
                 <div className="space-y-1.5">
                   <label className="text-sm font-bold text-[#4a4338]">City *</label>
-                  <input required type="text" name="city" placeholder="City" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
+                  <input required type="text" name="city" placeholder="City" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm text-black outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
                 </div>
 
                 <div className="space-y-1.5">
                   <label className="text-sm font-bold text-[#4a4338]">State *</label>
-                  <input required type="text" name="state" placeholder="State" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
+                  <input required type="text" name="state" placeholder="State" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm text-black outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
                 </div>
 
                 <div className="space-y-1.5">
                   <label className="text-sm font-bold text-[#4a4338]">Pin Code *</label>
-                  <input required type="text" name="pincode" placeholder="Pin Code" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
+                  <input required type="text" name="pincode" placeholder="Pin Code" className="w-full bg-white border border-[#e5dccf] rounded-lg px-4 py-3 text-sm text-black outline-none focus:border-[#D4AF37] transition-colors shadow-sm" />
                 </div>
               </div>
             </div>

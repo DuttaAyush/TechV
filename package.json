@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "frontend": "next dev frontend --hostname 0.0.0.0 --port 5016",
+    "clean": "node clean.js",
+    "frontend": "node clean.js && next dev frontend --hostname 0.0.0.0 --port 5016",
     "backend": "node backend/server.js",
     "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
     "build": "next build frontend && node copy-public.js",

@@ -261,13 +261,13 @@ export default function Nav() {
               )}
             </div>
           </div>
-          <a
-            href="#contact-form"
+          <Link
+            href="/contact"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-[#D4AF37] via-[#C5A059] to-[#B8860B] text-black hover:opacity-95 text-[13.5px] font-extrabold px-5 py-2.5 rounded shadow transition-all duration-200 hover:shadow-lg hover:shadow-[#D4AF37]/20"
           >
             <span>Contact Us</span>
             <ArrowUpRight className="h-4 w-4 text-black" />
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -503,14 +503,14 @@ export default function Nav() {
               </div>
 
               <div className="p-6 border-t border-[#1a1a1a] bg-[#090b0f]">
-                <a
-                  href="#contact-form"
+                <Link
+                  href="/contact"
                   onClick={() => setMobileOpen(false)}
                   className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#D4AF37] via-[#C5A059] to-[#B8860B] text-black font-extrabold text-sm py-3 rounded shadow"
                 >
                   <span>Contact Us</span>
                   <ArrowUpRight className="h-4 w-4 text-black" />
-                </a>
+                </Link>
               </div>
             </motion.aside>
           </>
